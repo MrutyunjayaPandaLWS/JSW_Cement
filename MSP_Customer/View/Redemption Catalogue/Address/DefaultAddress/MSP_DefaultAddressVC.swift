@@ -48,7 +48,7 @@ class MSP_DefaultAddressVC: BaseViewController, SendUpdatedAddressDelegate, popU
     var VM = DefaultAddressModels()
     var userID = UserDefaults.standard.string(forKey: "UserID") ?? ""
     var loyaltyID = UserDefaults.standard.string(forKey: "LoyaltyID") ?? ""
-    var pointBalance = UserDefaults.standard.double(forKey: "RedeemablePointBalance")
+    var pointBalance = UserDefaults.standard.integer(forKey: "RedeemablePointBalance")
     let verifiedStatus = UserDefaults.standard.integer(forKey: "VerifiedStatus")
     var checkAccountStatus = UserDefaults.standard.string(forKey: "SemiActiveAccount") ?? ""
     

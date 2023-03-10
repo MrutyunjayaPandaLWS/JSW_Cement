@@ -20,14 +20,18 @@ class JSW_ChangePasswordVC: BaseViewController {
     var delegate: SendNewPasswordDelegate!
     var newPassword = ""
     var mobileNumber = ""
-    
+    let userID = UserDefaults.standard.string(forKey: "UserID") ?? ""
     var VM = JSW_ChangePasswordVM()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.VM.VC = self
+        NotificationCenter.default.addObserver(self, selector: #selector(updatePass), name: Notification.Name.goToDashBoard, object: nil)
     }
 
-
+    @objc func updatePass(){
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     @IBAction func backBtn(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -42,16 +46,18 @@ class JSW_ChangePasswordVC: BaseViewController {
 //            self.newPassword = self.confirmPasswordTF.text ?? ""
 //            self.delegate.sendNewPassword(self)
 //            self.dismiss(animated: true)
-            self.passwordUpdateApi(newPassword: self.newPasswordTF.text ?? "", mobilenumber: self.mobileNumber)
+            self.passwordUpdateApi(newPassword: self.confirmPasswordTF.text ?? "")
         }
         
      
     }
-    func passwordUpdateApi(newPassword: String, mobilenumber: String){
+    func passwordUpdateApi(newPassword: String){
         let parameter = [
-            "Password": newPassword,
-            "UserName":mobilenumber,
-            "UserActionType":"UpdateChangedPassword"
+            "ActionType": 4,
+            "ActorId": self.userID,
+               "ObjCustomer": [
+                   "Password": newPassword
+               ]
         ] as [String:Any]
         print(parameter)
         self.VM.forgetPasswordSubmissionApi(parameter: parameter)

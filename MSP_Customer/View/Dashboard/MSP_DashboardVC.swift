@@ -388,7 +388,7 @@ class MSP_DashboardVC: BaseViewController, popUpDelegate{
 //                        self.dealerImage.isHidden = true
 //                    }
                     
-                    self.totalPointsLbl.text = "Total Points: \(response?.objCustomerDashboardList?[0].totalRedeemed ?? 0)"
+                    self.totalPointsLbl.text = "Total Points: \(Int(response?.objCustomerDashboardList?[0].totalRedeemed ?? 0) ?? 0)"
                     UserDefaults.standard.set(response?.objCustomerDashboardList?[0].totalRedeemed ?? 0, forKey: "TotalRedeemedPoints")
                     self.customerGradeLbl.text = response?.lstCustomerFeedBackJsonApi?[0].customerGrade ?? "-"
                     

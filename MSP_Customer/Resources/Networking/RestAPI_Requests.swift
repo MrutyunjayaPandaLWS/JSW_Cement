@@ -747,4 +747,16 @@ func myRedemptionStausListApi(parameters: JSON, completion: @escaping (MyRedempt
             }
         }
     }
+    func updatePasswordApi(parameters: JSON, completion: @escaping (ChangePasswordModel?, Error?) -> ()) -> URLSessionDataTask? {
+        return client.load(path: changePassword, method: .post, params: parameters) { data, error in
+            do{
+                if data != nil{
+                    let result1 =  try JSONDecoder().decode(ChangePasswordModel.self, from: data as! Data)
+                    completion(result1, nil)
+                }
+            }catch{
+                completion(nil, error)
+            }
+        }
+    }
 }

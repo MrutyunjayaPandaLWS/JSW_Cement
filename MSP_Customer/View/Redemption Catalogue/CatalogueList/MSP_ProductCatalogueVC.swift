@@ -18,7 +18,9 @@ class MSP_ProductCatalogueVC: BaseViewController, AddedToCartOrPlannerDelegate, 
         self.startIndex = 1
     }
     
-
+    @IBOutlet weak var selectdCategoryTitleLbl: UILabel!
+    @IBOutlet weak var selectedCategoryLbl: UILabel!
+    
     @IBOutlet weak var cartCountLbl: UILabel!
     @IBOutlet weak var notificationCountLbl: UILabel!
     @IBOutlet weak var redeemablePts: UILabel!
@@ -58,7 +60,7 @@ class MSP_ProductCatalogueVC: BaseViewController, AddedToCartOrPlannerDelegate, 
     var searchText = ""
     var categoryId = -1
     //let pointBalance = UserDefaults.standard.value(forKey: "RedeemablePointBalance")
-    var pointBalance = UserDefaults.standard.double(forKey: "RedeemablePointBalance")
+    var pointBalance = UserDefaults.standard.integer(forKey: "RedeemablePointBalance")
     //let pointBalance = UserDefaults.standard.value(forKey: "RedeemablePointBalance")
     let loyaltyId = UserDefaults.standard.string(forKey: "LoyaltyID") ?? ""
     var productCategoryListArray = [ProductCateogryModels]()
@@ -80,11 +82,13 @@ class MSP_ProductCatalogueVC: BaseViewController, AddedToCartOrPlannerDelegate, 
     var categoriesId = 0
     var noOfRows = 0
     var itsComeFrom = ""
-    
+    var selectedCategoryName = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         self.VM.VC = self
         print(self.pointBalance)
+        self.VM.redemptionCategoryArray.removeAll()
+        self.VM.redemptionCatalogueArray.removeAll()
         self.redeemablePts.text = "\(pointBalance)"
         self.searchTab = 1
         self.productTableView.delegate = self
@@ -100,7 +104,9 @@ class MSP_ProductCatalogueVC: BaseViewController, AddedToCartOrPlannerDelegate, 
         self.highToLowBtn.isHidden = true
         self.collectionViewTopSPace.constant = 55
         self.highToLowBtn.setTitle("Low To High", for: .normal)
-     
+        self.selectedCategoryLbl.isHidden = true
+        self.selectdCategoryTitleLbl.isHidden = true
+        self.redemptionCategoryList()
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -108,9 +114,8 @@ class MSP_ProductCatalogueVC: BaseViewController, AddedToCartOrPlannerDelegate, 
         self.loaderView.isHidden = true
 
    //     self.VM.redemptionCataloguesArray.removeAll()
-       
-        self.loaderView.isHidden = true
         self.redemptionCategoryList()
+       
         self.plannerListing()
         self.myCartList()
      //   self.notificationListApi()
@@ -221,6 +226,8 @@ class MSP_ProductCatalogueVC: BaseViewController, AddedToCartOrPlannerDelegate, 
         self.categoriesId = 0
         self.sortedBy = 0
         self.highToLowBtn.setTitle("Low To High", for: .normal)
+        self.VM.redemptionCategoryArray.removeAll()
+        self.VM.redemptionCatalogueArray.removeAll()
         self.redemptionCatalogueList(startIndex: self.startIndex)
     }
     @IBAction func categoryBtn(_ sender: Any) {
@@ -237,7 +244,9 @@ class MSP_ProductCatalogueVC: BaseViewController, AddedToCartOrPlannerDelegate, 
         self.selectedPtsRange1 = "All Points"
         self.selectedPtsRange = ""
         //self.filterByRangeArray.removeAll()
+        self.VM.redemptionCategoryArray.removeAll()
         self.VM.redemptionCatalogueArray.removeAll()
+//        self.filterByRangeArray.removeAll()
         self.searchButton.backgroundColor = .lightGray
         self.categoryButton.backgroundColor = .red
         self.pointsRangeButton.backgroundColor = .lightGray
@@ -256,6 +265,17 @@ class MSP_ProductCatalogueVC: BaseViewController, AddedToCartOrPlannerDelegate, 
     }
     
     @IBAction func pointRangeBtn(_ sender: Any) {
+        self.selectedCategoryLbl.isHidden = true
+        self.selectdCategoryTitleLbl.isHidden = true
+        if self.selectedCategoryName != "All"{
+            self.selectedCategoryLbl.isHidden = false
+            self.selectdCategoryTitleLbl.isHidden = false
+            self.selectdCategoryTitleLbl.text = self.selectedCategoryName
+        }else{
+            self.selectedCategoryLbl.isHidden = true
+            self.selectdCategoryTitleLbl.isHidden = true
+        }
+       
         self.filterByRangeValuesArray.removeAll()
         self.searchButton.backgroundColor = .lightGray
         self.categoryButton.backgroundColor = .lightGray
@@ -544,42 +564,8 @@ class MSP_ProductCatalogueVC: BaseViewController, AddedToCartOrPlannerDelegate, 
         ] as [String: Any]
         print(parameters)
         
-        self.VM.redemptionCateogry(parameters: parameters) { respone in
-            self.VM.redemptionCategoryArray = respone?.objCatalogueCategoryListJson ?? []
-            print(self.VM.redemptionCategoryArray.count)
-          //  DispatchQueue.main.async {
-                if self.VM.redemptionCategoryArray.count != 0 {
-                    
-                   
-                    DispatchQueue.main.async {
-                        self.noDataFound.isHidden = true
-                        self.catalogueCollectionView.isHidden = false
-                        self.productCategoryListArray.removeAll()
-                        self.productCategoryListArray.append((ProductCateogryModels(productCategoryId: "-1", productCategorName: "All", isSelected: 0)))
-                        for item in self.VM.redemptionCategoryArray{
-                            self.productCategoryListArray.append(ProductCateogryModels(productCategoryId: "\(item.catogoryId ?? 0)", productCategorName: item.catogoryName ?? "", isSelected: 0))
-                            
-                            print(item.catogoryName ?? "", "category Name")
-                            print(item.catogoryId ?? "", "Category ID")
-                        }
-                        self.catalogueCollectionView.reloadData()
-                        self.redemptionCatalogueList(startIndex: 1)
-                    
-                       
-                      
-                        self.loaderView.isHidden = true
-                        self.stopLoading()
-                    }
-                   
-                }else{
-                    DispatchQueue.main.async {
-                        self.noDataFound.isHidden = false
-                        self.loaderView.isHidden = true
-                        self.stopLoading()
-                    }
-                }
-            
-        }
+        self.VM.redemptionCateogry(parameters: parameters)
+        self.catalogueCollectionView.reloadData()
     }
     
     func myCartList(){
@@ -801,8 +787,8 @@ extension MSP_ProductCatalogueVC: UITableViewDelegate, UITableViewDataSource {
 }
 extension MSP_ProductCatalogueVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(self.itsFrom)
-        if self.itsFrom == "Category"{
+        print(self.categoriesId, "Fpsdkfjaksldf")
+        if self.categoriesId == 1{
             return self.productCategoryListArray.count
         }else{
             return self.filterByRangeArray.count
@@ -812,18 +798,20 @@ extension MSP_ProductCatalogueVC: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Catalogue_CVC", for: indexPath) as! Catalogue_CVC
-        print(self.itsFrom)
         if self.categoriesId == 1{
             print(self.productCategoryListArray.count)
-//            print(self.productCategoryListArray[indexPath.item].productCategorName ?? "")
-//                cell.catalogurLabel.text = "\(self.productCategoryListArray[indexPath.item].productCategorName ?? "")      "
-//                if self.categoryId == Int(self.productCategoryListArray[indexPath.item].productCategoryId!) ?? -1{
-//                    cell.catalogurLabel.textColor = UIColor.white
-//                    cell.catalogurLabel.backgroundColor = #colorLiteral(red: 0.6156862745, green: 0.06274509804, blue: 0.05882352941, alpha: 1)
-//                }else{
-//                    cell.catalogurLabel.textColor = UIColor.white
-//                    cell.catalogurLabel.backgroundColor = #colorLiteral(red: 0.4344037771, green: 0.4393812716, blue: 0.5076696277, alpha: 1)
-//                }
+            //print(self.productCategoryListArray[indexPath.item].productCategorName ?? "")
+            if self.productCategoryListArray.isEmpty == false || self.productCategoryListArray.count != 0{
+                cell.catalogurLabel.text = "\(self.productCategoryListArray[indexPath.item].productCategorName ?? "")      "
+                if self.categoryId == Int(self.productCategoryListArray[indexPath.item].productCategoryId!) ?? -1{
+                    cell.catalogurLabel.textColor = UIColor.white
+                    cell.catalogurLabel.backgroundColor = #colorLiteral(red: 0.6156862745, green: 0.06274509804, blue: 0.05882352941, alpha: 1)
+                }else{
+                    cell.catalogurLabel.textColor = UIColor.white
+                    cell.catalogurLabel.backgroundColor = #colorLiteral(red: 0.4344037771, green: 0.4393812716, blue: 0.5076696277, alpha: 1)
+                }
+            }
+               
         }else if self.categoriesId == 2{
             if self.filterByRangeArray.count != 0 {
                 cell.catalogurLabel.textAlignment = .center
@@ -838,16 +826,15 @@ extension MSP_ProductCatalogueVC: UICollectionViewDelegate, UICollectionViewData
             }
             
         }
-        
-        
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if self.itsFrom != "PtsRange"{
            // self.selectedPtsRange1 = "All Points"
-            self.VM.redemptionCatalogueArray.removeAll()
-            self.categoryId = Int(self.productCategoryListArray[indexPath.item].productCategoryId!) ?? -1
+            
+            self.categoryId = Int(self.productCategoryListArray[indexPath.row].productCategoryId!) ?? -1
             self.productCategoryListArray[indexPath.item].isSelected = 1
+            self.selectedCategoryName = self.productCategoryListArray[indexPath.row].productCategorName ?? ""
             // self.redemptionCatalogueList()
             self.itsFrom = "Category"
             print(self.categoryId)
@@ -874,6 +861,7 @@ extension MSP_ProductCatalogueVC: UICollectionViewDelegate, UICollectionViewData
             }else if self.selectedPtsRange1 == "25000 & Above pts"{
                 self.selectedPtsRange = "25000 - 999999999"
             }
+            
             //self.redemptionCategoryList()
             self.startIndex = 1
             self.VM.redemptionCatalogueArray.removeAll()

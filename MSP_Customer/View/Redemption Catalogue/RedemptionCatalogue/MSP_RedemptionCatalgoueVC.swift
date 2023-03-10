@@ -27,7 +27,7 @@ class MSP_RedemptionCatalgoueVC: BaseViewController, ViewTappedDelegate {
        @IBOutlet weak var loaderView: UIView!
     private var animationView11: AnimationView?
     
-    let redemptionBalance = UserDefaults.standard.double(forKey: "RedeemablePointBalance")
+    let redemptionBalance = UserDefaults.standard.integer(forKey: "RedeemablePointBalance")
     var viewArray = ["View"]
     var VM1 = HistoryNotificationsViewModel()
     let userID = UserDefaults.standard.string(forKey: "UserID") ?? ""

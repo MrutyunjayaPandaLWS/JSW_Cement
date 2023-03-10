@@ -37,6 +37,7 @@ extension Notification.Name{
     static let sendToLogin = Notification.Name(rawValue: "sendToLogin")
     
     static let hitDashBoardRequest = Notification.Name(rawValue: "hitDashBoardRequest")
+    static let goToDashBoard = Notification.Name(rawValue: "goToDashBoard")
     
     
 }

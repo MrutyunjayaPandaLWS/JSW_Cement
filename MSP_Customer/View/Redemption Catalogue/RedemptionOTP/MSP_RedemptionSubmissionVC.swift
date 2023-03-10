@@ -59,7 +59,7 @@ class MSP_RedemptionSubmissionVC: BaseViewController, popUpDelegate,UITextFieldD
     let emailID = UserDefaults.standard.string(forKey: "CustomerEmail") ?? ""
     let firstname = UserDefaults.standard.string(forKey: "FirstName") ?? ""
     let merchantEmail = UserDefaults.standard.string(forKey: "MerchantEmail") ?? ""
-    var pointBalance = UserDefaults.standard.double(forKey: "RedeemablePointBalance")
+    var pointBalance = UserDefaults.standard.integer(forKey: "RedeemablePointBalance")
     let loyaltyId = UserDefaults.standard.string(forKey: "LoyaltyID") ?? ""
     
     

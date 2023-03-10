@@ -19,7 +19,7 @@ class RedemptionsCatalogueListViewModel{
     var myPlannerListArray = [ObjCatalogueList2]()
     var notificationListArray = [LstPushHistoryJson]()
     
-    func redemptionCateogry(parameters: JSON, completion: @escaping (RedemptionCategoryModels?) -> ()){
+    func redemptionCateogry(parameters: JSON){
         DispatchQueue.main.async {
               self.VC?.startLoading()
               self.VC?.loaderView.isHidden = false
@@ -28,12 +28,37 @@ class RedemptionsCatalogueListViewModel{
         self.requestAPIs.redemptionCateogryListing(parameters: parameters) { (result, error) in
             if error == nil{
                 if result != nil {
-                    DispatchQueue.main.async {
-                        completion(result)
-                        self.VC?.loaderView.isHidden = true
-                        self.VC?.stopLoading()
-                    }
-                } else {
+                       self.redemptionCategoryArray = result?.objCatalogueCategoryListJson ?? []
+                        print(self.redemptionCategoryArray.count)
+                            if self.redemptionCategoryArray.count != 0 {
+                                DispatchQueue.main.async {
+                                    self.VC?.loaderView.isHidden = true
+                                    self.VC?.stopLoading()
+                                    self.VC?.noDataFound.isHidden = true
+                                    self.VC?.catalogueCollectionView.isHidden = false
+                                    self.VC?.productCategoryListArray.removeAll()
+                                    self.VC?.productCategoryListArray.append((ProductCateogryModels(productCategoryId: "-1", productCategorName: "All", isSelected: 0)))
+                                    for item in self.redemptionCategoryArray{
+                                        self.VC?.productCategoryListArray.append(ProductCateogryModels(productCategoryId: "\(item.catogoryId ?? 0)", productCategorName: item.catogoryName ?? "", isSelected: 0))
+                                    }
+                                    
+                                    print(self.VC?.productCategoryListArray.count, "asdfkldsafjdasf")
+                                    
+                                    self.VC?.catalogueCollectionView.reloadData()
+                                    self.VC?.redemptionCatalogueList(startIndex: 1)
+                                    self.VC?.loaderView.isHidden = true
+                                    self.VC?.stopLoading()
+                                }
+                               
+                            }else{
+                                DispatchQueue.main.async {
+                                    self.VC?.noDataFound.isHidden = false
+                                    self.VC?.loaderView.isHidden = true
+                                    self.VC?.stopLoading()
+                                }
+                            }
+                        
+                    } else {
                     print("No Response")
                     DispatchQueue.main.async {
                         self.VC?.loaderView.isHidden = true

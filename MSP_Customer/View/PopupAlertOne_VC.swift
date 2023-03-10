@@ -66,6 +66,11 @@ class PopupAlertOne_VC: BaseViewController {
                 self.delegate?.popupAlertDidTap(self)
                 NotificationCenter.default.post(name: .sendToLogin, object: nil)
             }
+        }else if itsComeFrom == "ChangePassword"{
+            self.dismiss(animated: true){
+                self.delegate?.popupAlertDidTap(self)
+                NotificationCenter.default.post(name: .goToDashBoard, object: nil)
+            }
         }
         
         //        if itsComeFrom == "DreamGift"{

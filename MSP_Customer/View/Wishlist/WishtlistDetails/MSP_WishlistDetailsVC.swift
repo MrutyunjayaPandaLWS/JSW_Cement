@@ -54,7 +54,7 @@ class MSP_WishlistDetailsVC: BaseViewController, popUpDelegate {
     var productId = 0
     
     var VM = RedemptionPlannerDetailsViewModel()
-    var pointBalance = UserDefaults.standard.double(forKey: "RedeemablePointBalance")
+    var pointBalance = UserDefaults.standard.integer(forKey: "RedeemablePointBalance")
     let userID = UserDefaults.standard.string(forKey: "UserID") ?? ""
     let loyaltyId = UserDefaults.standard.string(forKey: "LoyaltyID") ?? ""
     var selectedPlannerID = 0

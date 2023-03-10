@@ -25,7 +25,7 @@ class MSP_WishlistListingVC: BaseViewController, RedemptionPlannerDelegate, popU
     private var animationView11: AnimationView?
     
     var VM = RedemptionPlannerListViewModel()
-    var pointBalance = UserDefaults.standard.double(forKey: "RedeemablePointBalance")
+    var pointBalance = UserDefaults.standard.integer(forKey: "RedeemablePointBalance")
     let userID = UserDefaults.standard.string(forKey: "UserID") ?? ""
     let loyaltyId = UserDefaults.standard.string(forKey: "LoyaltyID") ?? ""
     var selectedPlannerID = 0

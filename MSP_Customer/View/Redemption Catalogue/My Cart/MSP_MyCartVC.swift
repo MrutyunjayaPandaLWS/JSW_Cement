@@ -20,7 +20,7 @@ class MSP_MyCartVC: BaseViewController, popUpDelegate, MyCartDelegate {
     private var animationView11: AnimationView?
 
     var VM = MycartViewModel()
-    var pointBalance = UserDefaults.standard.double(forKey: "RedeemablePointBalance")
+    var pointBalance = UserDefaults.standard.integer(forKey: "RedeemablePointBalance")
     let loyaltyId = UserDefaults.standard.string(forKey: "LoyaltyID") ?? ""
     let userID = UserDefaults.standard.string(forKey: "UserID") ?? ""
     var customerCartId = 0

@@ -36,7 +36,7 @@ class MSP_OffersandPromotionsVC: BaseViewController, PromotionDelegate{
     
     var VM = OffersListViewModel()
     let userID = UserDefaults.standard.string(forKey: "UserID") ?? ""
-    var pointBalance = UserDefaults.standard.double(forKey: "RedeemablePointBalance")
+    var pointBalance = UserDefaults.standard.integer(forKey: "RedeemablePointBalance")
     var fromSideMenu = ""
     var VM1 = HistoryNotificationsViewModel()
     let loyaltyId = UserDefaults.standard.string(forKey: "LoyaltyID") ?? ""
