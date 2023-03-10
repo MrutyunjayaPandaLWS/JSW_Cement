@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MSP_ClaimPointsDetailsTVC" rowHeight="287" id="KGk-i7-Jjw" customClass="MSP_ClaimPointsDetailsTVC" customModule="MSP_Customer" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="392" height="287"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="392" height="287"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dTg-43-aXZ">
+                        <rect key="frame" x="8" y="8" width="376" height="71.333333333333329"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 6277" translatesAutoresizingMaskIntoConstraints="NO" id="Cpy-5b-3V0">
+                                <rect key="frame" x="0.0" y="0.0" width="120" height="71.333333333333329"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="ZtJ-t8-TSi"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LIb-pq-vkk">
+                                <rect key="frame" x="128" y="8" width="240" height="12"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="12" id="yNh-1O-MqF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="12"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QY0-cp-JIH">
+                                <rect key="frame" x="128" y="28" width="240" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="buf-bx-ytg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
+                                <color key="textColor" red="0.1829449534" green="0.20585125679999999" blue="0.48237776760000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Qty(MT)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Tt-9y-XAu">
+                                <rect key="frame" x="128" y="68" width="42" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="DDj-zh-6hp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="12"/>
+                                <color key="textColor" red="0.18431372549019609" green="0.20392156862745098" blue="0.4823529411764706" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Qty" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tP7-Gv-G8w">
+                                <rect key="frame" x="128" y="88" width="120" height="30"/>
+                                <color key="backgroundColor" red="0.95698064569999997" green="0.96829968690000001" blue="0.98431605099999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="MP2-Py-nyw"/>
+                                    <constraint firstAttribute="height" constant="30" id="N5L-gd-t55"/>
+                                </constraints>
+                                <color key="textColor" red="0.1829449534" green="0.20585125679999999" blue="0.48237776760000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="enteredQTYEditingDidEnd:" destination="KGk-i7-Jjw" eventType="editingDidEnd" id="1XH-WR-Gfh"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Site Name &amp; Contact" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B5w-2C-Ke3">
+                                <rect key="frame" x="128" y="178" width="104.66666666666669" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="kbL-mi-TWR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="12"/>
+                                <color key="textColor" red="0.1829449534" green="0.20585125679999999" blue="0.48237776760000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Site Name &amp; Contact" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uw3-Q3-nDM">
+                                <rect key="frame" x="128" y="201" width="240" height="40"/>
+                                <color key="backgroundColor" red="0.95698064569999997" green="0.96829968690000001" blue="0.98431605099999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="PIL-Sm-cQb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="12"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="enterRemarksEditingDidEnd:" destination="KGk-i7-Jjw" eventType="editingDidEnd" id="tqj-ve-tSI"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Qty(KG)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FIh-Nf-IRW">
+                                <rect key="frame" x="128" y="123" width="40.666666666666657" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="sX7-f6-6lb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="12"/>
+                                <color key="textColor" red="0.1843137255" green="0.20392156859999999" blue="0.4823529412" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Qty" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iz6-vj-Avm">
+                                <rect key="frame" x="128" y="143" width="120" height="30"/>
+                                <color key="backgroundColor" red="0.95698064569999997" green="0.96829968690000001" blue="0.98431605099999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="3Ub-Vp-dGa"/>
+                                    <constraint firstAttribute="width" constant="120" id="llh-yb-GmZ"/>
+                                </constraints>
+                                <color key="textColor" red="0.1829449534" green="0.20585125679999999" blue="0.48237776760000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="qtyActKGTF:" destination="KGk-i7-Jjw" eventType="editingDidEnd" id="Vyh-mL-Cfh"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="3Tt-9y-XAu" firstAttribute="top" secondItem="QY0-cp-JIH" secondAttribute="bottom" constant="5" id="4uM-7i-Wco"/>
+                            <constraint firstItem="3Tt-9y-XAu" firstAttribute="leading" secondItem="Cpy-5b-3V0" secondAttribute="trailing" constant="8" id="95O-KY-mCs"/>
+                            <constraint firstItem="B5w-2C-Ke3" firstAttribute="top" secondItem="iz6-vj-Avm" secondAttribute="bottom" constant="5" id="C6p-2N-zkx"/>
+                            <constraint firstAttribute="trailing" secondItem="QY0-cp-JIH" secondAttribute="trailing" constant="8" id="CbK-z1-Rhc"/>
+                            <constraint firstItem="iz6-vj-Avm" firstAttribute="leading" secondItem="Cpy-5b-3V0" secondAttribute="trailing" constant="8" id="Gvn-LO-L3t"/>
+                            <constraint firstItem="QY0-cp-JIH" firstAttribute="top" secondItem="LIb-pq-vkk" secondAttribute="bottom" constant="8" id="LLu-fI-BYd"/>
+                            <constraint firstItem="LIb-pq-vkk" firstAttribute="top" secondItem="dTg-43-aXZ" secondAttribute="top" constant="8" id="MzW-rp-tKv"/>
+                            <constraint firstItem="uw3-Q3-nDM" firstAttribute="top" secondItem="B5w-2C-Ke3" secondAttribute="bottom" constant="8" id="NoT-t0-3VR"/>
+                            <constraint firstItem="tP7-Gv-G8w" firstAttribute="leading" secondItem="Cpy-5b-3V0" secondAttribute="trailing" constant="8" id="UKe-wd-yRM"/>
+                            <constraint firstItem="FIh-Nf-IRW" firstAttribute="leading" secondItem="Cpy-5b-3V0" secondAttribute="trailing" constant="8" id="VNG-fq-bIl"/>
+                            <constraint firstAttribute="bottom" secondItem="uw3-Q3-nDM" secondAttribute="bottom" constant="8" id="WiD-mf-ieZ"/>
+                            <constraint firstItem="uw3-Q3-nDM" firstAttribute="leading" secondItem="Cpy-5b-3V0" secondAttribute="trailing" constant="8" id="azY-3j-FR8"/>
+                            <constraint firstItem="B5w-2C-Ke3" firstAttribute="leading" secondItem="Cpy-5b-3V0" secondAttribute="trailing" constant="8" id="dnT-sB-dwD"/>
+                            <constraint firstAttribute="bottom" secondItem="Cpy-5b-3V0" secondAttribute="bottom" id="eXV-Qr-847"/>
+                            <constraint firstItem="QY0-cp-JIH" firstAttribute="leading" secondItem="Cpy-5b-3V0" secondAttribute="trailing" constant="8" id="eZk-U3-jqx"/>
+                            <constraint firstItem="LIb-pq-vkk" firstAttribute="leading" secondItem="Cpy-5b-3V0" secondAttribute="trailing" constant="8" id="jig-DX-JCQ"/>
+                            <constraint firstItem="tP7-Gv-G8w" firstAttribute="top" secondItem="3Tt-9y-XAu" secondAttribute="bottom" constant="5" id="rvo-4a-KWW"/>
+                            <constraint firstItem="FIh-Nf-IRW" firstAttribute="top" secondItem="tP7-Gv-G8w" secondAttribute="bottom" constant="5" id="tGc-tQ-i3V"/>
+                            <constraint firstAttribute="trailing" secondItem="uw3-Q3-nDM" secondAttribute="trailing" constant="8" id="tKu-5g-Gk0"/>
+                            <constraint firstItem="iz6-vj-Avm" firstAttribute="top" secondItem="FIh-Nf-IRW" secondAttribute="bottom" constant="5" id="u8f-J9-3Z7"/>
+                            <constraint firstItem="Cpy-5b-3V0" firstAttribute="leading" secondItem="dTg-43-aXZ" secondAttribute="leading" id="wov-aP-gjv"/>
+                            <constraint firstItem="Cpy-5b-3V0" firstAttribute="top" secondItem="dTg-43-aXZ" secondAttribute="top" id="xrC-2d-mUv"/>
+                            <constraint firstAttribute="trailing" secondItem="LIb-pq-vkk" secondAttribute="trailing" constant="8" id="ySl-5z-5HT"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="16"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" red="0.21960784310000001" green="0.2156862745" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                <constraints>
+                    <constraint firstItem="dTg-43-aXZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="Cnn-Uc-sVj"/>
+                    <constraint firstAttribute="bottom" secondItem="dTg-43-aXZ" secondAttribute="bottom" constant="8" id="I2c-mR-ueF"/>
+                    <constraint firstAttribute="trailing" secondItem="dTg-43-aXZ" secondAttribute="trailing" constant="8" id="XHp-1d-iyC"/>
+                    <constraint firstItem="dTg-43-aXZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="uYj-Io-5oY"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" red="0.2196078431372549" green="0.21568627450980393" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <connections>
+                <outlet property="productImage" destination="Cpy-5b-3V0" id="FJ7-Cn-54n"/>
+                <outlet property="productNameLbl" destination="QY0-cp-JIH" id="zxz-tI-OIM"/>
+                <outlet property="productNameTitle" destination="LIb-pq-vkk" id="Fgm-cC-oKp"/>
+                <outlet property="qtyKGTF" destination="iz6-vj-Avm" id="ZOb-wf-FIg"/>
+                <outlet property="qtyLbl" destination="3Tt-9y-XAu" id="vcd-am-6sA"/>
+                <outlet property="qtyTF" destination="tP7-Gv-G8w" id="UJu-Dt-VQu"/>
+                <outlet property="remarksTF" destination="uw3-Q3-nDM" id="rak-kF-BGe"/>
+            </connections>
+            <point key="canvasLocation" x="-39.694656488549619" y="9.5070422535211279"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Group 6277" width="196" height="71.333335876464844"/>
+    </resources>
+</document>

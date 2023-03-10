@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21513" systemVersion="22C65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="ClaimPointsArray" representedClassName="ClaimPointsArray" syncable="YES" codeGenerationType="class">
+        <attribute name="productCode" optional="YES" attributeType="String"/>
+        <attribute name="productId" optional="YES" attributeType="String"/>
+        <attribute name="productImage" optional="YES" attributeType="String"/>
+        <attribute name="productName" optional="YES" attributeType="String"/>
+        <attribute name="quantityKG" optional="YES" attributeType="String"/>
+        <attribute name="qunantity" optional="YES" attributeType="String"/>
+        <attribute name="remarks" optional="YES" attributeType="String"/>
+    </entity>
+</model>
