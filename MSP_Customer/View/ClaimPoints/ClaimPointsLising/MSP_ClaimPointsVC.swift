@@ -421,8 +421,8 @@ class MSP_ClaimPointsVC: BaseViewController, DropDownDelegate, SendDetailsDelega
                 if response?.returnMessage ?? "" == "1"{
                     
                     let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "MSP_ClaimPointsPopUpVC") as! MSP_ClaimPointsPopUpVC
-                    vc.modalTransitionStyle = .coverVertical
-                    vc.modalPresentationStyle = .fullScreen
+                    vc.modalTransitionStyle = .crossDissolve
+                    vc.modalPresentationStyle = .overFullScreen
                     self.present(vc, animated: true, completion: nil)
                 }else{
                     DispatchQueue.main.async{

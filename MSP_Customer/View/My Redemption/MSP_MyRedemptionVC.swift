@@ -339,84 +339,98 @@ extension MSP_MyRedemptionVC: UITableViewDelegate, UITableViewDataSource{
             cell?.refNoLbl.text = "\(self.VM.myRedemptionList[indexPath.row].redemptionRefno ?? "0")"
             cell?.pointsLbl.text = "\(self.VM.myRedemptionList[indexPath.row].redemptionPoints ?? 0)"
             cell?.categoryLbl.text = "\(self.VM.myRedemptionList[indexPath.row].catalogueType ?? "-")"
-            
-            if self.VM.myRedemptionList[indexPath.row].status ?? 0 == 0 || self.VM.myRedemptionList[indexPath.row].status ?? 0 == 1{
-                cell?.statusLbl.text = "Pending"
-                cell?.statusLbl.textColor = UIColor.black
-                cell?.statusView.backgroundColor = #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)
-                cell?.statusView.borderColor = #colorLiteral(red: 0.9523764253, green: 0.9772849679, blue: 0.9983460307, alpha: 1)
-            }
-            else if self.VM.myRedemptionList[indexPath.row].status ?? 0 == 2 {
-                cell?.statusLbl.text = "Processed"
-                cell?.statusLbl.textColor = UIColor.black
-                cell?.statusView.backgroundColor = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
-                cell?.statusView.borderColor = #colorLiteral(red: 0.1294117719, green: 0.2156862766, blue: 0.06666667014, alpha: 1)
-            }
-            else if self.VM.myRedemptionList[indexPath.row].status ?? 0 == 3 {
-                cell?.statusLbl.text = "Cancelled"
-                cell?.statusLbl.textColor = UIColor.black
-                cell?.statusView.backgroundColor = #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)
-                cell?.statusView.borderColor = #colorLiteral(red: 0.3098039329, green: 0.01568627544, blue: 0.1294117719, alpha: 1)
-            }else if self.VM.myRedemptionList[indexPath.row].status ?? 0 == 4 {
-                cell?.statusLbl.text = "Delivered"
-                cell?.statusLbl.textColor = UIColor.black
-                cell?.statusView.backgroundColor = #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1)
-                cell?.statusView.borderColor = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
-            }
-            else if self.VM.myRedemptionList[indexPath.row].status ?? 0 == 7 {
-                cell?.statusLbl.text = " Poster For Approval"
-                cell?.statusLbl.textColor = UIColor.black
-                cell?.statusView.backgroundColor = #colorLiteral(red: 0.5725490451, green: 0, blue: 0.2313725501, alpha: 1)
-                cell?.statusView.borderColor = #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)
-            }else if self.VM.myRedemptionList[indexPath.row].status ?? 0 == 8 {
-                cell?.statusLbl.text = "Posted For Approval 2"
-                cell?.statusLbl.textColor = UIColor.black
-                cell?.statusView.backgroundColor = #colorLiteral(red: 0.5725490451, green: 0, blue: 0.2313725501, alpha: 1)
-                cell?.statusView.borderColor = #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)
-            }
-            //        else if self.VM.myRedemptionList[indexPath.row].status ?? 0 == 9 {
-            //            cell?.statusLbl.text = "OnHold"
-            //            cell?.statusLbl.textColor = UIColor.black
-            //            cell?.statusView.backgroundColor = #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)
-            //            cell?.statusView.borderColor = #colorLiteral(red: 0.5058823824, green: 0.3372549117, blue: 0.06666667014, alpha: 1)
-            //        }else if self.VM.myRedemptionList[indexPath.row].status ?? 0 == 10 {
-            //            cell?.statusLbl.text = "Dispatched"
-            //            cell?.statusLbl.textColor = UIColor.black
-            //            cell?.statusView.backgroundColor = #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1)
-            //            cell?.statusView.borderColor = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
-            //        }else if self.VM.myRedemptionList[indexPath.row].status ?? 0 == 11 {
-            //            cell?.statusLbl.text = "Out for Delivery"
-            //            cell?.statusView.backgroundColor = #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1)
-            //            cell?.statusView.borderColor = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
-            //            cell?.statusLbl.textColor = UIColor.black
-            //        }else if self.VM.myRedemptionList[indexPath.row].status ?? 0 == 12 {
-            //            cell?.statusLbl.text = "Address Verified"
-            //            cell?.statusView.backgroundColor = #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)
-            //            cell?.statusLbl.textColor = UIColor.black
-            //            cell?.statusView.borderColor = #colorLiteral(red: 0.5058823824, green: 0.3372549117, blue: 0.06666667014, alpha: 1)
-            //        }
-            else{
-                cell?.statusLbl.text = "-"
-                cell?.statusView.backgroundColor = #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1)
-                cell?.statusLbl.textColor = UIColor.black
-                cell?.statusView.borderColor = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
-            }
+                    
+        var statusDtata = VM.myRedemptionList[indexPath.row].status ?? 0
+        //cell.statusLbl.setTitle("\(VM.myRedemptionList[indexPath.row].status ?? 0)", for: .normal)
+        if statusDtata == 0{
+            cell?.statusLbl.text = "Pending"
+            cell?.statusView.backgroundColor = #colorLiteral(red: 0.8705882353, green: 0.6431372549, blue: 0.01960784314, alpha: 1)
+        }else if statusDtata == 1{
+            cell?.statusLbl.text = "Approved"
+            cell?.statusView.backgroundColor = #colorLiteral(red: 0.3607843137, green: 0.3843137255, blue: 0.8392156863, alpha: 1)
+        }else if statusDtata == 2{
+            cell?.statusLbl.text = "Processed"
+            cell?.statusView.backgroundColor = #colorLiteral(red: 0.3607843137, green: 0.3843137255, blue: 0.8392156863, alpha: 1)
+        }else if statusDtata == 3{
+            cell?.statusLbl.text = "Cancelled"
+            cell?.statusView.backgroundColor = #colorLiteral(red: 0.8, green: 0.05882352941, blue: 0.07843137255, alpha: 1)
+        }else if statusDtata == 4{
+            cell?.statusLbl.text = "Delivered"
+            cell?.statusView.backgroundColor = #colorLiteral(red: 0.02745098039, green: 0.6431372549, blue: 0.3529411765, alpha: 1)
+        }else if statusDtata == 5{
+            cell?.statusLbl.text = "Rejected"
+            cell?.statusView.backgroundColor = #colorLiteral(red: 0.8, green: 0.05882352941, blue: 0.07843137255, alpha: 1)
+        }else if statusDtata == 7{
+            cell?.statusLbl.text = "Returned"
+            cell?.statusView.backgroundColor = #colorLiteral(red: 0.3607843137, green: 0.3843137255, blue: 0.8392156863, alpha: 1)
+        }else if statusDtata == 8{
+            cell?.statusLbl.text = "Redispatched"
+            cell?.statusView.backgroundColor = #colorLiteral(red: 0.3607843137, green: 0.3843137255, blue: 0.8392156863, alpha: 1)
+        }else if statusDtata == 9{
+            cell?.statusLbl.text = "OnHold"
+            cell?.statusView.backgroundColor = #colorLiteral(red: 0.8705882353, green: 0.6431372549, blue: 0.01960784314, alpha: 1)
+        }else if statusDtata == 10{
+            cell?.statusLbl.text = "Dispatched"
+            cell?.statusView.backgroundColor = #colorLiteral(red: 0.3607843137, green: 0.3843137255, blue: 0.8392156863, alpha: 1)
+        }else if statusDtata == 11{
+            cell?.statusLbl.text = "Out for Delivery"
+            cell?.statusView.backgroundColor = #colorLiteral(red: 0.3607843137, green: 0.3843137255, blue: 0.8392156863, alpha: 1)
+        }else if statusDtata == 12{
+            cell?.statusLbl.text = "Address Verified"
+            cell?.statusView.backgroundColor = #colorLiteral(red: 0.3607843137, green: 0.3843137255, blue: 0.8392156863, alpha: 1)
+        }else if statusDtata == 13{
+            cell?.statusLbl.text = "Posted for Approval"
+            cell?.statusView.backgroundColor = #colorLiteral(red: 0.3607843137, green: 0.3843137255, blue: 0.8392156863, alpha: 1)
+        }else if statusDtata == 14{
+            cell?.statusLbl.text = "Vendor Alloted"
+            cell?.statusView.backgroundColor = #colorLiteral(red: 0.3607843137, green: 0.3843137255, blue: 0.8392156863, alpha: 1)
+        }else if statusDtata == 15{
+            cell?.statusLbl.text = "Vendor Rejected"
+            cell?.statusView.backgroundColor = #colorLiteral(red: 0.8, green: 0.05882352941, blue: 0.07843137255, alpha: 1)
+        }else if statusDtata == 16{
+            cell?.statusLbl.text = "Posted for approval 2"
+            cell?.statusView.backgroundColor =  #colorLiteral(red: 0.3607843137, green: 0.3843137255, blue: 0.8392156863, alpha: 1)
+        }else if statusDtata == 17{
+            cell?.statusLbl.text = "Cancel Request"
+            cell?.statusView.backgroundColor =  #colorLiteral(red: 0.3607843137, green: 0.3843137255, blue: 0.8392156863, alpha: 1)
+        }else if statusDtata == 18{
+            cell?.statusLbl.text = "Redemption Verified"
+            cell?.statusView.backgroundColor =  #colorLiteral(red: 0.3607843137, green: 0.3843137255, blue: 0.8392156863, alpha: 1)
+        }else if statusDtata == 19{
+            cell?.statusLbl.text = "Delivery Confirmed"
+            cell?.statusView.backgroundColor =  #colorLiteral(red: 0.3607843137, green: 0.3843137255, blue: 0.8392156863, alpha: 1)
+        }else if statusDtata == 20{
+            cell?.statusLbl.text = "Return Requested"
+            cell?.statusView.backgroundColor =  #colorLiteral(red: 0.3607843137, green: 0.3843137255, blue: 0.8392156863, alpha: 1)
+        }else if statusDtata == 21{
+            cell?.statusLbl.text = "Return Pickup Schedule"
+            cell?.statusView.backgroundColor =  #colorLiteral(red: 0.3607843137, green: 0.3843137255, blue: 0.8392156863, alpha: 1)
+        }else if statusDtata == 22{
+            cell?.statusLbl.text = "Picked Up"
+            cell?.statusView.backgroundColor =  #colorLiteral(red: 0.3607843137, green: 0.3843137255, blue: 0.8392156863, alpha: 1)
+        }else if statusDtata == 23{
+            cell?.statusLbl.text = "Return Received"
+            cell?.statusView.backgroundColor =  #colorLiteral(red: 0.3607843137, green: 0.3843137255, blue: 0.8392156863, alpha: 1)
+        }else if statusDtata == 24{
+            cell?.statusLbl.text = "In Transit"
+            cell?.statusView.backgroundColor =  #colorLiteral(red: 0.3607843137, green: 0.3843137255, blue: 0.8392156863, alpha: 1)
+        }else if statusDtata == 25{
+            cell?.statusLbl.text = "Recieved"
+            cell?.statusView.backgroundColor =  #colorLiteral(red: 0.3607843137, green: 0.3843137255, blue: 0.8392156863, alpha: 1)
+        }else{
+            cell?.statusLbl.text = "Recieved"
+            cell?.statusView.backgroundColor = #colorLiteral(red: 0.3607843137, green: 0.3843137255, blue: 0.8392156863, alpha: 1)
+        }
         return cell!
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "MSP_MyRedemptionDetails") as? MSP_MyRedemptionDetails
-        vc?.quantity = self.VM.myRedemptionList[indexPath.row].quantity ?? 0
-        vc?.prodRefNo = self.VM.myRedemptionList[indexPath.row].redemptionRefno ?? ""
-        vc?.descData = self.VM.myRedemptionList[indexPath.row].productDesc ?? ""
-        vc?.termsandContions = self.VM.myRedemptionList[indexPath.row].termsCondition ?? ""
-        vc?.productName = self.VM.myRedemptionList[indexPath.row].productName ?? ""
-        vc?.catagryName = self.VM.myRedemptionList[indexPath.row].categoryName ?? ""
-        vc?.productImage = self.VM.myRedemptionList[indexPath.row].productImage ?? ""
-        vc?.productPoints = "\(self.VM.myRedemptionList[indexPath.row].pointsPerUnit ?? 0)"
-        self.navigationController?.pushViewController(vc!,animated: true)
+        let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_MyRedemptionDetailsVC") as? FG_MyRedemptionDetailsVC
+        vc?.redepmtionId = "\(self.VM.myRedemptionList[indexPath.row].redemptionId ?? 0)"
+        vc?.productRefno = "\(self.VM.myRedemptionList[indexPath.row].redemptionRefno ?? "")"
+        navigationController?.pushViewController(vc!, animated: true)
         
     }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

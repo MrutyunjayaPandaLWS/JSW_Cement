@@ -106,14 +106,14 @@ class MSP_ProductCatalogueVC: BaseViewController, AddedToCartOrPlannerDelegate, 
         self.highToLowBtn.setTitle("Low To High", for: .normal)
         self.selectedCategoryLbl.isHidden = true
         self.selectdCategoryTitleLbl.isHidden = true
-        self.redemptionCategoryList()
+//        self.redemptionCategoryList()
         
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.loaderView.isHidden = true
 
-   //     self.VM.redemptionCataloguesArray.removeAll()
+        self.VM.redemptionCataloguesArray.removeAll()
         self.redemptionCategoryList()
        
         self.plannerListing()
@@ -694,7 +694,7 @@ extension MSP_ProductCatalogueVC: UITableViewDelegate, UITableViewDataSource {
 //        print(self.VM.redemptionCatalogueArray[indexPath.row].tdsPercentage ?? 0.0,"TDS")
 //        print(self.VM.redemptionCatalogueArray[indexPath.row].applicableTds ?? 0.0,"Applicable")
         cell.productNameLabel.text = self.VM.redemptionCatalogueArray[indexPath.row].productName ?? ""
-        cell.categoryTypeLabel.text = self.VM.redemptionCatalogueArray[indexPath.row].catogoryName ?? ""
+        cell.categoryTypeLabel.text = "Category / \(self.VM.redemptionCatalogueArray[indexPath.row].catogoryName ?? "")"
         cell.pointsLabel.text = "\(Double(self.VM.redemptionCatalogueArray[indexPath.row].pointsRequired ?? 0))"
         let receivedImage = self.VM.redemptionCatalogueArray[indexPath.row].productImage ?? ""
         let totalImgURL = productCatalogueImgURL + receivedImage

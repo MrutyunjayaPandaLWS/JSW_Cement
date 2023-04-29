@@ -85,7 +85,7 @@ PODS:
     - ImageSlideshow/Core
   - ImageSlideshow/Core (1.8.3)
   - IQKeyboardManagerSwift (6.5.10)
-  - Kingfisher (7.4.1)
+  - Kingfisher (7.6.2)
   - lottie-ios (3.4.3)
   - MarqueeLabel (4.0.5)
   - nanopb (2.30909.0):
@@ -115,7 +115,7 @@ DEPENDENCIES:
   - HCSStarRatingView (~> 1.5)
   - ImageSlideshow/Alamofire
   - IQKeyboardManagerSwift
-  - Kingfisher (~> 7.0)
+  - Kingfisher
   - lottie-ios
   - NHRangeSlider (~> 0.2)
   - NotificationBannerSwift (~> 3.0.0)
@@ -170,7 +170,7 @@ SPEC CHECKSUMS:
   HCSStarRatingView: 1d18f79654735514cd6f00e6d90e38cb6320dc31
   ImageSlideshow: 4694d7d699a1549582e7cc631fb392d8f91630f3
   IQKeyboardManagerSwift: 52962c76ab33532f15ad9f3ff4e5715eda5335bb
-  Kingfisher: cd762a593a61b2fbecf7645c00f9a801a3ebfc9c
+  Kingfisher: 6c5449c6450c5239166510ba04afe374a98afc4f
   lottie-ios: 9ae750cdc7820fecbd3c2f0cfc493038208fcdc4
   MarqueeLabel: 00cc0bcd087111dca575878b3531af980559707d
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
@@ -184,6 +184,6 @@ SPEC CHECKSUMS:
   SwiftGifOrigin: fbd6cf37afcfcf97a5c3db996ddc0492e5c5c145
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: 1a8f83a0234a6b309e2764e85f8f2739bc5ea687
+PODFILE CHECKSUM: 4a958440adcbf89e61e914b821a1d112b0b6aa37
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.12.0

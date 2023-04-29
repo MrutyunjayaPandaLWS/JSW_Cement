@@ -120,7 +120,11 @@ class MSP_PointStatementVC: BaseViewController , DateSelectedDelegate, popUpDele
             self.volumeOutBtn.isHidden = true
             self.rangeMultiOutBtn.isHidden = true
             self.frequenctmultiOutBtn.isHidden = true
-        }
+        }else{
+            self.consistencyOutBtn.isHidden = true
+            self.volumeOutBtn.isHidden = true
+            self.rangeMultiOutBtn.isHidden = true
+            self.frequenctmultiOutBtn.isHidden = true        }
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

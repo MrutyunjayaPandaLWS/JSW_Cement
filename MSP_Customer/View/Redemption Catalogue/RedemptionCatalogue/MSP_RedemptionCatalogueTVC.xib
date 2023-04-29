@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -73,8 +73,8 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Catalogue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P03-7F-Njn">
-                                <rect key="frame" x="12" y="7.9999999999999991" width="100.66666666666667" height="15.666666666666664"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="13"/>
+                                <rect key="frame" x="12" y="12.000000000000002" width="140" height="20.666666666666671"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="17"/>
                                 <color key="textColor" red="0.1843137255" green="0.20392156859999999" blue="0.4823529412" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -88,7 +88,7 @@
                             <constraint firstAttribute="trailing" secondItem="Vcx-DB-rSO" secondAttribute="trailing" id="apn-Ak-ih9"/>
                             <constraint firstItem="8yc-yN-8gk" firstAttribute="leading" secondItem="ouJ-dJ-lPa" secondAttribute="leading" id="ddg-FQ-xUl"/>
                             <constraint firstAttribute="bottom" secondItem="Vcx-DB-rSO" secondAttribute="bottom" id="fqC-JG-TPU"/>
-                            <constraint firstItem="P03-7F-Njn" firstAttribute="top" secondItem="ouJ-dJ-lPa" secondAttribute="top" constant="8" id="seR-Cu-N3h"/>
+                            <constraint firstItem="P03-7F-Njn" firstAttribute="top" secondItem="ouJ-dJ-lPa" secondAttribute="top" constant="12" id="seR-Cu-N3h"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">

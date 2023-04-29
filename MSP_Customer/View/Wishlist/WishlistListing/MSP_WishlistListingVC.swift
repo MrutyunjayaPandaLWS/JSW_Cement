@@ -418,7 +418,7 @@ extension MSP_WishlistListingVC: UITableViewDataSource, UITableViewDelegate{
         cell.selectionStyle = .none
         let receivedImage = self.VM.myPlannerListArray[indexPath.row].productImage ?? ""
         let totalImgURL = productCatalogueImgURL + receivedImage
-        cell.productImage.sd_setImage(with: URL(string: totalImgURL), placeholderImage: UIImage(named: "ic_default_img"))
+        cell.productImage.sd_setImage(with: URL(string: totalImgURL), placeholderImage: UIImage(named: "appLogo"))
      //   cell.categoryLbl.text = VM.myPlannerListArray[indexPath.row].catogoryName ?? ""
         cell.productNameLabel.text  = self.VM.myPlannerListArray[indexPath.row].productName ?? ""
         cell.desireDateLabel.text = self.VM.myPlannerListArray[indexPath.row].achievementDateMonthWize ?? ""

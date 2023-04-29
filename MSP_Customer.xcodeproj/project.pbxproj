@@ -255,6 +255,14 @@
 		84DB497A292FA0E4000789E6 /* MSP_ClaimPointsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DB4978292FA0E4000789E6 /* MSP_ClaimPointsTVC.swift */; };
 		84DB497B292FA0E4000789E6 /* MSP_ClaimPointsTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84DB4979292FA0E4000789E6 /* MSP_ClaimPointsTVC.xib */; };
 		84DB497D292FA934000789E6 /* MSP_ClaimPointsPopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DB497C292FA934000789E6 /* MSP_ClaimPointsPopUpVC.swift */; };
+		84DC204229FAAAEF00D1E2E1 /* FG_MyRedemptionDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DC204129FAAAEF00D1E2E1 /* FG_MyRedemptionDetailsVC.swift */; };
+		84DC204429FAAB9B00D1E2E1 /* FG_MyRedemptionDetailsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DC204329FAAB9B00D1E2E1 /* FG_MyRedemptionDetailsTVC.swift */; };
+		84DC204629FAAFA000D1E2E1 /* FG_RedemptionDetailsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DC204529FAAFA000D1E2E1 /* FG_RedemptionDetailsVM.swift */; };
+		84DC204B29FAB36C00D1E2E1 /* RedemptionCatalogueList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DC204829FAB36A00D1E2E1 /* RedemptionCatalogueList.swift */; };
+		84DC204C29FAB36C00D1E2E1 /* RedemptionDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DC204929FAB36B00D1E2E1 /* RedemptionDetails.swift */; };
+		84DC204D29FAB36C00D1E2E1 /* RedemptionDetailsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DC204A29FAB36C00D1E2E1 /* RedemptionDetailsModels.swift */; };
+		84DC205129FAB38500D1E2E1 /* RedemptionDetailsOrderStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DC204F29FAB38400D1E2E1 /* RedemptionDetailsOrderStatus.swift */; };
+		84DC205229FAB38500D1E2E1 /* RedemptionDetailsOrderStatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DC205029FAB38500D1E2E1 /* RedemptionDetailsOrderStatusModel.swift */; };
 		84DCD262292CF25000EE2BEF /* MSP_WishlistDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DCD261292CF25000EE2BEF /* MSP_WishlistDetailsVC.swift */; };
 		84DF9F6A292F531F0054A60F /* lf30_editor_1i2qyxs4.json in Resources */ = {isa = PBXBuildFile; fileRef = 84DF9F69292F531F0054A60F /* lf30_editor_1i2qyxs4.json */; };
 		84DF9F6C292F6A700054A60F /* MSP_MySummaryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DF9F6B292F6A700054A60F /* MSP_MySummaryVC.swift */; };
@@ -582,6 +590,14 @@
 		84DB4978292FA0E4000789E6 /* MSP_ClaimPointsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSP_ClaimPointsTVC.swift; sourceTree = "<group>"; };
 		84DB4979292FA0E4000789E6 /* MSP_ClaimPointsTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MSP_ClaimPointsTVC.xib; sourceTree = "<group>"; };
 		84DB497C292FA934000789E6 /* MSP_ClaimPointsPopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSP_ClaimPointsPopUpVC.swift; sourceTree = "<group>"; };
+		84DC204129FAAAEF00D1E2E1 /* FG_MyRedemptionDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FG_MyRedemptionDetailsVC.swift; sourceTree = "<group>"; };
+		84DC204329FAAB9B00D1E2E1 /* FG_MyRedemptionDetailsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FG_MyRedemptionDetailsTVC.swift; sourceTree = "<group>"; };
+		84DC204529FAAFA000D1E2E1 /* FG_RedemptionDetailsVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FG_RedemptionDetailsVM.swift; sourceTree = "<group>"; };
+		84DC204829FAB36A00D1E2E1 /* RedemptionCatalogueList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedemptionCatalogueList.swift; sourceTree = "<group>"; };
+		84DC204929FAB36B00D1E2E1 /* RedemptionDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedemptionDetails.swift; sourceTree = "<group>"; };
+		84DC204A29FAB36C00D1E2E1 /* RedemptionDetailsModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedemptionDetailsModels.swift; sourceTree = "<group>"; };
+		84DC204F29FAB38400D1E2E1 /* RedemptionDetailsOrderStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedemptionDetailsOrderStatus.swift; sourceTree = "<group>"; };
+		84DC205029FAB38500D1E2E1 /* RedemptionDetailsOrderStatusModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedemptionDetailsOrderStatusModel.swift; sourceTree = "<group>"; };
 		84DCD261292CF25000EE2BEF /* MSP_WishlistDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSP_WishlistDetailsVC.swift; sourceTree = "<group>"; };
 		84DF9F69292F531F0054A60F /* lf30_editor_1i2qyxs4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lf30_editor_1i2qyxs4.json; sourceTree = "<group>"; };
 		84DF9F6B292F6A700054A60F /* MSP_MySummaryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSP_MySummaryVC.swift; sourceTree = "<group>"; };
@@ -890,6 +906,7 @@
 		25579BFF293226DD009FBD32 /* MyRedemptionsList */ = {
 			isa = PBXGroup;
 			children = (
+				84DC204529FAAFA000D1E2E1 /* FG_RedemptionDetailsVM.swift */,
 				25579C00293226DD009FBD32 /* MyRedemptionsListViewModel.swift */,
 			);
 			path = MyRedemptionsList;
@@ -1499,6 +1516,8 @@
 		841E202F2931EF5400BB6E96 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				84DC204E29FAB37100D1E2E1 /* RedemptionDetailsOrderStatusModel */,
+				84DC204729FAB35C00D1E2E1 /* RedemptionDetailsModels */,
 				84D88B0B29BB516D001C7A5E /* ChangePasswordModels */,
 				84140DD5298D10AD0090DD44 /* AdhaarCardExistsModels */,
 				25C789D32972A556004140FE /* TCModels */,
@@ -1653,6 +1672,8 @@
 		845C10032931F206004BEEBB /* My Redemption */ = {
 			isa = PBXGroup;
 			children = (
+				84DC204129FAAAEF00D1E2E1 /* FG_MyRedemptionDetailsVC.swift */,
+				84DC204329FAAB9B00D1E2E1 /* FG_MyRedemptionDetailsTVC.swift */,
 				84826A592992A61A00836F4F /* MSP_MyRedemptionDetails.swift */,
 				84A8404A292B768200623236 /* MSP_MyRedemptionVC.swift */,
 				84A8404C292B773F00623236 /* MSP_MyRedemptionTVC.swift */,
@@ -2159,6 +2180,25 @@
 			path = ClaimPointsDetails;
 			sourceTree = "<group>";
 		};
+		84DC204729FAB35C00D1E2E1 /* RedemptionDetailsModels */ = {
+			isa = PBXGroup;
+			children = (
+				84DC204829FAB36A00D1E2E1 /* RedemptionCatalogueList.swift */,
+				84DC204929FAB36B00D1E2E1 /* RedemptionDetails.swift */,
+				84DC204A29FAB36C00D1E2E1 /* RedemptionDetailsModels.swift */,
+			);
+			path = RedemptionDetailsModels;
+			sourceTree = "<group>";
+		};
+		84DC204E29FAB37100D1E2E1 /* RedemptionDetailsOrderStatusModel */ = {
+			isa = PBXGroup;
+			children = (
+				84DC204F29FAB38400D1E2E1 /* RedemptionDetailsOrderStatus.swift */,
+				84DC205029FAB38500D1E2E1 /* RedemptionDetailsOrderStatusModel.swift */,
+			);
+			path = RedemptionDetailsOrderStatusModel;
+			sourceTree = "<group>";
+		};
 		84FB8C252927497B00FF2C1D = {
 			isa = PBXGroup;
 			children = (
@@ -2543,6 +2583,7 @@
 				256800462937779400E625DB /* CatalogueDetailsViewModel.swift in Sources */,
 				2533C9C82938D540003696FB /* ForgotPasswordModels.swift in Sources */,
 				846261222927817100EE1DBB /* MyCart_TVC.swift in Sources */,
+				84DC204C29FAB36C00D1E2E1 /* RedemptionDetails.swift in Sources */,
 				841E20192931EE6200BB6E96 /* RestAPI_Requests.swift in Sources */,
 				84B2842D293B7B370011DC5D /* CityList.swift in Sources */,
 				25C0C3A82937382C00BA95BB /* ObjCatalogueList2.swift in Sources */,
@@ -2639,6 +2680,7 @@
 				844018F5292BA225008E870F /* MSP_MyDreamGiftTVC.swift in Sources */,
 				255F147629320B7E003281F6 /* ChatListViewModel.swift in Sources */,
 				841E20282931EE9900BB6E96 /* URLMethods.swift in Sources */,
+				84DC204429FAAB9B00D1E2E1 /* FG_MyRedemptionDetailsTVC.swift in Sources */,
 				25579C392932457A009FBD32 /* MyDreamGiftModels.swift in Sources */,
 				259A2AE929388498006626F9 /* SideMenuModel.swift in Sources */,
 				25C789D62972A556004140FE /* TCModels.swift in Sources */,
@@ -2650,6 +2692,7 @@
 				25C240AC2930BEBD00B7F8B3 /* MSP_ClaimStatusTVC.swift in Sources */,
 				2533C9C52938D342003696FB /* ForgotPasswordViewModel.swift in Sources */,
 				25579BFD29322511009FBD32 /* RedemptionCatalogueModels.swift in Sources */,
+				84DC204B29FAB36C00D1E2E1 /* RedemptionCatalogueList.swift in Sources */,
 				2533C9BA2938C46C003696FB /* MSP_CustomerApp.xcdatamodeld in Sources */,
 				841E20202931EE8400BB6E96 /* URLExtension.swift in Sources */,
 				84FB8C7529274CF700FF2C1D /* ImageExtension.swift in Sources */,
@@ -2679,6 +2722,7 @@
 				25553CC12942008F0080897E /* QueryListingModels.swift in Sources */,
 				84FB8C7729274CF700FF2C1D /* ViewExtension.swift in Sources */,
 				842D1ED0292B482900D08F49 /* MSP_EditAddressVC.swift in Sources */,
+				84DC204D29FAB36C00D1E2E1 /* RedemptionDetailsModels.swift in Sources */,
 				25FF75252934C89B0083E613 /* SideMenuTableViewCell.swift in Sources */,
 				2533C9B02938AAA6003696FB /* RedemptionPlannerListViewModel.swift in Sources */,
 				255F147729320B7E003281F6 /* LodgeListViewModel.swift in Sources */,
@@ -2715,6 +2759,7 @@
 				84140DD8298D11100090DD44 /* Json4Swift_Base.swift in Sources */,
 				2533C9B12938AAA6003696FB /* RedemptionPlannerDetailsViewModel.swift in Sources */,
 				84C2F1B6292F3F1100118B6B /* MSP_QueryTypeListingTVC.swift in Sources */,
+				84DC204229FAAAEF00D1E2E1 /* FG_MyRedemptionDetailsVC.swift in Sources */,
 				84FB8C7329274CF700FF2C1D /* String + Font Extension.swift in Sources */,
 				25C0C38F29371A3500BA95BB /* LoginViewModel.swift in Sources */,
 				2533C9A72938A73F003696FB /* IncreaseProductModels.swift in Sources */,
@@ -2736,9 +2781,11 @@
 				2556582129360C8C004AC7A4 /* PanModels.swift in Sources */,
 				840EFE9E2928A00000481CF8 /* MSP_ProductCatalogueDetailsVC.swift in Sources */,
 				84FB8C7629274CF700FF2C1D /* GrandientExtension.swift in Sources */,
+				84DC205129FAB38500D1E2E1 /* RedemptionDetailsOrderStatus.swift in Sources */,
 				25FB65CE293B2A44000B678A /* DeleteAccountModels.swift in Sources */,
 				255F14AA29320BB3003281F6 /* senderInfoTableViewCell.swift in Sources */,
 				25FB65BD293B132E000B678A /* UserList.swift in Sources */,
+				84DC205229FAB38500D1E2E1 /* RedemptionDetailsOrderStatusModel.swift in Sources */,
 				255F14A429320BB3003281F6 /* customerqueryTableViewCell.swift in Sources */,
 				84DB497A292FA0E4000789E6 /* MSP_ClaimPointsTVC.swift in Sources */,
 				25C0C391293722C300BA95BB /* PopupAlertOne_VC.swift in Sources */,
@@ -2753,6 +2800,7 @@
 				84FB8C7A29274CF700FF2C1D /* ViewControllerUtils.swift in Sources */,
 				84B28432293B7B430011DC5D /* StateList.swift in Sources */,
 				841E20272931EE9900BB6E96 /* RequestMethod.swift in Sources */,
+				84DC204629FAAFA000D1E2E1 /* FG_RedemptionDetailsVM.swift in Sources */,
 				84C793432970094A00D9575E /* LstCustomerFeedBackJsonApi.swift in Sources */,
 				84C387112931D1F500C4FC6A /* MSP_NotificationVC.swift in Sources */,
 				84C793452970094A00D9575E /* LstLoyaltyProgramReport.swift in Sources */,
@@ -2827,11 +2875,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 2HG885J5KS;
+				DEVELOPMENT_TEAM = 2HG885J5KS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NotificationServiceExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = NotificationServiceExtension;
@@ -2846,7 +2892,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Loyltwo3ks-Pvt-Ltd.JSW-Cement.NotificationServiceExtension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "JSW Cement NotificationService Ad Hoc";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -2858,11 +2903,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 2HG885J5KS;
+				DEVELOPMENT_TEAM = 2HG885J5KS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NotificationServiceExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = NotificationServiceExtension;
@@ -2877,7 +2920,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Loyltwo3ks-Pvt-Ltd.JSW-Cement.NotificationServiceExtension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "JSW Cement NotificationService Ad Hoc";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -3010,12 +3052,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = MSP_Customer/MSP_Customer.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 2HG885J5KS;
+				DEVELOPMENT_TEAM = 2HG885J5KS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MSP_Customer/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "JSW Cement";
@@ -3042,7 +3082,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Loyltwo3ks-Pvt-Ltd.JSW-Cement";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "JSW-Cement-Ad Hoc";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "MSP_Customer/Resources/MSP_Customer-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -3062,11 +3101,9 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = MSP_Customer/MSP_Customer.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 2HG885J5KS;
+				DEVELOPMENT_TEAM = 2HG885J5KS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MSP_Customer/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "JSW Cement";
@@ -3093,7 +3130,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Loyltwo3ks-Pvt-Ltd.JSW-Cement";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "JSW-Cement-Ad Hoc";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "MSP_Customer/Resources/MSP_Customer-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;

@@ -22,7 +22,7 @@ target 'MSP_Customer' do
   pod 'DPOTPView'
   pod 'Firebase/Analytics'
   pod 'GoogleAnalytics'
-  pod 'Kingfisher', '~> 7.0'
+  pod 'Kingfisher'
   
   pod 'QCropper'
 

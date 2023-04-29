@@ -80,7 +80,7 @@ class MSP_WishlistDetailsVC: BaseViewController, popUpDelegate {
         tdsprice.text = "\(tdspercentage1)%"
         points.text = "\(Double(productPoints))"
         let totalImgURL = productCatalogueImgURL + productImage
-        productImageView.sd_setImage(with: URL(string: totalImgURL), placeholderImage: UIImage(named: "ic_default_img"))
+        productImageView.sd_setImage(with: URL(string: totalImgURL), placeholderImage: UIImage(named: "appLogo"))
         self.todayPoints.text = "\(Int(pointBalance))"
         self.monthlyPointsLabel.text = "\(redeemableAverageEarning)"
         if productPoints  > Int(pointBalance) {
