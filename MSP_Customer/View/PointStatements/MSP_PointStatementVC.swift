@@ -654,16 +654,16 @@ extension MSP_PointStatementVC: UITableViewDelegate, UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "MSP_PointSummaryTVC") as! MSP_PointSummaryTVC
         cell.selectionStyle = .none
         if self.VM.myPointsStatementArray[indexPath.row].status ?? "0" == "0"{
-            cell.statusLbl.text = "- \(Double(VM.myPointsStatementArray[indexPath.row].pointBalance ?? 0)) Points"
+            cell.statusLbl.text = "- \(Double(VM.myPointsStatementArray[indexPath.row].pointBalance ?? 0))"
             cell.statusLbl.textColor = #colorLiteral(red: 0.8862745098, green: 0.09411764706, blue: 0.1176470588, alpha: 1)
         }else{
-            cell.statusLbl.text = "+ \(Double(VM.myPointsStatementArray[indexPath.row].pointBalance ?? 0)) Points"
+            cell.statusLbl.text = "+ \(Double(VM.myPointsStatementArray[indexPath.row].pointBalance ?? 0))"
             cell.statusLbl.textColor = #colorLiteral(red: 0.02745098039, green: 0.6745098039, blue: 0.1764705882, alpha: 1)
         }
         if self.VM.myPointsStatementArray[indexPath.row].behaviourName ?? "-" == "Bonus Points"{
             cell.infoLbl.text = "Bonus"
         }else{
-            cell.infoLbl.text = VM.myPointsStatementArray[indexPath.row].remarks ?? "-"
+            cell.infoLbl.text = VM.myPointsStatementArray[indexPath.row].behaviourName ?? "-"
         }
      
         
@@ -673,10 +673,10 @@ extension MSP_PointStatementVC: UITableViewDelegate, UITableViewDataSource{
         
         return cell
     }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 170
-        
-    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 170
+//
+//    }
     
     
     

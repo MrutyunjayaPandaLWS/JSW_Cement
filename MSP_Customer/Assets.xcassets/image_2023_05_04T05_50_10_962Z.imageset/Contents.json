@@ -1,6 +1,7 @@
 {
   "images" : [
     {
+      "filename" : "image_2023_05_04T05_50_10_962Z.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -9,7 +10,6 @@
       "scale" : "2x"
     },
     {
-      "filename" : "home.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

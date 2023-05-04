@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,36 +11,40 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MSP_PointSummaryTVC" rowHeight="218" id="KGk-i7-Jjw" customClass="MSP_PointSummaryTVC" customModule="MSP_Customer" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="712" height="218"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MSP_PointSummaryTVC" rowHeight="153" id="KGk-i7-Jjw" customClass="MSP_PointSummaryTVC" customModule="MSP_Customer" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="712" height="100"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="712" height="218"/>
+                <rect key="frame" x="0.0" y="0.0" width="712" height="100"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GPc-bw-X1b">
-                        <rect key="frame" x="8" y="8" width="696" height="202"/>
+                        <rect key="frame" x="8" y="5" width="696" height="90"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00/00/0000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ef6-UC-bq9">
-                                <rect key="frame" x="16" y="15.999999999999998" width="91" height="19.333333333333329"/>
+                                <rect key="frame" x="16" y="16" width="91" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="oQq-SK-Sfc"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+ 100  Points" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9qx-ni-JcJ">
-                                <rect key="frame" x="580.66666666666663" y="91" width="89.333333333333371" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+ 100  Points" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9qx-ni-JcJ">
+                                <rect key="frame" x="580" y="53.666666666666664" width="100" height="19.999999999999993"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="AeR-Ct-FYQ"/>
+                                    <constraint firstAttribute="width" constant="100" id="H3i-t8-4ct"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
                                 <color key="textColor" systemColor="systemGreenColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nnf-My-P5j">
-                                <rect key="frame" x="16" y="141" width="664" height="35"/>
+                                <rect key="frame" x="16" y="46" width="140.33333333333334" height="35"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reward Adjustment" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQ0-YE-b2G">
-                                        <rect key="frame" x="5" y="5" width="654" height="25"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reward Adjustment" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQ0-YE-b2G">
+                                        <rect key="frame" x="7.9999999999999929" y="5" width="124.33333333333331" height="25"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="15"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -48,8 +52,8 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="FQ0-YE-b2G" firstAttribute="leading" secondItem="Nnf-My-P5j" secondAttribute="leading" constant="5" id="E73-dj-uhI"/>
-                                    <constraint firstAttribute="trailing" secondItem="FQ0-YE-b2G" secondAttribute="trailing" constant="5" id="WaZ-4b-dES"/>
+                                    <constraint firstItem="FQ0-YE-b2G" firstAttribute="leading" secondItem="Nnf-My-P5j" secondAttribute="leading" constant="8" id="E73-dj-uhI"/>
+                                    <constraint firstAttribute="trailing" secondItem="FQ0-YE-b2G" secondAttribute="trailing" constant="8" id="WaZ-4b-dES"/>
                                     <constraint firstAttribute="height" constant="35" id="bTa-MP-cY9"/>
                                     <constraint firstAttribute="bottom" secondItem="FQ0-YE-b2G" secondAttribute="bottom" constant="5" id="jt5-Pz-LPe"/>
                                     <constraint firstItem="FQ0-YE-b2G" firstAttribute="top" secondItem="Nnf-My-P5j" secondAttribute="top" constant="5" id="xKY-kI-7jp"/>
@@ -69,13 +73,14 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="9qx-ni-JcJ" secondAttribute="trailing" constant="26" id="JqR-YH-0uE"/>
-                            <constraint firstAttribute="trailing" secondItem="Nnf-My-P5j" secondAttribute="trailing" constant="16" id="Kmk-eF-d0b"/>
+                            <constraint firstItem="9qx-ni-JcJ" firstAttribute="centerY" secondItem="Nnf-My-P5j" secondAttribute="centerY" id="HD5-tU-gDF"/>
+                            <constraint firstAttribute="trailing" secondItem="9qx-ni-JcJ" secondAttribute="trailing" constant="16" id="JqR-YH-0uE"/>
                             <constraint firstItem="ef6-UC-bq9" firstAttribute="leading" secondItem="GPc-bw-X1b" secondAttribute="leading" constant="16" id="MZn-DC-sic"/>
+                            <constraint firstItem="9qx-ni-JcJ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Nnf-My-P5j" secondAttribute="trailing" constant="20" id="Mjq-cD-zLI"/>
                             <constraint firstItem="ef6-UC-bq9" firstAttribute="top" secondItem="GPc-bw-X1b" secondAttribute="top" constant="16" id="bS0-Eg-Ybk"/>
-                            <constraint firstItem="9qx-ni-JcJ" firstAttribute="centerY" secondItem="GPc-bw-X1b" secondAttribute="centerY" id="da7-rB-ReT"/>
+                            <constraint firstItem="Nnf-My-P5j" firstAttribute="top" secondItem="ef6-UC-bq9" secondAttribute="bottom" constant="10" id="em8-Z7-IST"/>
                             <constraint firstItem="Nnf-My-P5j" firstAttribute="leading" secondItem="GPc-bw-X1b" secondAttribute="leading" constant="16" id="k0B-fc-eQM"/>
-                            <constraint firstAttribute="bottom" secondItem="Nnf-My-P5j" secondAttribute="bottom" constant="26" id="o0F-gy-ChT"/>
+                            <constraint firstAttribute="bottom" secondItem="Nnf-My-P5j" secondAttribute="bottom" constant="9" id="o0F-gy-ChT"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -87,9 +92,9 @@
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="GPc-bw-X1b" secondAttribute="trailing" constant="8" id="29L-Wf-49h"/>
-                    <constraint firstItem="GPc-bw-X1b" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="CqI-Gg-TnH"/>
-                    <constraint firstAttribute="bottom" secondItem="GPc-bw-X1b" secondAttribute="bottom" constant="8" id="LCX-mT-vxs"/>
+                    <constraint firstItem="GPc-bw-X1b" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="CqI-Gg-TnH"/>
                     <constraint firstItem="GPc-bw-X1b" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="hcS-Qs-fou"/>
+                    <constraint firstAttribute="bottom" secondItem="GPc-bw-X1b" secondAttribute="bottom" constant="5" id="pae-iG-Y8C"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -99,7 +104,7 @@
                 <outlet property="infoLbl" destination="FQ0-YE-b2G" id="uDe-7d-46C"/>
                 <outlet property="statusLbl" destination="9qx-ni-JcJ" id="dPW-MF-vhU"/>
             </connections>
-            <point key="canvasLocation" x="377.09923664122135" y="50"/>
+            <point key="canvasLocation" x="377.09923664122135" y="75.704225352112687"/>
         </tableViewCell>
     </objects>
     <resources>

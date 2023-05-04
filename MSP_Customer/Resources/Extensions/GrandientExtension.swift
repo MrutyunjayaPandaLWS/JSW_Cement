@@ -111,6 +111,17 @@ class GradientTabBarController: UITabBarController {
         tabBar.backgroundColor = UIColor.clear
       //  tabBar.frame.origin.y = view.frame.height - 10
     }
+    
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+         if self.selectedIndex == 0 {
+            let rootView = self.viewControllers![self.selectedIndex] as! UINavigationController
+            rootView.popToRootViewController(animated: false)
+         }else if self.selectedIndex == 1{
+             self.tabBarController?.selectedIndex = selectedIndex
+         }else if self.selectedIndex == 2{
+             self.tabBarController?.selectedIndex = selectedIndex
+         }
+     }
 }
 @IBDesignable
 class GradientLabel: UILabel {

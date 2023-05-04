@@ -86,6 +86,12 @@ class MSP_SideMenuViewController: BaseViewController, popUpDelegate {
         
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        
+    }
+    
     @objc func closingSideMenu(){
         self.closeLeft()
     }

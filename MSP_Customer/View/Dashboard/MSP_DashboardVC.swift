@@ -909,6 +909,33 @@ extension MSP_DashboardVC: CropperViewControllerDelegate {
     }
 }
 
+//extension MSP_DashboardVC{
+//     func createShadowLayer(color: UIColor, offset: CGSize, shadowOpacity: Double, shadowRadius: Int) -> CAShapeLayer {
+//            // Modified
+//            let shadowLayer = CAShapeLayer()
+//            shadowLayer.path = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.cornerRadius).cgPath
+//            shadowLayer.fillColor = self.backgroundColor?.cgColor
+//            shadowLayer.shadowPath = shadowLayer.path
+//            
+//    //        shadowLayer.masksToBounds = false
+//            shadowLayer.shadowColor = color.cgColor
+//         shadowLayer.shadowOpacity = Float(shadowOpacity)
+//            shadowLayer.shadowOffset = offset
+//         shadowLayer.shadowRadius = CGFloat(shadowRadius)
+//    //        shadowLayer.shouldRasterize = true
+//
+//            return shadowLayer
+//        }
+//    
+//     func addDropShadow() {
+//
+//         let topLayer = createShadowLayer(color: .white, offset: CGSize(width: -6, height: -6), shadowOpacity: 0.5, shadowRadius: 4)
+//         let bottomLayer = createShadowLayer(color: .black, offset: CGSize(width: 6, height: 6), shadowOpacity: 0.8, shadowRadius: 4)
+//            // Modified
+//            layer.insertSublayer(topLayer, at: 0)
+//            layer.insertSublayer(bottomLayer, at: 0)
+//        }
+//}
 
 
 
