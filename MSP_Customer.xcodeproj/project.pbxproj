@@ -166,11 +166,15 @@
 		844018F5292BA225008E870F /* MSP_MyDreamGiftTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844018F3292BA225008E870F /* MSP_MyDreamGiftTVC.swift */; };
 		844018F6292BA225008E870F /* MSP_MyDreamGiftTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844018F4292BA225008E870F /* MSP_MyDreamGiftTVC.xib */; };
 		844018F8292BB3B8008E870F /* MSP_MyDreamGiftDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844018F7292BB3B8008E870F /* MSP_MyDreamGiftDetailsVC.swift */; };
+		844502672A0F53B900A6D3D4 /* UiViewx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844502662A0F53B900A6D3D4 /* UiViewx.swift */; };
 		84487B8E292FABBA0075815D /* MSP_RedemptionCatalgoueVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84487B8D292FABBA0075815D /* MSP_RedemptionCatalgoueVC.swift */; };
 		845FC761292DE2D000319D64 /* MSP_LodgeQueryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845FC760292DE2D000319D64 /* MSP_LodgeQueryVC.swift */; };
 		845FC764292DE63900319D64 /* MSP_LodgeQueryTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845FC762292DE63900319D64 /* MSP_LodgeQueryTVC.swift */; };
 		845FC765292DE63900319D64 /* MSP_LodgeQueryTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 845FC763292DE63900319D64 /* MSP_LodgeQueryTVC.xib */; };
 		845FC767292DF1C500319D64 /* MSP_CreateNewQueryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845FC766292DF1C500319D64 /* MSP_CreateNewQueryVC.swift */; };
+		8461E5042A12197700B56457 /* SelectDealerDropDownTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8461E5022A12197600B56457 /* SelectDealerDropDownTVC.swift */; };
+		8461E5052A12197700B56457 /* SelectDealerDropDownVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8461E5032A12197700B56457 /* SelectDealerDropDownVC.swift */; };
+		8461E5072A123BE800B56457 /* SelectDealerDropDownVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8461E5062A123BE800B56457 /* SelectDealerDropDownVM.swift */; };
 		846261222927817100EE1DBB /* MyCart_TVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846261212927817100EE1DBB /* MyCart_TVC.swift */; };
 		8462612629278B6700EE1DBB /* MSP_TierBenefitsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8462612529278B6700EE1DBB /* MSP_TierBenefitsTVC.swift */; };
 		84826A5A2992A61A00836F4F /* MSP_MyRedemptionDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84826A592992A61A00836F4F /* MSP_MyRedemptionDetails.swift */; };
@@ -502,11 +506,15 @@
 		844018F3292BA225008E870F /* MSP_MyDreamGiftTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSP_MyDreamGiftTVC.swift; sourceTree = "<group>"; };
 		844018F4292BA225008E870F /* MSP_MyDreamGiftTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MSP_MyDreamGiftTVC.xib; sourceTree = "<group>"; };
 		844018F7292BB3B8008E870F /* MSP_MyDreamGiftDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSP_MyDreamGiftDetailsVC.swift; sourceTree = "<group>"; };
+		844502662A0F53B900A6D3D4 /* UiViewx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiViewx.swift; sourceTree = "<group>"; };
 		84487B8D292FABBA0075815D /* MSP_RedemptionCatalgoueVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSP_RedemptionCatalgoueVC.swift; sourceTree = "<group>"; };
 		845FC760292DE2D000319D64 /* MSP_LodgeQueryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSP_LodgeQueryVC.swift; sourceTree = "<group>"; };
 		845FC762292DE63900319D64 /* MSP_LodgeQueryTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSP_LodgeQueryTVC.swift; sourceTree = "<group>"; };
 		845FC763292DE63900319D64 /* MSP_LodgeQueryTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MSP_LodgeQueryTVC.xib; sourceTree = "<group>"; };
 		845FC766292DF1C500319D64 /* MSP_CreateNewQueryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSP_CreateNewQueryVC.swift; sourceTree = "<group>"; };
+		8461E5022A12197600B56457 /* SelectDealerDropDownTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectDealerDropDownTVC.swift; sourceTree = "<group>"; };
+		8461E5032A12197700B56457 /* SelectDealerDropDownVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectDealerDropDownVC.swift; sourceTree = "<group>"; };
+		8461E5062A123BE800B56457 /* SelectDealerDropDownVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDealerDropDownVM.swift; sourceTree = "<group>"; };
 		846261212927817100EE1DBB /* MyCart_TVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCart_TVC.swift; sourceTree = "<group>"; };
 		8462612529278B6700EE1DBB /* MSP_TierBenefitsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSP_TierBenefitsTVC.swift; sourceTree = "<group>"; };
 		84826A592992A61A00836F4F /* MSP_MyRedemptionDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSP_MyRedemptionDetails.swift; sourceTree = "<group>"; };
@@ -832,6 +840,7 @@
 			isa = PBXGroup;
 			children = (
 				2552E187293B5A8000962F2E /* MSP_ClaimPointsModel.swift */,
+				8461E5062A123BE800B56457 /* SelectDealerDropDownVM.swift */,
 			);
 			path = ClaimPoints;
 			sourceTree = "<group>";
@@ -1824,6 +1833,7 @@
 		845C10142931F698004BEEBB /* ClaimPoints */ = {
 			isa = PBXGroup;
 			children = (
+				8461E5012A12195D00B56457 /* Claim Pont Dropdown */,
 				84826A5B2992A8D100836F4F /* ClaimPointsDetails */,
 				845C10152931F6A6004BEEBB /* ClaimPointsLising */,
 				845C10162931F6B9004BEEBB /* ClaimPopUp */,
@@ -1834,9 +1844,9 @@
 		845C10152931F6A6004BEEBB /* ClaimPointsLising */ = {
 			isa = PBXGroup;
 			children = (
+				84A06C57292F9DDE00B9D0AB /* MSP_ClaimPointsVC.swift */,
 				84DB4978292FA0E4000789E6 /* MSP_ClaimPointsTVC.swift */,
 				84DB4979292FA0E4000789E6 /* MSP_ClaimPointsTVC.xib */,
-				84A06C57292F9DDE00B9D0AB /* MSP_ClaimPointsVC.swift */,
 			);
 			path = ClaimPointsLising;
 			sourceTree = "<group>";
@@ -1916,6 +1926,15 @@
 				84A06C55292F904500B9D0AB /* MSP_MyProfileVC.swift */,
 			);
 			path = MyProfile;
+			sourceTree = "<group>";
+		};
+		8461E5012A12195D00B56457 /* Claim Pont Dropdown */ = {
+			isa = PBXGroup;
+			children = (
+				8461E5032A12197700B56457 /* SelectDealerDropDownVC.swift */,
+				8461E5022A12197600B56457 /* SelectDealerDropDownTVC.swift */,
+			);
+			path = "Claim Pont Dropdown";
 			sourceTree = "<group>";
 		};
 		84826A5B2992A8D100836F4F /* ClaimPointsDetails */ = {
@@ -2011,6 +2030,7 @@
 			isa = PBXGroup;
 			children = (
 				84A0851F2A028DAD004808E6 /* MultiShadowViewX.swift */,
+				844502662A0F53B900A6D3D4 /* UiViewx.swift */,
 			);
 			path = Design;
 			sourceTree = "<group>";
@@ -2575,6 +2595,7 @@
 				84B28434293B7B520011DC5D /* DropDownModels.swift in Sources */,
 				2533C9C22938CAF9003696FB /* PrivacyPolicyViewController.swift in Sources */,
 				84B28425293B7B180011DC5D /* LstAttributesDetails1.swift in Sources */,
+				8461E5052A12197700B56457 /* SelectDealerDropDownVC.swift in Sources */,
 				84C79324296FDAB100D9575E /* ObjCustomerDashboardList1.swift in Sources */,
 				252CA09229923639006200D9 /* LstDreamGift1.swift in Sources */,
 				2568004E2937876A00E625DB /* CustomerBasicInfoListJson.swift in Sources */,
@@ -2641,6 +2662,7 @@
 				84CA03212940530D008D5146 /* PointStatemntModelCLassVM.swift in Sources */,
 				256800422937779400E625DB /* MycartViewModel.swift in Sources */,
 				255F14AF29320C1E003281F6 /* ChatListViewController.swift in Sources */,
+				844502672A0F53B900A6D3D4 /* UiViewx.swift in Sources */,
 				2533C9B72938C2DB003696FB /* PersistanceService.swift in Sources */,
 				84CA033E29406A7B008D5146 /* RedemptionOTPModels.swift in Sources */,
 				25579BFC29322511009FBD32 /* ObjCatalogueList.swift in Sources */,
@@ -2679,6 +2701,7 @@
 				840EFE9D2928A00000481CF8 /* MSP_TierBenefitsVC.swift in Sources */,
 				84C793422970094A00D9575E /* ObjCatalogueDetailsForCustomer.swift in Sources */,
 				25C0C39E2937379300BA95BB /* MyCartModels.swift in Sources */,
+				8461E5042A12197700B56457 /* SelectDealerDropDownTVC.swift in Sources */,
 				840B5729293E00E5007F9F60 /* DealerListModels.swift in Sources */,
 				255F148929320B90003281F6 /* HelpTopicModel.swift in Sources */,
 				25579BF62932210E009FBD32 /* RedemptionCategoryModels.swift in Sources */,
@@ -2792,6 +2815,7 @@
 				2556582529360C8C004AC7A4 /* GetpanDetails.swift in Sources */,
 				2556582129360C8C004AC7A4 /* PanModels.swift in Sources */,
 				840EFE9E2928A00000481CF8 /* MSP_ProductCatalogueDetailsVC.swift in Sources */,
+				8461E5072A123BE800B56457 /* SelectDealerDropDownVM.swift in Sources */,
 				84FB8C7629274CF700FF2C1D /* GrandientExtension.swift in Sources */,
 				84DC205129FAB38500D1E2E1 /* RedemptionDetailsOrderStatus.swift in Sources */,
 				25FB65CE293B2A44000B678A /* DeleteAccountModels.swift in Sources */,

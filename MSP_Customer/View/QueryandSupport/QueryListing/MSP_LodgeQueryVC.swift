@@ -46,6 +46,7 @@ class MSP_LodgeQueryVC: BaseViewController, DropDownDelegate, DateSelectedDelega
     }
     
 
+    @IBOutlet weak var filterShadowView: UIView!
     @IBOutlet weak var lodgeQueryTabelView: UITableView!
     @IBOutlet weak var notificaitonLbl: UILabel!
     
@@ -90,7 +91,8 @@ class MSP_LodgeQueryVC: BaseViewController, DropDownDelegate, DateSelectedDelega
         self.playAnimation()
         self.noDataFoundLbl.textColor = .white
     //    self.loaderView.isHidden = true
-        self.filterView.isHidden = true
+        self.filterShadowView.isHidden = true
+        self.filterView.layer.maskedCorners = [.layerMinXMinYCorner,.layerMaxXMinYCorner]
         self.VM.VC = self
         self.noDataFoundLbl.isHidden = true
         self.lodgeQueryTabelView.register(UINib(nibName: "MSP_LodgeQueryTVC", bundle: nil), forCellReuseIdentifier: "MSP_LodgeQueryTVC")
@@ -113,6 +115,13 @@ class MSP_LodgeQueryVC: BaseViewController, DropDownDelegate, DateSelectedDelega
 //        guard let builder = GAIDictionaryBuilder.createScreenView() else { return }
 //        tracker.send(builder.build() as [NSObject : AnyObject])
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let touch = touches.first
+        if touch?.view == filterShadowView{
+            self.filterShadowView.isHidden = true
+        }
+    }
 
     @IBAction func backBtn(_ sender: Any) {
         if self.fromSideMenu == "SideMenu"{
@@ -132,7 +141,7 @@ class MSP_LodgeQueryVC: BaseViewController, DropDownDelegate, DateSelectedDelega
     }
     
     @IBAction func filterBtn(_ sender: Any) {
-        self.filterView.isHidden = false
+        self.filterShadowView.isHidden = false
     }
     
     @IBAction func selectedStatusBtn(_ sender: Any) {
@@ -167,7 +176,7 @@ class MSP_LodgeQueryVC: BaseViewController, DropDownDelegate, DateSelectedDelega
                 let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "PopupAlertOne_VC") as? PopupAlertOne_VC
                 vc!.delegate = self
                 vc!.titleInfo = ""
-                vc!.descriptionInfo = "Please select date range or status"
+                vc!.descriptionInfo = "Please select date range or select status or both"
                 vc!.modalPresentationStyle = .overCurrentContext
                 vc!.modalTransitionStyle = .crossDissolve
                 self.present(vc!, animated: true, completion: nil)
@@ -178,7 +187,7 @@ class MSP_LodgeQueryVC: BaseViewController, DropDownDelegate, DateSelectedDelega
                 self.startindexint = 1
                 self.itsFrom = "Filter"
                 self.queryListApi(startIndex: self.startindexint)
-                self.filterView.isHidden = true
+                self.filterShadowView.isHidden = true
             }
         }else if self.fromDateLbl.text != "From Date" && self.toDateLbl.text == "To Date" {
             DispatchQueue.main.async{
@@ -208,7 +217,7 @@ class MSP_LodgeQueryVC: BaseViewController, DropDownDelegate, DateSelectedDelega
                     let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "PopupAlertOne_VC") as? PopupAlertOne_VC
                     vc!.delegate = self
                     vc!.titleInfo = ""
-                    vc!.descriptionInfo = "To date shouldn't greater than from date"
+                    vc!.descriptionInfo = "To date shouldn't be smaller than from date"
                     vc!.modalPresentationStyle = .overCurrentContext
                     vc!.modalTransitionStyle = .crossDissolve
                     self.present(vc!, animated: true, completion: nil)
@@ -218,7 +227,7 @@ class MSP_LodgeQueryVC: BaseViewController, DropDownDelegate, DateSelectedDelega
                 self.itsFrom = "Filter"
                 self.startindexint = 1
                 self.queryListApi(startIndex: self.startindexint)
-                self.filterView.isHidden = true
+                self.filterShadowView.isHidden = true
             }
             
         }
@@ -234,7 +243,7 @@ class MSP_LodgeQueryVC: BaseViewController, DropDownDelegate, DateSelectedDelega
         self.VM.queryListingArray.removeAll()
         self.startindexint = 1
         self.queryListApi(startIndex: self.startindexint)
-        self.filterView.isHidden = true
+        self.filterShadowView.isHidden = true
     }
 
     func queryListApi(startIndex: Int){

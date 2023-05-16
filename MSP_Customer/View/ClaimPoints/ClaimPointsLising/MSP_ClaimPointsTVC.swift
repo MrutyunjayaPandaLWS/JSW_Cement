@@ -38,6 +38,10 @@ class MSP_ClaimPointsTVC: UITableViewCell, UITextViewDelegate,UITextFieldDelegat
     
     
     @IBAction func enteredQTYEditingDidEnd(_ sender: Any) {
+        let qty = Int(qtyTF.text ?? "0") ?? 0
+        if qty > 0{
+            qtyTF.text = "\(qty)"
+        }
         self.delegate.qtyValue(self)
     }
     

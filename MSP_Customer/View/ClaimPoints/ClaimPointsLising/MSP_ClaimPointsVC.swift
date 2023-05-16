@@ -10,8 +10,13 @@ import SDWebImage
 import CoreData
 import Firebase
 import Lottie
-class MSP_ClaimPointsVC: BaseViewController, DropDownDelegate, SendDetailsDelegate, popUpDelegate, DateSelectedDelegate {
+class MSP_ClaimPointsVC: BaseViewController, DropDownDelegate, SendDetailsDelegate, popUpDelegate, DateSelectedDelegate, DealerDropdownlistDelagate {
     func declineDate(_ vc: MSP_DOBVC) {}
+    func selectedDealer(item: SelectDealerDropDownVC) {
+        self.selectDealerlbl.text = item.selectedDealerName
+        self.selectedDealerId = item.selectedDealerId
+        print(item.selectedDealerId)
+    }
     
     func acceptDate(_ vc: MSP_DOBVC) {
         if vc.isComeFrom == "1"{
@@ -212,7 +217,7 @@ class MSP_ClaimPointsVC: BaseViewController, DropDownDelegate, SendDetailsDelega
         self.claimPointListTableView.register(UINib(nibName: "MSP_ClaimPointsTVC", bundle: nil), forCellReuseIdentifier: "MSP_ClaimPointsTVC")
         self.claimPointListTableView.delegate = self
         self.claimPointListTableView.dataSource = self
-        self.claimPointListTableView.estimatedRowHeight = 100
+        self.claimPointListTableView.estimatedRowHeight = 70
         self.claimPointListTableView.rowHeight = UITableView.automaticDimension
         self.claimPointListTableView.reloadData()
         NotificationCenter.default.addObserver(self, selector: #selector(sendToClaimStatus), name: Notification.Name.sendToClaimStatusVC, object: nil)
@@ -268,9 +273,9 @@ class MSP_ClaimPointsVC: BaseViewController, DropDownDelegate, SendDetailsDelega
     
     
     @IBAction func selectDealerBtn(_ sender: Any) {
-        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "MSP_DropDownVC") as? MSP_DropDownVC
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "SelectDealerDropDownVC") as? SelectDealerDropDownVC
         vc!.delegate = self
-        vc!.isComeFrom = 6
+//        vc!.isComeFrom = 6
         vc!.modalPresentationStyle = .overCurrentContext
         vc!.modalTransitionStyle = .crossDissolve
         self.present(vc!, animated: true, completion: nil)
@@ -525,7 +530,8 @@ extension MSP_ClaimPointsVC: UITableViewDataSource, UITableViewDelegate{
       //  let imageUrl = VM.myClaimsPointsArray[indexPath.row].brandImg ?? ""
         if imageUrl != " " || imageUrl != "" || imageUrl != nil{
             let totalImgURL = PROMO_IMG1 + imageUrl
-            cell?.productImage.sd_setImage(with: URL(string: totalImgURL), placeholderImage: UIImage(named: "appLogo"))
+            let productImage = totalImgURL.replacingOccurrences(of: " ", with: "%20")
+            cell?.productImage.sd_setImage(with: URL(string: productImage), placeholderImage: UIImage(named: "appLogo"))
         }else{
             cell?.productImage.image = UIImage(named: "MSP-logo (1)")
         }
