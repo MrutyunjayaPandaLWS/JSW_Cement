@@ -19,7 +19,7 @@ class MSP_ClaimPointsVC: BaseViewController, DropDownDelegate, SendDetailsDelega
     }
     
     func acceptDate(_ vc: MSP_DOBVC) {
-        if vc.isComeFrom == "1"{
+        if vc.isComeFrom == "3"{
             self.selectedFromDate = vc.selectedDate
             self.searchPointsArrayTF.text = vc.selectedDate
         }
@@ -265,7 +265,7 @@ class MSP_ClaimPointsVC: BaseViewController, DropDownDelegate, SendDetailsDelega
     @IBAction func selectDate(_ sender: Any) {
         let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "MSP_DOBVC") as? MSP_DOBVC
         vc!.delegate = self
-        vc!.isComeFrom = "1"
+        vc!.isComeFrom = "3"
         vc!.modalPresentationStyle = .overCurrentContext
         vc!.modalTransitionStyle = .coverVertical
         self.present(vc!, animated: true, completion: nil)

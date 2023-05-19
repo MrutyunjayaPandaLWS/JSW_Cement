@@ -24,8 +24,23 @@ class MSP_DOBVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        datePicker.maximumDate = date
+        if isComeFrom == "3"{
+            let today = Date()
+            print(today,"sdkjd")
+            let dateCheck = today.description.dropFirst(8)
+            let splitDate = dateCheck.split(separator: " ")
+            if splitDate[0] <= "15"{
+                datePicker.maximumDate = Date()
+                datePicker.minimumDate = Calendar.current.date(byAdding: .day, value: -30, to: Date())
+            }else{
+                datePicker.maximumDate = Date()
+                datePicker.minimumDate = Calendar.current.date(byAdding: .day, value: -7, to: Date())
+            }
+            
+            
+        }else{
+            datePicker.maximumDate = date
+        }
     }
     override func touchesBegan(_ touchscreen: Set<UITouch>, with event: UIEvent?)
     {
@@ -60,6 +75,12 @@ class MSP_DOBVC: UIViewController {
             self.delegate.acceptDate(self)
             self.dismiss(animated: true, completion: nil)
         }else if isComeFrom == "2"{
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd"
+            selectedDate = formatter.string(from: datePicker.date)
+            self.delegate.acceptDate(self)
+            self.dismiss(animated: true, completion: nil)
+        }else if isComeFrom == "3"{
             let formatter = DateFormatter()
             formatter.dateFormat = "yyyy-MM-dd"
             selectedDate = formatter.string(from: datePicker.date)

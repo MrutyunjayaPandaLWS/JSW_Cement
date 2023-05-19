@@ -18,8 +18,9 @@ class MSP_ClaimStatusTVC: UITableViewCell {
     
     @IBOutlet var claimStatusView: UIView!
     @IBOutlet weak var claimRemarksLbl: UILabel!
-    @IBOutlet var DealerCodeLbl: UILabel!
+   // @IBOutlet var DealerCodeLbl: UILabel!
     
+    @IBOutlet var earnedPointsLbl: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         claimStatusView.layer.cornerRadius = 16

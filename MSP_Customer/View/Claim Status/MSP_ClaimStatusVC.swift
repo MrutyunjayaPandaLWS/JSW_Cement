@@ -312,7 +312,8 @@ extension MSP_ClaimStatusVC: UITableViewDelegate, UITableViewDataSource{
         cell.dealerNameLbl.text = self.VM.claimStatusArray[indexPath.row].retailerName ?? "-"
         cell.claimsIDLbl.text = self.VM.claimStatusArray[indexPath.row].invoiceNo ?? "-"
         cell.remarksLbl.text = self.VM.claimStatusArray[indexPath.row].remarks ?? "-"
-        cell.DealerCodeLbl.text = self.VM.claimStatusArray[indexPath.row].dealerCode ?? ""
+        //cell.DealerCodeLbl.text = self.VM.claimStatusArray[indexPath.row].dealerCode ?? ""
+        cell.earnedPointsLbl.text = "\(Int(self.VM.claimStatusArray[indexPath.row].creditedPoint ?? 0))"
         
             if self.VM.claimStatusArray[indexPath.row].status ?? "-" == "Pending" || self.VM.claimStatusArray[indexPath.row].status ?? "-" == "Escalated"{
                 cell.claimStatusView.backgroundColor = #colorLiteral(red: 0.8686603904, green: 0.6390978098, blue: 0.02780325711, alpha: 1)
@@ -335,7 +336,7 @@ extension MSP_ClaimStatusVC: UITableViewDelegate, UITableViewDataSource{
         
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 280
+        return 250
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
