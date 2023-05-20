@@ -28,8 +28,11 @@ class MSP_ProgromBenefits: UIViewController {
         super.viewDidLoad()
         notificationListApi()
         self.loaderView.isHidden = true
-        self.noDataFoundLbl.isHidden = true
-        weBView.loadRequest(NSURLRequest(url: NSURL(fileURLWithPath: Bundle.main.path(forResource: "key_benefits_udaan", ofType: "html")!) as URL) as URLRequest)
+        self.noDataFoundLbl.isHidden = false
+        self.noDataFoundLbl.text = "No Data Found !!"
+        self.noDataFoundLbl.textColor = .black
+        
+        //weBView.loadRequest(NSURLRequest(url: NSURL(fileURLWithPath: Bundle.main.path(forResource: "key_benefits_udaan", ofType: "html")!) as URL) as URLRequest)
         
     }
     

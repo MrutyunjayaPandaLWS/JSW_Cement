@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>7118819182-pdpl5tntripu58qsc0g4402s5ebnjgu9.apps.googleusercontent.com</string>
+	<string>293474823119-1imor5icsogmse008nj3j2vb3vckfnld.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.7118819182-pdpl5tntripu58qsc0g4402s5ebnjgu9</string>
+	<string>com.googleusercontent.apps.293474823119-1imor5icsogmse008nj3j2vb3vckfnld</string>
 	<key>API_KEY</key>
-	<string>AIzaSyDSON81-qoHImCNLWK1rdHSxBZ3zcJHkCw</string>
+	<string>AIzaSyCTUNsZ3JAu68IbLkkU4jo0lUU5uOZbpGc</string>
 	<key>GCM_SENDER_ID</key>
-	<string>7118819182</string>
+	<string>293474823119</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>Loyltwo3ks-Pvt-Ltd.MSP-Customer</string>
+	<string>Loyltwo3ks-Pvt-Ltd.JSW-Cement</string>
 	<key>PROJECT_ID</key>
-	<string>customer-app---ios-32c43</string>
+	<string>jsw-cement-39430</string>
 	<key>STORAGE_BUCKET</key>
-	<string>customer-app---ios-32c43.appspot.com</string>
+	<string>jsw-cement-39430.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:7118819182:ios:a502afa31cc6ce173b3b7f</string>
+	<string>1:293474823119:ios:270a93dc4d7cfa6ad8c0ba</string>
 </dict>
 </plist>

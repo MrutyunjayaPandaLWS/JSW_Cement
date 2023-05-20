@@ -26,11 +26,6 @@ import Foundation
 
 
 //////Live:-
-///
-///https://jswserv.prowessbeat.com/token
-//grant_type:password
-//username:JSWLiveUser
-//password:JL$wP@c#mnts#
 
 let tokenURL = "https://jswserv.prowessbeat.com/token"
 let baseURl = "https://jswserv.prowessbeat.com/Mobile/"
@@ -41,7 +36,7 @@ let imageBaseURL = "https://jswlive.prowessbeat.com/UploadFiles/ProductManager/P
 let profileImageURL = "https://jswlive.prowessbeat.com/UploadFiles/CustomerImage/"
 let productCatalogueImgURL = "https://jswlive.prowessbeat.com/UploadFiles/CatalogueImages/"
 let checkUserExistencyURL = "https://jswserv.prowessbeat.com/Mobile/CheckCustomerExistancyAndVerification"
-let forgotPassURL = "https://jswlive.prowessbeat.com/Mobile/forgotPasswordMobileApp"
+let forgotPassURL = "https://jswserv.prowessbeat.com/Mobile/forgotPasswordMobileApp"
 
 let username = "JSWLiveUser"
 let password = "JL$wP@c#mnts#"

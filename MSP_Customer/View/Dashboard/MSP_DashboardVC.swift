@@ -372,8 +372,10 @@ class MSP_DashboardVC: BaseViewController, popUpDelegate{
                         print(totalImgURL, "Total Image URL")
                         self.customerProfileImage.kf.setImage(with: URL(string: totalImgURL),placeholder: UIImage(named: "icons8-life-cycle-96"))
                     }
+                    let firstName = response?.lstCustomerFeedBackJsonApi?[0].firstName ?? "-"
+                    let lastName = response?.lstCustomerFeedBackJsonApi?[0].lastName ?? ""
                     
-                    self.customerNameLbl.text = response?.lstCustomerFeedBackJsonApi?[0].firstName ?? "-"
+                    self.customerNameLbl.text = "\(firstName + " " + lastName)"
                     self.customerIDLbl.text = response?.lstCustomerFeedBackJsonApi?[0].loyaltyId ?? "-"
                     self.accountTypeName.text = response?.lstCustomerFeedBackJsonApi?[0].customerType ?? "-"
 //                    if response?.lstCustomerFeedBackJsonApi?[0].customerTypeId ?? 0 == 51{
@@ -533,13 +535,8 @@ class MSP_DashboardVC: BaseViewController, popUpDelegate{
             }else{
                 DispatchQueue.main.async {
                     self.stopLoading()
-                   // self.dashboardAPI()
-                    //self.bannerImagesAPI()
-//                                        self.maintenanceAPI()
-//                                        self.isUpdateAvailable()
                 }
             }
-            //self.stopLoading()
         }
         
     }
@@ -817,7 +814,7 @@ extension MSP_DashboardVC: UIImagePickerControllerDelegate, UINavigationControll
                }
     
     func maintenanceAPI(){
-        guard let url = URL(string: "http://appupdate.arokiait.com/updates/serviceget?pid=Loyltwo3ks-Pvt-Ltd.MSP-Customer") else {return}
+        guard let url = URL(string: "http://appupdate.arokiait.com/updates/serviceget?pid=Loyltwo3ks-Pvt-Ltd.JSW-Cement") else {return}
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard let dataResponse = data,
                   error == nil else {

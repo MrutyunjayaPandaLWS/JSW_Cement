@@ -229,7 +229,9 @@ class MSP_SideMenuViewController: BaseViewController, popUpDelegate {
         print(parameters,"Dash")
         self.vm.dashboardAPICall(parameters: parameters) { response in
             DispatchQueue.main.async {
-                self.customerNameLbl.text = response?.lstCustomerFeedBackJsonApi?[0].firstName ?? "-"
+                let firstname = response?.lstCustomerFeedBackJsonApi?[0].firstName ?? "-"
+                let lastnaem = response?.lstCustomerFeedBackJsonApi?[0].lastName ?? "-"
+                self.customerNameLbl.text = "\(firstname + " " + lastnaem)"
                 let customerImage = String(response?.lstCustomerFeedBackJsonApi?[0].customerImage ?? "").dropFirst(1)
                 
                 let imageData = customerImage.split(separator: "~")

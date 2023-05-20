@@ -7,10 +7,14 @@
 
 import UIKit
 import SlideMenuControllerSwift
+
+import FirebaseCore
 import Firebase
+import UserNotificationsUI
+import FirebaseMessaging
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDelegate, MessagingDelegate {
 
     var window: UIWindow?
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -48,8 +52,48 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             self.setInitialViewAsRootViewController()
         }
+        
+        if #available(iOS 10.0, *) {
+            UNUserNotificationCenter.current().delegate = self
+            let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+            UNUserNotificationCenter.current().requestAuthorization(
+                options: authOptions,
+                completionHandler: {_, _ in })
+        } else {
+            let settings: UIUserNotificationSettings =
+                UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+            application.registerUserNotificationSettings(settings)
+        }
+        
+       //   Messaging.messaging().isAutoInitEnabled = true
+          application.registerForRemoteNotifications()
+          Messaging.messaging().delegate = self
+          Messaging.messaging().token { token, error in
+              if let error = error {
+                print("Error fetching FCM registration token: \(error)")
+              } else if let token = token {
+                print("FCM registration token: \(token)")
+                UserDefaults.standard.setValue(token, forKey: "UD_DEVICE_TOKEN")
+              }
+            }
+        
         return true
     }
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void)
+    {
+        completionHandler([.alert, .badge, .sound])
+    }
+
+    
+    
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
+        print("Firebase token: \(fcmToken)")
+        UserDefaults.standard.setValue(fcmToken, forKey: "DEVICE_TOKEN")
+
+    }
+    
+    
+    
     
     func setHomeAsRootViewController(){
         let leftVC = storyboard.instantiateViewController(withIdentifier: "MSP_SideMenuViewController") as! MSP_SideMenuViewController

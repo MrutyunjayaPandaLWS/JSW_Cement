@@ -7,7 +7,55 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "178E056F-7450-4930-8C58-D1E940FC16FA"
+            uuid = "5CD2CFDC-4FB7-4352-A3A3-0D16EC6C4002"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MSP_Customer/View/Dashboard/MSP_DashboardVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "328"
+            endingLineNumber = "328"
+            landmarkName = "dashboardAPI()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "5CD2CFDC-4FB7-4352-A3A3-0D16EC6C4002 - b06e8c172766ddc3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MSP_Customer.MSP_DashboardVC.dashboardAPI() -&gt; ()"
+                  moduleName = "MSP_Customer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/arokia-m3/Documents/LWS%20Projects/JSW_Cement/MSP_Customer/View/Dashboard/MSP_DashboardVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "328"
+                  endingLineNumber = "328"
+                  offsetFromSymbolStart = "1226">
+               </Location>
+               <Location
+                  uuid = "5CD2CFDC-4FB7-4352-A3A3-0D16EC6C4002 - 9313b0e08f3da05f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Optional&lt;MSP_Customer.DashboardModels&gt;) -&gt; () in MSP_Customer.MSP_DashboardVC.dashboardAPI() -&gt; ()"
+                  moduleName = "MSP_Customer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/arokia-m3/Documents/LWS%20Projects/JSW_Cement/MSP_Customer/View/Dashboard/MSP_DashboardVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "329"
+                  endingLineNumber = "329"
+                  offsetFromSymbolStart = "203">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5CB3293B-F656-4443-814B-BC58042D7864"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -17,6 +65,22 @@
             startingLineNumber = "251"
             endingLineNumber = "251"
             landmarkName = "claimPointsApi(startIndex:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "ABCD75F2-9240-41DC-BF91-9D6DBD111E63"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MSP_Customer/ViewModels/ForgotPassword/ForgotPasswordViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "forgotPasswordAPI(paramters:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

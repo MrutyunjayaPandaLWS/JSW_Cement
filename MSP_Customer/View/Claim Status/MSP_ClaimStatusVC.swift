@@ -266,17 +266,6 @@ class MSP_ClaimStatusVC: BaseViewController, DateSelectedDelegate, popUpDelegate
             }else{
                 self.claimsCountLbl.isHidden = true
             }
-            if self.VM1.notificationListArray.count != 0 {
-                DispatchQueue.main.async {
-//                    self.notificationListTableView.isHidden = false
-//                    self.noDataFoundLbl.isHidden = true
-//                    self.notificationListTableView.reloadData()
-                }
-            }else{
-//                self.noDataFoundLbl.isHidden = false
-//                self.notificationListTableView.isHidden = true
-                
-            }
         }
         
     }

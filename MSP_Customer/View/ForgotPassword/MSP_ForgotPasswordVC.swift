@@ -83,8 +83,8 @@ class MSP_ForgotPasswordVC: BaseViewController, popUpDelegate, UITextFieldDelega
             ]
             print(parameters)
             self.vm.forgotPasswordAPI(paramters: parameters)
-            
-        }}
+        }
+    }
                 //print(response?.forgotPasswordMobileAppResult,"hjsgjhdg")
                 
 //                if response?.forgotPasswordMobileAppResult ?? false == true {

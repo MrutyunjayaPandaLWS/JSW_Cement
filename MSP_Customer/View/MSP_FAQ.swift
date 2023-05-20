@@ -10,11 +10,15 @@ import WebKit
 class MSP_FAQ: BaseViewController {
 
     @IBOutlet weak var webviewKit: UIWebView!
+    @IBOutlet weak var noDataLbl: UILabel!
+    
     
     var fromSideMenu = ""
     override func viewDidLoad() {
         super.viewDidLoad()
 //        webviewKit.loadRequest(NSURLRequest(url: NSURL(fileURLWithPath: Bundle.main.path(forResource: "udaan_ilp_faqs", ofType: "html")!) as URL) as URLRequest)
+        self.noDataLbl.text = "No data Found !"
+        self.noDataLbl.textColor = .black
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

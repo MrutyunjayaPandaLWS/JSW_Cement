@@ -25,6 +25,12 @@ target 'MSP_Customer' do
   pod 'Kingfisher'
   
   pod 'QCropper'
+  
+  pod 'Firebase/Core'
+  pod 'FirebaseAuth'
+  pod 'FirebaseFirestore'
+  pod 'Firebase/Messaging'
+  pod 'Firebase/Analytics'
 
 
 end
