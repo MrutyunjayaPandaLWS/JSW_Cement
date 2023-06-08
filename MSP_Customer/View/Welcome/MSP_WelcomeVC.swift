@@ -18,7 +18,7 @@ class MSP_WelcomeVC: BaseViewController {
     @IBOutlet var welcomeView: UIView!
     
     @IBOutlet weak var loaderAnimatedView: AnimationView!
-       @IBOutlet weak var loaderView: UIView!
+    @IBOutlet weak var loaderView: UIView!
     private var animationView11: AnimationView?
     override func viewDidLoad() {
         super.viewDidLoad()
