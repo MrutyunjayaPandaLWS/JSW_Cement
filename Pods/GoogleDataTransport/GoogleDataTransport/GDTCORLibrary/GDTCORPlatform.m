@@ -205,12 +205,8 @@ NSData *_Nullable GDTCOREncodeArchive(id<NSSecureCoding> obj,
     }
     if (filePath.length > 0) {
       result = [resultData writeToFile:filePath options:NSDataWritingAtomic error:error];
-      if (result == NO || (error != NULL && *error != nil)) {
-        if (error != NULL && *error != nil) {
-          GDTCORLogDebug(@"Attempt to write archive failed: path:%@ error:%@", filePath, *error);
-        } else {
-          GDTCORLogDebug(@"Attempt to write archive failed: path:%@", filePath);
-        }
+      if (result == NO || *error) {
+        GDTCORLogDebug(@"Attempt to write archive failed: path:%@ error:%@", filePath, *error);
       } else {
         GDTCORLogDebug(@"Writing archive succeeded: %@", filePath);
       }

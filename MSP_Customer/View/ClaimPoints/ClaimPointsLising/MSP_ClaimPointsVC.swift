@@ -169,6 +169,7 @@ class MSP_ClaimPointsVC: BaseViewController, DropDownDelegate, SendDetailsDelega
     func genderDidTap(_ vc: MSP_DropDownVC) {}
     func titleDidTap(_ vc: MSP_DropDownVC) {}
     
+    @IBOutlet weak var selectDealerOrSubDealerLbl: UILabel!
     
     @IBOutlet var selectDealerView: UIView!
     @IBOutlet weak var noDataFoundLbl: UILabel!
@@ -280,6 +281,11 @@ class MSP_ClaimPointsVC: BaseViewController, DropDownDelegate, SendDetailsDelega
         vc!.modalTransitionStyle = .crossDissolve
         self.present(vc!, animated: true, completion: nil)
     }
+    
+    
+    @IBAction func subDealerActBTN(_ sender: Any) {
+    }
+    
     
     @IBAction func submitButton(_ sender: Any) {
         print(selectedDealerId,"ID")
