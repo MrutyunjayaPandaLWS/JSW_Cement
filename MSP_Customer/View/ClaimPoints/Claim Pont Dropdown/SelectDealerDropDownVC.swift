@@ -30,7 +30,8 @@ class SelectDealerDropDownVC: BaseViewController,UISearchBarDelegate {
     var delegate: DealerDropdownlistDelagate?
     var userID = UserDefaults.standard.string(forKey: "UserID") ?? ""
     var loyaltyID = UserDefaults.standard.string(forKey: "LoyaltyID") ?? ""
-    
+    var locationID = 0
+    var headerMessage = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,6 +41,11 @@ class SelectDealerDropDownVC: BaseViewController,UISearchBarDelegate {
         self.dropDownTableView.dataSource = self
         self.noDataFoundLbl.isHidden = true
         claimPointsDealerApi()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        headerLbl.text = "Please \(headerMessage)"
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
@@ -64,7 +70,8 @@ class SelectDealerDropDownVC: BaseViewController,UISearchBarDelegate {
         self.VM.myClaimsPointsDelarArray.removeAll()
         let parameters = [
                 "ActionType": 68,
-                "ActorId": "\(userID)"
+                "ActorId": "\(userID)",
+//                "LocationId": locationID
                 ] as [String : Any]
                 print(parameters)
                 self.VM.claimPointsDelarAPI(parameters: parameters) { response in

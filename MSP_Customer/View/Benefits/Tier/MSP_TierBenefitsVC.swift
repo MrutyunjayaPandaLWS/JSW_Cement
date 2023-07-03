@@ -9,6 +9,7 @@ import UIKit
 import Firebase
 import Lottie
 class MSP_TierBenefitsVC: UIViewController {
+    
     @IBOutlet weak var loaderAnimatedView: AnimationView!
         @IBOutlet weak var loaderView: UIView!
 

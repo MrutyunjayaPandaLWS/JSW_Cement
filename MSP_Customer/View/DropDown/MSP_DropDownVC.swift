@@ -8,7 +8,7 @@
 import UIKit
 import Toast_Swift
 import Lottie
-protocol DropDownDelegate : AnyObject {
+@objc protocol DropDownDelegate : AnyObject {
     func stateDidTap(_ vc: MSP_DropDownVC)
     func cityDidTap(_ vc: MSP_DropDownVC)
     func preferredLanguageDidTap(_ vc: MSP_DropDownVC)
@@ -17,6 +17,7 @@ protocol DropDownDelegate : AnyObject {
     func dealerDipTap(_ vc: MSP_DropDownVC)
     func statusDipTap(_ vc: MSP_DropDownVC)
     func redemptionStatusDidTap(_ vc: MSP_DropDownVC)
+    @objc optional func DidTappedCatagoryList(_ vc: MSP_DropDownVC)
 }
 class MSP_DropDownVC: BaseViewController{
 
@@ -38,7 +39,7 @@ class MSP_DropDownVC: BaseViewController{
     var selectedPreferredID = -1
     var stateIDfromPreviousScreen = -1
     var countryIDfromPreviousScreen = 15
-    
+    var catagoryName = ""
     var selectedState = ""
     var selectedCity = ""
     var selectedLanguage = ""
@@ -56,6 +57,7 @@ class MSP_DropDownVC: BaseViewController{
     var genderArray = [String]()
     var titleArray = [String]()
     var statusListArray = ["Pending","Approved","Rejected", "Escalated"]
+    var Catagorylist = ["Select Type","Dealer","Sub Dealer"]
     var selectedStatusName = ""
     var selectedStatusId = -1
     override func viewDidLoad() {
@@ -82,6 +84,9 @@ class MSP_DropDownVC: BaseViewController{
              self.myRedemptionStatusApi()
          }else if isComeFrom == 9{
              self.lodgeQueryStatusApi()
+         }else if isComeFrom == 10{
+             self.dropDownTableView.reloadData()
+             self.heightOfTable.constant = 90
          }
         print(isComeFrom, "isComeFrom")
     }
@@ -224,6 +229,8 @@ extension MSP_DropDownVC: UITableViewDataSource, UITableViewDelegate{
             return self.statusListArray.count
         }else if isComeFrom == 8 || isComeFrom == 9{
             return self.VM.myRedemptionListArray.count
+        }else if isComeFrom == 10{
+            return self.Catagorylist.count
         }else{
             return 0
         }
@@ -247,6 +254,8 @@ extension MSP_DropDownVC: UITableViewDataSource, UITableViewDelegate{
             cell!.dropdownInfo.text = self.statusListArray[indexPath.row]
         }else if isComeFrom == 8 || isComeFrom == 9{
             cell!.dropdownInfo.text = self.VM.myRedemptionListArray[indexPath.row].attributeValue ?? ""
+        }else if isComeFrom == 10{
+            cell!.dropdownInfo.text = self.Catagorylist[indexPath.row]
         }
         return cell!
     }
@@ -303,6 +312,11 @@ extension MSP_DropDownVC: UITableViewDataSource, UITableViewDelegate{
             self.selectedRedemptionStatus = self.VM.myRedemptionListArray[indexPath.row].attributeValue ?? ""
             self.seletedRedemptionStatusId = self.VM.myRedemptionListArray[indexPath.row].attributeId ?? -1
             self.delegate?.redemptionStatusDidTap(self)
+            self.dismiss(animated: true, completion: nil)
+            
+        }else if isComeFrom == 10{
+            self.catagoryName = self.Catagorylist[indexPath.row]
+            self.delegate?.DidTappedCatagoryList?(self)
             self.dismiss(animated: true, completion: nil)
             
         }

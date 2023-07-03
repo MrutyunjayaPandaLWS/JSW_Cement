@@ -11,9 +11,24 @@ import CoreData
 import Firebase
 import Lottie
 class MSP_ClaimPointsVC: BaseViewController, DropDownDelegate, SendDetailsDelegate, popUpDelegate, DateSelectedDelegate, DealerDropdownlistDelagate {
+    func DidTappedCatagoryList(_ vc: MSP_DropDownVC) {
+        self.selectDealerlbl.text = vc.catagoryName
+        if vc.catagoryName == "Select Type"{
+            categoryView.isHidden =  true
+            self.selectedDealerId = -1
+        }else if vc.catagoryName == "Dealer"{
+                categoryView.isHidden =  false
+                selectDealerOrSubDelaerTitle.text = "Select Dealer"
+                selectDealerOrSubDealerLbl.text = "Select Dealer"
+        }else if vc.catagoryName == "Sub Dealer"{
+                selectDealerOrSubDelaerTitle.text = "Select Sub Dealer"
+                selectDealerOrSubDealerLbl.text = "Select Sub Dealer"
+                categoryView.isHidden =  false
+        }
+    }
     func declineDate(_ vc: MSP_DOBVC) {}
     func selectedDealer(item: SelectDealerDropDownVC) {
-        self.selectDealerlbl.text = item.selectedDealerName
+        self.selectDealerOrSubDealerLbl.text = item.selectedDealerName
         self.selectedDealerId = item.selectedDealerId
         print(item.selectedDealerId)
     }
@@ -169,8 +184,13 @@ class MSP_ClaimPointsVC: BaseViewController, DropDownDelegate, SendDetailsDelega
     func genderDidTap(_ vc: MSP_DropDownVC) {}
     func titleDidTap(_ vc: MSP_DropDownVC) {}
     
+    @IBOutlet weak var selectDealerOrSubDelaerTitle: UILabel!
+    
     @IBOutlet weak var selectDealerOrSubDealerLbl: UILabel!
     
+    @IBOutlet weak var selectdateview: UIView!
+    @IBOutlet weak var selectTypeView: UIView!
+    @IBOutlet weak var categoryView: UIView!
     @IBOutlet var selectDealerView: UIView!
     @IBOutlet weak var noDataFoundLbl: UILabel!
     @IBOutlet weak var selectDealerlbl: UILabel!
@@ -210,6 +230,11 @@ class MSP_ClaimPointsVC: BaseViewController, DropDownDelegate, SendDetailsDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         self.VM.VC = self
+        self.selectDealerOrSubDelaerTitle.text = "Select Dealer"
+        self.selectDealerOrSubDealerLbl.text = "Select Dealer"
+        self.selectDealerlbl.text = "Select Type"
+        self.selectedDealerId = -1
+        self.selectTypeView.isHidden =  true
         self.clearTable()
         self.submitBtn.isHidden = true
         self.loaderView.isHidden = true
@@ -233,8 +258,7 @@ class MSP_ClaimPointsVC: BaseViewController, DropDownDelegate, SendDetailsDelega
         self.loaderView.isHidden = true
         clearTable()
         fetchCartDetails()
-         self.selectedDealerId = -1
-        self.selectDealerlbl.text = "Select Dealer"
+//        self.selectDealerlbl.text = "Select Dealer"
         DispatchQueue.main.asyncAfter(deadline: .now()+0.9, execute: {
             //self.notificationListApi()
             self.claimPointsApi()
@@ -274,9 +298,10 @@ class MSP_ClaimPointsVC: BaseViewController, DropDownDelegate, SendDetailsDelega
     
     
     @IBAction func selectDealerBtn(_ sender: Any) {
-        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "SelectDealerDropDownVC") as? SelectDealerDropDownVC
+        
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "MSP_DropDownVC") as? MSP_DropDownVC
         vc!.delegate = self
-//        vc!.isComeFrom = 6
+        vc!.isComeFrom = 10
         vc!.modalPresentationStyle = .overCurrentContext
         vc!.modalTransitionStyle = .crossDissolve
         self.present(vc!, animated: true, completion: nil)
@@ -284,18 +309,43 @@ class MSP_ClaimPointsVC: BaseViewController, DropDownDelegate, SendDetailsDelega
     
     
     @IBAction func subDealerActBTN(_ sender: Any) {
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "SelectDealerDropDownVC") as? SelectDealerDropDownVC
+        vc!.delegate = self
+//        vc!.isComeFrom = 10"LocationId":6   - SUB DEALER
+        //         "LocationId":1  -  DEALER
+        if self.selectDealerlbl.text == "Dealer"{
+            vc?.locationID = 1
+        }else if self.selectDealerlbl.text == "Sub Dealer"{
+            vc?.locationID = 6
+        }
+        vc?.headerMessage = "\(selectDealerOrSubDelaerTitle.text ?? "")"
+        vc!.modalPresentationStyle = .overCurrentContext
+        vc!.modalTransitionStyle = .crossDissolve
+        self.present(vc!, animated: true, completion: nil)
     }
     
     
     @IBAction func submitButton(_ sender: Any) {
         print(selectedDealerId,"ID")
         print(claimPointsDetailsArray.count,"claimsCount")
-        if self.selectedDealerId == -1 || self.selectDealerlbl.text == "Select Dealer"{
+//        if self.selectDealerlbl.text == "Select Type"{
+//            DispatchQueue.main.async{
+//                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "PopupAlertOne_VC") as? PopupAlertOne_VC
+//                vc!.delegate = self
+//                vc!.titleInfo = ""
+//                vc!.descriptionInfo = "Please Select type"
+//                vc!.modalPresentationStyle = .overCurrentContext
+//                vc!.modalTransitionStyle = .crossDissolve
+//                self.present(vc!, animated: true, completion: nil)
+//
+//            }
+//        }else
+        if self.selectDealerOrSubDealerLbl.text == "Select Dealer" || self.selectDealerOrSubDealerLbl.text == "Select Sub Dealer" || self.selectDealerOrSubDealerLbl.text == "Select Dealer / Sub Dealer"{
             DispatchQueue.main.async{
                 let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "PopupAlertOne_VC") as? PopupAlertOne_VC
                 vc!.delegate = self
                 vc!.titleInfo = ""
-                vc!.descriptionInfo = "Select any dealer..."
+                vc!.descriptionInfo = "Please \(String(describing: self.selectDealerOrSubDelaerTitle.text ?? ""))"
                 vc!.modalPresentationStyle = .overCurrentContext
                 vc!.modalTransitionStyle = .crossDissolve
                 self.present(vc!, animated: true, completion: nil)
