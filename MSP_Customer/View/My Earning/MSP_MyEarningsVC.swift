@@ -56,16 +56,17 @@ class MSP_MyEarningsVC: BaseViewController , DateSelectedDelegate, popUpDelegate
             self.backOutBTN.isHidden = true
             self.headerLBL.textAlignment = .center
         }
+        self.myEarningsTableView.contentInset = UIEdgeInsets(top: 0,left: 0,bottom: 110,right: 0)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.myEarningFilterView.isHidden = true
-        self.VM.myEarningListArray.removeAll()
         selectedFromDate = ""
         selectedToDate = ""
         self.loaderView.isHidden = true
         self.playAnimation()
-        DispatchQueue.main.asyncAfter(deadline: .now()+0.9, execute: {
+        self.VM.myEarningListArray.removeAll()
+        DispatchQueue.main.asyncAfter(deadline: .now()+1.0, execute: {
             self.myEarningListApi(startIndex: 1)
         })
        
@@ -79,6 +80,7 @@ class MSP_MyEarningsVC: BaseViewController , DateSelectedDelegate, popUpDelegate
 //        guard let builder = GAIDictionaryBuilder.createScreenView() else { return }
 //        tracker.send(builder.build() as [NSObject : AnyObject])
     }
+
     
     @IBAction func myEarningsFilterBtn(_ sender: Any) {
         self.myEarningFilterView.isHidden = false

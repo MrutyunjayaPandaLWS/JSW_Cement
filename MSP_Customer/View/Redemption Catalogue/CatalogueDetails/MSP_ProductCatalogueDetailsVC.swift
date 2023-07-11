@@ -16,6 +16,7 @@ protocol SendDataDelegate: AnyObject{
 class MSP_ProductCatalogueDetailsVC: BaseViewController, popUpDelegate {
     func popupAlertDidTap(_ vc: PopupAlertOne_VC) {}
     
+    @IBOutlet weak var whisListCountlbl: UILabel!
     @IBOutlet weak var productImageSlideShow: ImageSlideshow!
     @IBOutlet var countLabel: UILabel!
     @IBOutlet var productImageView: UIImageView!
@@ -104,7 +105,7 @@ class MSP_ProductCatalogueDetailsVC: BaseViewController, popUpDelegate {
         }
         self.notificationListApi()
         self.myCartList()
-        
+        plannerListing1()
 //        guard let tracker = GAI.sharedInstance().defaultTracker else { return }
 //        tracker.set(kGAIScreenName, value: "Product Catalogue Details")
 //
@@ -313,6 +314,14 @@ class MSP_ProductCatalogueDetailsVC: BaseViewController, popUpDelegate {
         
     }
     
+    func plannerListing1(){
+        let parameters = [
+            "ActionType": "6",
+            "ActorId": "\(userID)"
+        ] as [String : Any]
+        self.VM.plannerListingApi1(parameters: parameters)
+    }
+    
     func plannerListing(){
         let parameters = [
             "ActionType": "6",
@@ -323,6 +332,12 @@ class MSP_ProductCatalogueDetailsVC: BaseViewController, popUpDelegate {
             self.VM.myPlannerListArray = response?.objCatalogueList ?? []
             print(self.VM.myPlannerListArray.count)
             DispatchQueue.main.async {
+                if self.VM.myPlannerListArray.count > 0 {
+                    self.whisListCountlbl.isHidden = false
+                    self.whisListCountlbl.text = "\(self.VM.myPlannerListArray.count)"
+                }else{
+                    self.whisListCountlbl.isHidden = true
+                }
                 let filterCategory = self.VM.myPlannerListArray.filter { $0.catalogueId == self.catalogueId}
                 print(filterCategory.count)
                 if filterCategory.count > 0 {

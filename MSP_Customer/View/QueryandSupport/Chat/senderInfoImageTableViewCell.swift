@@ -18,7 +18,8 @@ class senderInfoImageTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = .none
-        customView.roundCorners(corners: [.bottomLeft, .topLeft, .bottomRight], radius: 15.0)
+        customView.cornerRadius = 15
+        customView.layer.maskedCorners = [.layerMaxXMaxYCorner,.layerMinXMaxYCorner,.layerMinXMinYCorner]
 
     }
 

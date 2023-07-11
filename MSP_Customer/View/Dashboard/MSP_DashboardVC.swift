@@ -392,6 +392,7 @@ class MSP_DashboardVC: BaseViewController, popUpDelegate{
                     
                     self.totalPointsLbl.text = "Total Points: \(Int(response?.objCustomerDashboardList?[0].totalRedeemed ?? 0) ?? 0)"
                     UserDefaults.standard.set(response?.objCustomerDashboardList?[0].totalRedeemed ?? 0, forKey: "TotalRedeemedPoints")
+                    UserDefaults.standard.set(response?.objCustomerDashboardList?[0].overAllPointsEarned ?? 0, forKey: "overAllPointsEarned")
                     self.customerGradeLbl.text = response?.lstCustomerFeedBackJsonApi?[0].customerGrade ?? "-"
                     
                     // self.customerCatagoryLbl.text = response?.lstCustomerFeedBackJsonApi?[0].title ?? "-"
@@ -777,7 +778,7 @@ extension MSP_DashboardVC: UIImagePickerControllerDelegate, UINavigationControll
             if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
                 print(image)
                 
-                let imageData = image.resized(withPercentage: 0.1)
+                let imageData = image.resized(withPercentage: 0.3)
                 let imageData1: NSData = imageData!.pngData()! as NSData
                 self.customerProfileImage.image = image
                 //self.strdata1 = imageData1.base64EncodedString(options: .lineLength64Characters)
@@ -828,14 +829,14 @@ extension MSP_DashboardVC: UIImagePickerControllerDelegate, UINavigationControll
                 let isMaintenanceValue = ((jsonResponse as AnyObject).value(forKeyPath: "Result.is_maintenance") as? String)!
                 let forceupdatevalue = ((jsonResponse as AnyObject).value(forKeyPath: "Result.version_number") as? String)!
                 print(isMaintenanceValue)
-                if isMaintenanceValue == "1"{
+                if isMaintenanceValue != "1"{
                     print(isMaintenanceValue)
                     DispatchQueue.main.async {
                         self.loaderView.isHidden = true
                         self.stopLoading()
                         self.maintenanceView.isHidden = false
                     }
-                }else if isMaintenanceValue == "0"{
+                }else if isMaintenanceValue == "1"{
                     print(isMaintenanceValue)
                     DispatchQueue.main.async {
                         self.maintenanceView.isHidden = true

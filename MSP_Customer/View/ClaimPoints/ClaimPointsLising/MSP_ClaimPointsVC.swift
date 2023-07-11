@@ -230,8 +230,8 @@ class MSP_ClaimPointsVC: BaseViewController, DropDownDelegate, SendDetailsDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         self.VM.VC = self
-        self.selectDealerOrSubDelaerTitle.text = "Select Dealer"
-        self.selectDealerOrSubDealerLbl.text = "Select Dealer"
+        self.selectDealerOrSubDelaerTitle.text = "Select Dealer / Sub Dealer"
+        self.selectDealerOrSubDealerLbl.text = "Select Dealer / Sub Dealer"
         self.selectDealerlbl.text = "Select Type"
         self.selectedDealerId = -1
         self.selectTypeView.isHidden =  true
@@ -470,7 +470,7 @@ class MSP_ClaimPointsVC: BaseViewController, DropDownDelegate, SendDetailsDelega
             "ActorId": "\(self.userID)",
             "ProductSaveDetailList": self.newproductArray as [[String: Any]],
             "RitailerId": self.selectedDealerId,
-            "SourceDevice": 1,
+            "SourceDevice": 3,
             "TranDate": "\(self.selectedFromDate)"
         ]as [String : Any]
         print(parameters)

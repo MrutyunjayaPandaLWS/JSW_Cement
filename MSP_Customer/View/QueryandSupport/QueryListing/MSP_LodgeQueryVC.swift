@@ -98,13 +98,14 @@ class MSP_LodgeQueryVC: BaseViewController, DropDownDelegate, DateSelectedDelega
         self.lodgeQueryTabelView.register(UINib(nibName: "MSP_LodgeQueryTVC", bundle: nil), forCellReuseIdentifier: "MSP_LodgeQueryTVC")
         self.lodgeQueryTabelView.delegate = self
         self.lodgeQueryTabelView.dataSource = self
+        self.lodgeQueryTabelView.contentInset = UIEdgeInsets(top: 0,left: 0,bottom: 110,right: 0)
     }
     override func viewWillAppear(_ animated: Bool) {
         self.loaderView.isHidden = true
-        self.VM.queryListsArray.removeAll()
-        self.VM.queryListingArray.removeAll()
-      
         DispatchQueue.main.asyncAfter(deadline: .now()+0.9, execute: {
+            self.VM.queryListsArray.removeAll()
+            self.VM.queryListingArray.removeAll()
+            
             self.queryListApi(startIndex: self.startindexint)
            // self.notificationListApi()
         })
@@ -353,12 +354,12 @@ extension MSP_LodgeQueryVC: UITableViewDataSource, UITableViewDelegate{
         
         if CustomerTicketID == CustomerTicketIDchatvc{
             let centerviewcontroller = self.storyboard1.instantiateViewController(withIdentifier: "ChatListViewController") as! ChatListViewController
-            print(VM.queryListingArray[indexPath.section].customerTicketID!)
-            centerviewcontroller.CustomerTicketIDchatvc = "\(VM.queryListingArray[indexPath.section].customerTicketID ?? 0)"
-            centerviewcontroller.helptopicid = "\(VM.queryListingArray[indexPath.section].helpTopicID ?? 0)"
-            centerviewcontroller.querysummary = VM.queryListingArray[indexPath.section].querySummary ?? ""
-            centerviewcontroller.helptopicdetails = VM.queryListingArray[indexPath.section].helpTopic ?? ""
-            centerviewcontroller.querydetails = "  \(VM.queryListingArray[indexPath.section].queryDetails ?? "")"
+            print(VM.queryListingArray[indexPath.row].customerTicketID!)
+            centerviewcontroller.CustomerTicketIDchatvc = "\(VM.queryListingArray[indexPath.row].customerTicketID ?? 0)"
+            centerviewcontroller.helptopicid = "\(VM.queryListingArray[indexPath.row].helpTopicID ?? 0)"
+            centerviewcontroller.querysummary = VM.queryListingArray[indexPath.row].querySummary ?? ""
+            centerviewcontroller.helptopicdetails = VM.queryListingArray[indexPath.row].helpTopic ?? ""
+            centerviewcontroller.querydetails = "  \(VM.queryListingArray[indexPath.row].queryDetails ?? "")"
             self.navigationController?.pushViewController(centerviewcontroller, animated: true)
         }
         return cell
@@ -369,7 +370,7 @@ extension MSP_LodgeQueryVC: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
         let centerviewcontroller = self.storyboard1.instantiateViewController(withIdentifier: "ChatListViewController") as! ChatListViewController
-        print(VM.queryListingArray[indexPath.section].customerTicketID ?? 0)
+//        print(VM.queryListingArray[indexPath.row].customerTicketID ?? 0)
         centerviewcontroller.CustomerTicketIDchatvc = "\(VM.queryListingArray[indexPath.row].customerTicketID ?? 0)"
         centerviewcontroller.helptopicid = "\(VM.queryListingArray[indexPath.row].helpTopicID ?? 0)"
         centerviewcontroller.querysummary = VM.queryListingArray[indexPath.row].querySummary ?? ""

@@ -16,7 +16,9 @@ class otherInfoImageTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = .none
-        customImage.roundCorners(corners: [.bottomLeft, .topRight, .bottomRight], radius: 15.0)
+        customImage.cornerRadius = 15
+        customImage.layer.maskedCorners = [.layerMaxXMaxYCorner,.layerMinXMaxYCorner,.layerMinXMinYCorner]
+//        customImage.roundCorners(corners: [.bottomLeft, .topRight, .bottomRight], radius: 15.0)
  
         
         

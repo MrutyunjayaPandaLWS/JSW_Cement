@@ -18,6 +18,7 @@ class MSP_ProductCatalogueVC: BaseViewController, AddedToCartOrPlannerDelegate, 
         self.startIndex = 1
     }
     
+    @IBOutlet weak var whisListCountLbl: UILabel!
     @IBOutlet weak var selectdCategoryTitleLbl: UILabel!
     @IBOutlet weak var selectedCategoryLbl: UILabel!
     
@@ -630,9 +631,12 @@ class MSP_ProductCatalogueVC: BaseViewController, AddedToCartOrPlannerDelegate, 
                 self.loaderView.isHidden = true
                 self.stopLoading()
                 
-//                if self.VM.myPlannerListArray.count > 0 {
-//
-//                }
+                if self.VM.myPlannerListArray.count > 0 {
+                    self.whisListCountLbl.isHidden = false
+                    self.whisListCountLbl.text = "\(self.VM.myPlannerListArray.count)"
+                }else{
+                    self.whisListCountLbl.isHidden = true
+                }
             }
         }
         

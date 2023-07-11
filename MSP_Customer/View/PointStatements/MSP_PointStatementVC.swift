@@ -28,6 +28,8 @@ class MSP_PointStatementVC: BaseViewController , DateSelectedDelegate, popUpDele
         self.dismiss(animated: true)
     }
     
+    @IBOutlet weak var redeemablepointsLbl: UILabel!
+    @IBOutlet weak var redeeamblepointsTitleLbl: UILabel!
     @IBOutlet weak var countLbl: UILabel!
     @IBOutlet weak var tablePointStatementTableView: UITableView!
     @IBOutlet weak var totalPts: UILabel!
@@ -58,6 +60,7 @@ class MSP_PointStatementVC: BaseViewController , DateSelectedDelegate, popUpDele
     
     let customerTypeId = UserDefaults.standard.value(forKey: "CustomerTypeId") ?? 0
     let totalRedeemedPts = UserDefaults.standard.integer(forKey: "TotalRedeemedPoints")
+    let redeamblepoints = UserDefaults.standard.integer(forKey: "overAllPointsEarned")
     let userID = UserDefaults.standard.string(forKey: "UserID") ?? ""
     var fromSideMenu = ""
     var credited = ""
@@ -92,6 +95,7 @@ class MSP_PointStatementVC: BaseViewController , DateSelectedDelegate, popUpDele
     override func viewDidLoad() {
         super.viewDidLoad()
         self.totalPts.text = "\(self.totalRedeemedPts ?? 0)"
+        self.redeemablepointsLbl.text = "\(redeamblepoints ?? 0)"
         self.VM.VC = self
         self.loaderView.isHidden = true
         self.volumeOutBtn.isHidden = true
@@ -125,6 +129,8 @@ class MSP_PointStatementVC: BaseViewController , DateSelectedDelegate, popUpDele
             self.volumeOutBtn.isHidden = true
             self.rangeMultiOutBtn.isHidden = true
             self.frequenctmultiOutBtn.isHidden = true        }
+        
+        self.tablePointStatementTableView.contentInset = UIEdgeInsets(top: 0,left: 0,bottom: 110,right: 0)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

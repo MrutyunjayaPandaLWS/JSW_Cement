@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -27,10 +27,10 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iQj-y7-GP3">
-                        <rect key="frame" x="16" y="111" width="200" height="31"/>
+                        <rect key="frame" x="16" y="111" width="16" height="31"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hI8-vj-d9Z">
-                                <rect key="frame" x="8" y="4" width="184" height="23"/>
+                                <rect key="frame" x="8" y="4" width="0.0" height="23"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -41,7 +41,7 @@
                             <constraint firstItem="hI8-vj-d9Z" firstAttribute="leading" secondItem="iQj-y7-GP3" secondAttribute="leading" constant="8" id="4Js-D0-P4f"/>
                             <constraint firstItem="hI8-vj-d9Z" firstAttribute="top" secondItem="iQj-y7-GP3" secondAttribute="top" constant="4" id="6yS-Ka-caB"/>
                             <constraint firstAttribute="trailing" secondItem="hI8-vj-d9Z" secondAttribute="trailing" constant="8" id="IFv-G5-UZk"/>
-                            <constraint firstAttribute="width" constant="200" id="bG7-aM-Ney"/>
+                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="200" id="bG7-aM-Ney"/>
                             <constraint firstAttribute="bottom" secondItem="hI8-vj-d9Z" secondAttribute="bottom" constant="4" id="y0K-Jh-RLL"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>

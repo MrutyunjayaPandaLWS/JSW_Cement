@@ -12,13 +12,15 @@ import Firebase
 import Lottie
 class MSP_OffersandPromotionsDetailsVC: BaseViewController {
 
+    @IBOutlet weak var descriptionLbl: UILabel!
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var notifiCountLbl: UILabel!
     
     @IBOutlet weak var productNameLbl: UILabel!
     
     @IBOutlet weak var shortDescriptionLbl: UILabel!
-    @IBOutlet weak var descriptionWK: UIWebView!
+   
+    @IBOutlet weak var descriptionWK: WKWebView!
     
     @IBOutlet weak var loaderAnimatedView: AnimationView!
        @IBOutlet weak var loaderView: UIView!
@@ -36,7 +38,9 @@ class MSP_OffersandPromotionsDetailsVC: BaseViewController {
         self.productNameLbl.text = self.productName
         self.shortDescriptionLbl.text = self.shortDesc
         self.productImage.sd_setImage(with: URL(string: productImg), placeholderImage: UIImage(named: "ic_default_img"))
-        self.descriptionWK.loadHTMLString(self.longDesc, baseURL: nil)
+//        self.descriptionWK.loadHTMLString(self.longDesc, baseURL: nil)
+        descriptionData()
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -85,5 +89,30 @@ class MSP_OffersandPromotionsDetailsVC: BaseViewController {
             }
         }
         
+    }
+    
+    func descriptionData(){
+        let plainText = convertHTMLToPlainText(htmlString: self.longDesc)
+        self.descriptionLbl.text = plainText
+    }
+    
+    func convertHTMLToPlainText(htmlString: String) -> String {
+        if let attributedString = NSAttributedString(htmlString: htmlString) {
+            return attributedString.string
+        } else {
+            return ""
+        }
+    }
+}
+
+
+extension NSAttributedString {
+    convenience init?(htmlString: String) {
+        guard let data = htmlString.data(using: .utf8) else { return nil }
+        let options: [NSAttributedString.DocumentReadingOptionKey: Any] = [
+            .documentType: NSAttributedString.DocumentType.html,
+            .characterEncoding: String.Encoding.utf8.rawValue
+        ]
+        try? self.init(data: data, options: options, documentAttributes: nil)
     }
 }

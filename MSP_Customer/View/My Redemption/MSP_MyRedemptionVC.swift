@@ -82,7 +82,7 @@ class MSP_MyRedemptionVC: BaseViewController, DateSelectedDelegate, popUpDelegat
         self.myRedemptionTableView.delegate = self
         self.myRedemptionTableView.dataSource = self
        
-        
+        self.myRedemptionTableView.contentInset = UIEdgeInsets(top: 0,left: 0,bottom: 110,right: 0)
         if ((tabBarController?.shouldPerformSegue(withIdentifier: "comingFrom", sender: .none)) != nil){
             self.backOutBTN.isHidden = true
             self.headerLBL.textAlignment = .center

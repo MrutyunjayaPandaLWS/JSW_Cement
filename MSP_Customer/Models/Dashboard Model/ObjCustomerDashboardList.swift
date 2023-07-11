@@ -104,6 +104,7 @@ struct ObjCustomerDashboardList : Codable {
 	let isActive : Bool?
 	let actorRole : String?
 	let actionType : Int?
+    let overAllPointsEarned :  String?
 
 	enum CodingKeys: String, CodingKey {
 
@@ -198,6 +199,7 @@ struct ObjCustomerDashboardList : Codable {
 		case isActive = "isActive"
 		case actorRole = "actorRole"
 		case actionType = "actionType"
+        case overAllPointsEarned = "overAllPointsEarned"
 	}
 
 	init(from decoder: Decoder) throws {
@@ -293,6 +295,7 @@ struct ObjCustomerDashboardList : Codable {
 		isActive = try values.decodeIfPresent(Bool.self, forKey: .isActive)
 		actorRole = try values.decodeIfPresent(String.self, forKey: .actorRole)
 		actionType = try values.decodeIfPresent(Int.self, forKey: .actionType)
+        overAllPointsEarned = try values.decodeIfPresent(String.self, forKey: .overAllPointsEarned)
 	}
 
 }

@@ -172,8 +172,8 @@ extension MSP_OffersandPromotionsVC: UITableViewDelegate, UITableViewDataSource{
         cell?.viewBtn.tag = indexPath.row
         return cell!
     }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 230
-    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 230
+//    }
     
 }

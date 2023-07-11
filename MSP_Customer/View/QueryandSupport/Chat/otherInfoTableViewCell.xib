@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -27,10 +27,10 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="14R-xT-WWw">
-                        <rect key="frame" x="16" y="14" width="200" height="30"/>
+                        <rect key="frame" x="16" y="14" width="16" height="30"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q6j-PM-hMr">
-                                <rect key="frame" x="8" y="4" width="184" height="22"/>
+                                <rect key="frame" x="8" y="4" width="0.0" height="22"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -40,7 +40,7 @@
                         <constraints>
                             <constraint firstItem="q6j-PM-hMr" firstAttribute="leading" secondItem="14R-xT-WWw" secondAttribute="leading" constant="8" id="0RB-Rn-4T9"/>
                             <constraint firstAttribute="trailing" secondItem="q6j-PM-hMr" secondAttribute="trailing" constant="8" id="DZc-Ud-D3m"/>
-                            <constraint firstAttribute="width" constant="200" id="vRV-1q-C2c"/>
+                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="200" id="vRV-1q-C2c"/>
                             <constraint firstAttribute="bottom" secondItem="q6j-PM-hMr" secondAttribute="bottom" constant="4" id="y3r-WF-Q5r"/>
                             <constraint firstItem="q6j-PM-hMr" firstAttribute="top" secondItem="14R-xT-WWw" secondAttribute="top" constant="4" id="yQq-E7-DME"/>
                         </constraints>
@@ -75,6 +75,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="gko-jx-AHa"/>
             <connections>
+                <outlet property="customImage" destination="14R-xT-WWw" id="kxF-qJ-acW"/>
                 <outlet property="itemText" destination="q6j-PM-hMr" id="K4I-0l-YhO"/>
                 <outlet property="itemTime" destination="jJA-T3-wGd" id="7Rw-4s-Xqu"/>
                 <outlet property="itemcustomer" destination="BHF-Cf-RBL" id="X4o-4c-N2N"/>

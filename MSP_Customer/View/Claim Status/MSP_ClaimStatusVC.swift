@@ -73,9 +73,11 @@ class MSP_ClaimStatusVC: BaseViewController, DateSelectedDelegate, popUpDelegate
         self.claimsTableView.register(UINib(nibName: "MSP_ClaimStatusTVC", bundle: nil), forCellReuseIdentifier: "MSP_ClaimStatusTVC")
         self.loaderView.isHidden = false
         self.playAnimation()
-        DispatchQueue.main.asyncAfter(deadline: .now()+0.9, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now()+0.1, execute: {
+            self.VM.claimStatusArray.removeAll()
             self.claimPointsApi(startIndex: self.startindexint)
         })
+        self.claimsTableView.contentInset = UIEdgeInsets(top: 0,left: 0,bottom: 80,right: 0)
     }
     override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
@@ -237,7 +239,7 @@ class MSP_ClaimStatusVC: BaseViewController, DateSelectedDelegate, popUpDelegate
     
    // {"ActionType":4,"ActiveStatus":"-2","FromDate":"","PageSize":8,"SalesPersonId":"MSP000327","StartIndex":1,"ToDate":""}
     func claimPointsApi(startIndex: Int) {
-        self.VM.claimStatusArray.removeAll()
+//        self.VM.claimStatusArray.removeAll()
         let parameters = [
             "ActionType": 4,
             "ActiveStatus": "\(self.selectedStatusId)",
@@ -348,6 +350,7 @@ extension MSP_ClaimStatusVC: UITableViewDelegate, UITableViewDataSource{
                     return
                 }
             }
+            
         }
     }
     

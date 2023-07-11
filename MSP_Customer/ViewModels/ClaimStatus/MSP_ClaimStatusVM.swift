@@ -17,7 +17,7 @@ class MSP_ClaimStatusVM {
     func claimStatusApi(parameters: JSON){
         DispatchQueue.main.async {
               self.VC?.startLoading()
-            self.claimStatusArray.removeAll()
+//            self.claimStatusArray.removeAll()
          }
         
         self.requestAPIs.claimStatusApi(parameters: parameters) { (result, error) in
@@ -45,16 +45,17 @@ class MSP_ClaimStatusVM {
                                     self.VC?.filterScreenView.isHidden = false
                                 }
                         }else{
-                            if self.VC!.itsFrom == "Filter"{
+                            if self.claimStatusArray.count == 0{
+                                if self.VC!.itsFrom == "Filter"{
                                     self.VC?.noDataLbl.isHidden = false
                                     self.VC?.claimsTableView.isHidden = true
                                     self.VC?.filterScreenView.isHidden = false
-                            }else{
-                                self.VC?.noDataLbl.isHidden = false
-                                self.VC?.claimsTableView.isHidden = true
-                                self.VC?.filterScreenView.isHidden = false
+                                }else{
+                                    self.VC?.noDataLbl.isHidden = false
+                                    self.VC?.claimsTableView.isHidden = true
+                                    self.VC?.filterScreenView.isHidden = false
+                                }
                             }
-
                         }
                     }
 

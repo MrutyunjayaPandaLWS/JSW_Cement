@@ -49,6 +49,132 @@
                   endingLineNumber = "280"
                   offsetFromSymbolStart = "81">
                </Location>
+               <Location
+                  uuid = "FE566BF8-D9D0-432B-81E6-77AC9029BACB - e8cd4eddb90444c3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MSP_Customer.MSP_ClaimPointsVC.selectDealerBtn(Any) -&gt; ()"
+                  moduleName = "MSP_Customer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/JSW_Cement/MSP_Customer/View/ClaimPoints/ClaimPointsLising/MSP_ClaimPointsVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "302"
+                  endingLineNumber = "302"
+                  offsetFromSymbolStart = "84">
+               </Location>
+               <Location
+                  uuid = "FE566BF8-D9D0-432B-81E6-77AC9029BACB - e8cd4eddb90444c3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MSP_Customer.MSP_ClaimPointsVC.selectDealerBtn(Any) -&gt; ()"
+                  moduleName = "MSP_Customer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/JSW_Cement/MSP_Customer/View/ClaimPoints/ClaimPointsLising/MSP_ClaimPointsVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "302"
+                  endingLineNumber = "302"
+                  offsetFromSymbolStart = "81">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E5707436-B1D8-48DD-918F-993BB676F482"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MSP_Customer/View/Dashboard/MSP_DashboardVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "327"
+            endingLineNumber = "327"
+            landmarkName = "dashboardAPI()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E5707436-B1D8-48DD-918F-993BB676F482 - 868a37679ab4c2fe"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MSP_Customer.MSP_DashboardVC.dashboardAPI() -&gt; ()"
+                  moduleName = "MSP_Customer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/JSW_Cement/MSP_Customer/View/Dashboard/MSP_DashboardVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "327"
+                  endingLineNumber = "327"
+                  offsetFromSymbolStart = "1144">
+               </Location>
+               <Location
+                  uuid = "E5707436-B1D8-48DD-918F-993BB676F482 - 868a37679ab4c2fe"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MSP_Customer.MSP_DashboardVC.dashboardAPI() -&gt; ()"
+                  moduleName = "MSP_Customer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/JSW_Cement/MSP_Customer/View/Dashboard/MSP_DashboardVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "327"
+                  endingLineNumber = "327"
+                  offsetFromSymbolStart = "1033">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "45F07F68-59C8-4B29-AEE9-68C3D8093833"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MSP_Customer/View/Claim Status/MSP_ClaimStatusVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "345"
+            endingLineNumber = "345"
+            landmarkName = "tableView(_:willDisplay:forRowAt:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "45F07F68-59C8-4B29-AEE9-68C3D8093833 - 21f6b574356a93c4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MSP_Customer.MSP_ClaimStatusVC.tableView(_: __C.UITableView, willDisplay: __C.UITableViewCell, forRowAt: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "MSP_Customer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/JSW_Cement/MSP_Customer/View/Claim%20Status/MSP_ClaimStatusVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "345"
+                  endingLineNumber = "345"
+                  offsetFromSymbolStart = "1036">
+               </Location>
+               <Location
+                  uuid = "45F07F68-59C8-4B29-AEE9-68C3D8093833 - 21f6b574356a93a5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MSP_Customer.MSP_ClaimStatusVC.tableView(_: __C.UITableView, willDisplay: __C.UITableViewCell, forRowAt: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "MSP_Customer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/JSW_Cement/MSP_Customer/View/Claim%20Status/MSP_ClaimStatusVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "346"
+                  endingLineNumber = "346"
+                  offsetFromSymbolStart = "1040">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -27,10 +27,10 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7WI-98-CfR">
-                        <rect key="frame" x="172" y="114" width="200" height="84"/>
+                        <rect key="frame" x="342" y="114" width="30" height="84"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sdjfklafjasdlfdsaljfasldjfsdafsadfsadfasdfadsfsadfasdfasdfasdfasdfasdfsd" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fK9-9D-rjx">
-                                <rect key="frame" x="8" y="4" width="184" height="76"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fK9-9D-rjx">
+                                <rect key="frame" x="8" y="4" width="14" height="76"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -42,7 +42,7 @@
                             <constraint firstAttribute="bottom" secondItem="fK9-9D-rjx" secondAttribute="bottom" constant="4" id="Exa-6H-NNs"/>
                             <constraint firstItem="fK9-9D-rjx" firstAttribute="top" secondItem="7WI-98-CfR" secondAttribute="top" constant="4" id="tK6-Nq-mm2"/>
                             <constraint firstItem="fK9-9D-rjx" firstAttribute="leading" secondItem="7WI-98-CfR" secondAttribute="leading" constant="8" id="tvj-26-q6w"/>
-                            <constraint firstAttribute="width" constant="200" id="ySJ-EM-ghU"/>
+                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="200" id="ySJ-EM-ghU"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">

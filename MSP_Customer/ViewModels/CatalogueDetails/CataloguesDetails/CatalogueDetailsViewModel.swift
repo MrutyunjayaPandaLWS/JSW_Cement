@@ -181,4 +181,33 @@ class CatalogueDetailsViewModel{
     
     }
     
+    func plannerListingApi1(parameters: JSON){
+        self.requestAPIs.plannerListApi(parameters: parameters) { (result, error) in
+            if error == nil{
+                if result != nil {
+                    DispatchQueue.main.async {
+                        let whisList = result?.objCatalogueList ?? []
+                        if whisList.count > 0 {
+                            self.VC?.whisListCountlbl.isHidden = false
+                            self.VC?.whisListCountlbl.text = "\(whisList.count)"
+                        }else{
+                            self.VC?.whisListCountlbl.isHidden = true
+                        }
+                    }
+                    
+                } else {
+                    print("No Response")
+                    DispatchQueue.main.async {
+                        self.VC?.whisListCountlbl.isHidden = true
+                    }
+                }
+            }else{
+                DispatchQueue.main.async {
+                    self.VC?.whisListCountlbl.isHidden = true
+                }
+            }
+    }
+    
+    }
+    
 }
