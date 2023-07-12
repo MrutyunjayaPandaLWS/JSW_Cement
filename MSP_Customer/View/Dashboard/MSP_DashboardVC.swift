@@ -829,14 +829,14 @@ extension MSP_DashboardVC: UIImagePickerControllerDelegate, UINavigationControll
                 let isMaintenanceValue = ((jsonResponse as AnyObject).value(forKeyPath: "Result.is_maintenance") as? String)!
                 let forceupdatevalue = ((jsonResponse as AnyObject).value(forKeyPath: "Result.version_number") as? String)!
                 print(isMaintenanceValue)
-                if isMaintenanceValue != "1"{
+                if isMaintenanceValue == "1"{
                     print(isMaintenanceValue)
                     DispatchQueue.main.async {
                         self.loaderView.isHidden = true
                         self.stopLoading()
                         self.maintenanceView.isHidden = false
                     }
-                }else if isMaintenanceValue == "1"{
+                }else if isMaintenanceValue == "0"{
                     print(isMaintenanceValue)
                     DispatchQueue.main.async {
                         self.maintenanceView.isHidden = true
