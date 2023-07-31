@@ -46,7 +46,21 @@ class MSP_ClaimPointsVC: BaseViewController, DropDownDelegate, SendDetailsDelega
     func qtyValue(_ cell: MSP_ClaimPointsTVC) {
         guard let tappedIndexPath = self.claimPointListTableView.indexPath(for: cell) else{return}
         
-        
+        if self.claimPointsDetailsArray.count != 0{
+            for data in self.claimPointsDetailsArray{
+                if self.VM.myClaimsPointsArray[tappedIndexPath.row].cat_Id1 ?? 0 == Int(data.productId!) ?? -1{
+                    if let index = self.VM.myClaimsPointsArray.firstIndex(where: {$0.cat_Id1 ?? 0 == Int(data.productId ?? "") ?? -1} ) {
+                        print(index)
+                        let remove = self.claimPointsDetailsArray[index]
+                        print(remove)
+                        print("Existing Cart Address Remove")
+                        persistanceservice.context.delete(remove)
+                        persistanceservice.saveContext()
+                        self.fetchCartDetails()
+                    }
+                }
+            }
+        }
         
         if cell.qtyTF.tag == self.VM.myClaimsPointsArray[tappedIndexPath.row].cat_Id1 ?? -1 {
             print(self.VM.myClaimsPointsArray[tappedIndexPath.row].cat_Id1 ?? -1, "Product Id")
@@ -88,7 +102,7 @@ class MSP_ClaimPointsVC: BaseViewController, DropDownDelegate, SendDetailsDelega
                     }
             }else if finalValue != "" && finalValue != "0" && finalValue != " " && finalValue != "-1" && finalValue != "00" && finalValue != "000" && finalValue != "0000"  && finalValue != "0000" && finalValue != "00000" && finalValue != "000000" && finalValue != "0000000" && finalValue != "00000000" && finalValue != "000000000" && finalValue != "0000000000" {
                 
-                let calcValue = Int(finalValue)! - 1
+                let calcValue = Int(finalValue) ?? 0 - 1
                 print(calcValue)
                 if calcValue >= 0{
                     

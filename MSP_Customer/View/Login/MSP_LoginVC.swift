@@ -383,6 +383,7 @@ class MSP_LoginVC: BaseViewController, popUpDelegate, CheckBoxSelectDelegate,UIT
                 if response?.userList?[0].isUserActive ?? 0 == 1 && response?.userList?[0].result ?? 0 == 1 && response?.userList?[0].verifiedStatus == 1  || response?.userList?[0].isUserActive ?? 0 == 1 && response?.userList?[0].verifiedStatus == 4{
                     UserDefaults.standard.setValue(response?.userList?[0].userId ?? -1, forKey: "UserID")
                     UserDefaults.standard.setValue(true, forKey: "IsloggedIn?")
+                    UserDefaults.standard.set(self.passwordTF.text, forKey: "Password")
                     DispatchQueue.main.async {
                         if #available(iOS 13.0, *) {
                             let sceneDelegate = self.view.window!.windowScene!.delegate as! SceneDelegate

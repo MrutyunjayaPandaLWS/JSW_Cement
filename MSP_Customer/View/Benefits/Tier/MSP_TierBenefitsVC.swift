@@ -32,11 +32,11 @@ class MSP_TierBenefitsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.noDataFoundLbl.isHidden = true
+        self.noDataFoundLbl.isHidden = false
         self.tierBenefitsTableView.delegate = self
         self.tierBenefitsTableView.dataSource = self
         self.tierBenefitsTableView.isHidden = false
-        self.tierView.isHidden = false
+        self.tierView.isHidden = true
         self.loaderView.isHidden = true
 //        if self.tierListingArray.count >= 10{
 //            self.tableViewHeightConstraint.constant = 550

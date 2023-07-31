@@ -30,6 +30,7 @@ class MSP_MyCartVC: BaseViewController, popUpDelegate, MyCartDelegate {
     let verifiedStatus = UserDefaults.standard.integer(forKey: "VerifiedStatus")
     var checkAccountStatus = UserDefaults.standard.string(forKey: "SemiActiveAccount") ?? ""
     var VM1 = HistoryNotificationsViewModel()
+    var cartCountData = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,11 +67,11 @@ class MSP_MyCartVC: BaseViewController, popUpDelegate, MyCartDelegate {
     }
     
     @IBAction func proceedbtn(_ sender: Any) {
-        if self.verifiedStatus != 1{
+        if self.cartCountData != 1{
             let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "PopupAlertOne_VC") as? PopupAlertOne_VC
             vc!.delegate = self
             vc!.titleInfo = ""
-            vc!.descriptionInfo = "You are not allowled to redeem .Please contact your administrator"
+            vc!.descriptionInfo = "Please submit your identity proof"
             vc!.modalPresentationStyle = .overCurrentContext
             vc!.modalTransitionStyle = .crossDissolve
             self.present(vc!, animated: true, completion: nil)
@@ -89,7 +90,7 @@ class MSP_MyCartVC: BaseViewController, popUpDelegate, MyCartDelegate {
     func increaseCount(_ cell: MyCart_TVC) {
         guard let tappedIndexPath = self.myCartTableView.indexPath(for: cell) else{return}
         if cell.plusBTN.tag == tappedIndexPath.row{
-            if Int(self.VM.myCartListArray[tappedIndexPath.row].sumOfTotalPointsRequired ?? 0.0) <= Int(self.pointBalance) ?? 0{
+            if Int(self.VM.myCartListArray[tappedIndexPath.row].sumOfTotalPointsRequired ?? 0.0) <= Int(self.pointBalance) {
                 let calcValue = Int(self.VM.myCartListArray[tappedIndexPath.row].sumOfTotalPointsRequired ?? 0.0) + Int(self.VM.myCartListArray[tappedIndexPath.row].pointsPerUnit ?? 0)
                 print(calcValue, "Calculated Values")
                 if calcValue <= Int(self.pointBalance) ?? 0{
@@ -219,6 +220,9 @@ class MSP_MyCartVC: BaseViewController, popUpDelegate, MyCartDelegate {
                     self.checkoutView.isHidden = false
                     self.nodataFound.isHidden = true
                     self.myCartTableView.reloadData()
+                    if self.VM.myCartListArray.count != 0 {
+                        self.cartCountData = self.VM.myCartListArray[0].is_CartRedeemable ?? 0
+                    }
 //                    if self.VM.myCartListArray[0].Is_Redeemable ?? -2 == 1{
 //                        self.checkoutView.isHidden = false
 //

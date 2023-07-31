@@ -28,7 +28,7 @@ class MSP_EditAddressVC: BaseViewController, UITextFieldDelegate, DropDownDelega
         self.selectedState = vc.selectedState
         self.selectedCityID = 0
         self.selectedCityIdProtocol = 0
-        self.cityButton.setTitle("Select City", for: .normal)
+        self.cityButton.setTitle("Select District", for: .normal)
     }
     
     func cityDidTap(_ vc: MSP_DropDownVC) {
@@ -288,12 +288,12 @@ class MSP_EditAddressVC: BaseViewController, UITextFieldDelegate, DropDownDelega
                 self.present(vc!, animated: true, completion: nil)
             }
 
-       }else if cityButton.currentTitle == "Select City" || self.cityButton.currentTitle == "" || self.cityButton.currentTitle == nil{
+       }else if cityButton.currentTitle == "Select District" || self.cityButton.currentTitle == "" || self.cityButton.currentTitle == nil{
             DispatchQueue.main.async{
                 let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "PopupAlertOne_VC") as? PopupAlertOne_VC
                 vc!.delegate = self
                 vc!.titleInfo = ""
-                    vc!.descriptionInfo = "Select City"
+                    vc!.descriptionInfo = "Select District"
                 
                 vc!.modalPresentationStyle = .overFullScreen
                 vc!.modalTransitionStyle = .crossDissolve

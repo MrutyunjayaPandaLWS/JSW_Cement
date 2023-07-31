@@ -187,7 +187,7 @@ class MSP_PointStatementVC: BaseViewController , DateSelectedDelegate, popUpDele
     
     @IBAction func todayBtn(_ sender: Any) {
         
-        let yesterday = "\(Calendar.current.date(byAdding: .day, value: 1, to: Date())!)"
+        let yesterday = "\(Calendar.current.date(byAdding: .day, value: 0, to: Date())!)"
         let today = yesterday.split(separator: " ")
         let desiredDateFormat = convertDateFormater("\(today[0])", fromDate: "yyyy-MM-dd", toDate: "yyyy-MM-dd")
         self.fromDateLbl.text = "\(desiredDateFormat)"
@@ -215,7 +215,7 @@ class MSP_PointStatementVC: BaseViewController , DateSelectedDelegate, popUpDele
     
     @IBAction func yesterDateActBtn(_ sender: Any) {
         let today = Date().description.split(separator: " ")
-        let yesterday = "\(Calendar.current.date(byAdding: .day, value: 0, to: Date())!)"
+        let yesterday = "\(Calendar.current.date(byAdding: .day, value: -1, to: Date())!)"
         let chanegeFormate = yesterday.split(separator: " ")
         let desiredDateFormat = convertDateFormater("\(chanegeFormate[0])", fromDate: "yyyy-MM-dd", toDate: "yyyy-MM-dd")
         let desiredDate = convertDateFormater("\(today[0])", fromDate: "yyyy-MM-dd", toDate: "yyyy-MM-dd")
@@ -259,9 +259,7 @@ class MSP_PointStatementVC: BaseViewController , DateSelectedDelegate, popUpDele
         let yesterday = "\(Calendar.current.date(byAdding: .day, value: 1, to: Date())!)"
         let today = yesterday.split(separator: " ")
         let desiredDateFormat = convertDateFormater("\(today[0])", fromDate: "yyyy-MM-dd", toDate: "yyyy-MM-dd")
-        self.fromDateLbl.text = "\(desiredDateFormat)"
-        self.fromDateLbl.text = "\(desiredMonthDate)"
-        self.fromDateLbl.textColor = .black
+        
         self.toDateLbl.text = "\(desiredDateFormat)"
         self.toDateLbl.textColor = .black
         
@@ -276,6 +274,17 @@ class MSP_PointStatementVC: BaseViewController , DateSelectedDelegate, popUpDele
             self.sixMonthOutBtn.backgroundColor = .white
             self.todayOutBtn.backgroundColor = .white
        // }
+        if let startDate = getCurrentMonthStartDate() {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            let startDateString = dateFormatter.string(from: startDate)
+            self.fromDateLbl.text = "\(startDateString)"
+            self.fromDateLbl.text = "\(startDateString)"
+            self.fromDateLbl.textColor = .black
+            print("The current month's starting date is: \(startDateString)")
+        } else {
+            print("Failed to get the current month's starting date.")
+        }
         
         self.yesterdaysOutBtn.setTitleColor(UIColor.black, for: UIControl.State.normal)
         self.todayOutBtn.setTitleColor(UIColor.black, for: UIControl.State.normal)
@@ -284,6 +293,23 @@ class MSP_PointStatementVC: BaseViewController , DateSelectedDelegate, popUpDele
         self.sixMonthOutBtn.setTitleColor(UIColor.black, for: UIControl.State.normal)
         
     }
+    
+    
+    
+    func getCurrentMonthStartDate() -> Date? {
+        let calendar = Calendar.current
+        let currentDate = Date()
+        let components = calendar.dateComponents([.year, .month], from: currentDate)
+        var firstDayComponents = DateComponents()
+        firstDayComponents.year = components.year
+        firstDayComponents.month = components.month
+        firstDayComponents.day = 1
+        let firstDayOfCurrentMonth = calendar.date(from: firstDayComponents)
+        return firstDayOfCurrentMonth
+    }
+
+    // Get the current month's starting date
+    
    
 
     
@@ -293,7 +319,7 @@ class MSP_PointStatementVC: BaseViewController , DateSelectedDelegate, popUpDele
         let exactPrivDate = previousMonth.split(separator: " ")
         let desiredMonthDate = convertDateFormater("\(exactPrivDate[0])", fromDate: "yyyy-MM-dd", toDate: "yyyy-MM-dd")
     
-        let yesterday = "\(Calendar.current.date(byAdding: .day, value: 1, to: Date())!)"
+        let yesterday = "\(Calendar.current.date(byAdding: .day, value: 0, to: Date())!)"
         let today = yesterday.split(separator: " ")
        // let desiredDateFormat = convertDateFormater("\(today[0])", fromDate: "yyyy-MM-dd", toDate: "yyyy-MM-dd")
         
@@ -340,7 +366,7 @@ class MSP_PointStatementVC: BaseViewController , DateSelectedDelegate, popUpDele
        // let today = Date().description.split(separator: " ")
         let previousMonth = "\(Calendar.current.date(byAdding: .day, value: -365, to: Date())!)"
         let exactPrivDate = previousMonth.split(separator: " ")
-        let yesterday = "\(Calendar.current.date(byAdding: .day, value: 1, to: Date())!)"
+        let yesterday = "\(Calendar.current.date(byAdding: .day, value: 0, to: Date())!)"
         let today = yesterday.split(separator: " ")
         let desiredTodaysDate = convertDateFormater("\(today[0])", fromDate: "yyyy-MM-dd", toDate: "yyyy-MM-dd")
         

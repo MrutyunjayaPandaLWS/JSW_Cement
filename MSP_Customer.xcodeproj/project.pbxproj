@@ -57,8 +57,6 @@
 		25579C2929324163009FBD32 /* HistoryNotificationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25579C2829324162009FBD32 /* HistoryNotificationsViewModel.swift */; };
 		25579C3429324523009FBD32 /* DreamGiftListingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25579C3129324523009FBD32 /* DreamGiftListingViewModel.swift */; };
 		25579C3529324523009FBD32 /* DreamGiftDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25579C3329324523009FBD32 /* DreamGiftDetailsViewModel.swift */; };
-		25579C392932457A009FBD32 /* MyDreamGiftModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25579C372932457A009FBD32 /* MyDreamGiftModels.swift */; };
-		25579C3A2932457A009FBD32 /* LstDreamGift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25579C382932457A009FBD32 /* LstDreamGift.swift */; };
 		25579C3D293245EB009FBD32 /* RemoveGiftModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25579C3C293245EA009FBD32 /* RemoveGiftModels.swift */; };
 		255F147629320B7E003281F6 /* ChatListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255F147129320B7E003281F6 /* ChatListViewModel.swift */; };
 		255F147729320B7E003281F6 /* LodgeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255F147329320B7E003281F6 /* LodgeListViewModel.swift */; };
@@ -97,6 +95,8 @@
 		25ABAD1829484D8400B8B370 /* LstCustomerIdentityInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25ABAD1429484D8400B8B370 /* LstCustomerIdentityInfo.swift */; };
 		25ABAD1929484D8400B8B370 /* MyProfileModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25ABAD1529484D8400B8B370 /* MyProfileModels.swift */; };
 		25ABAD1A29484D8400B8B370 /* LstCustomerJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25ABAD1629484D8400B8B370 /* LstCustomerJson.swift */; };
+		25B9CAA92A754208000BE669 /* MyDreamGiftModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B9CAA72A754207000BE669 /* MyDreamGiftModels.swift */; };
+		25B9CAAA2A754208000BE669 /* LstDreamGift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B9CAA82A754208000BE669 /* LstDreamGift.swift */; };
 		25C0C38F29371A3500BA95BB /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C0C38E29371A3500BA95BB /* LoginViewModel.swift */; };
 		25C0C391293722C300BA95BB /* PopupAlertOne_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C0C390293722C300BA95BB /* PopupAlertOne_VC.swift */; };
 		25C0C3942937242500BA95BB /* MemberVerificationModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C0C3932937242500BA95BB /* MemberVerificationModels.swift */; };
@@ -393,8 +393,6 @@
 		25579C2829324162009FBD32 /* HistoryNotificationsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryNotificationsViewModel.swift; sourceTree = "<group>"; };
 		25579C3129324523009FBD32 /* DreamGiftListingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DreamGiftListingViewModel.swift; sourceTree = "<group>"; };
 		25579C3329324523009FBD32 /* DreamGiftDetailsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DreamGiftDetailsViewModel.swift; sourceTree = "<group>"; };
-		25579C372932457A009FBD32 /* MyDreamGiftModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDreamGiftModels.swift; sourceTree = "<group>"; };
-		25579C382932457A009FBD32 /* LstDreamGift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LstDreamGift.swift; sourceTree = "<group>"; };
 		25579C3C293245EA009FBD32 /* RemoveGiftModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoveGiftModels.swift; sourceTree = "<group>"; };
 		255F147129320B7E003281F6 /* ChatListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListViewModel.swift; sourceTree = "<group>"; };
 		255F147329320B7E003281F6 /* LodgeListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LodgeListViewModel.swift; sourceTree = "<group>"; };
@@ -436,6 +434,8 @@
 		25ABAD1429484D8400B8B370 /* LstCustomerIdentityInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LstCustomerIdentityInfo.swift; sourceTree = "<group>"; };
 		25ABAD1529484D8400B8B370 /* MyProfileModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfileModels.swift; sourceTree = "<group>"; };
 		25ABAD1629484D8400B8B370 /* LstCustomerJson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LstCustomerJson.swift; sourceTree = "<group>"; };
+		25B9CAA72A754207000BE669 /* MyDreamGiftModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDreamGiftModels.swift; sourceTree = "<group>"; };
+		25B9CAA82A754208000BE669 /* LstDreamGift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LstDreamGift.swift; sourceTree = "<group>"; };
 		25C0C38E29371A3500BA95BB /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		25C0C390293722C300BA95BB /* PopupAlertOne_VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupAlertOne_VC.swift; sourceTree = "<group>"; };
 		25C0C3932937242500BA95BB /* MemberVerificationModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberVerificationModels.swift; sourceTree = "<group>"; };
@@ -1044,8 +1044,8 @@
 		25579C362932457A009FBD32 /* MyDreamGift */ = {
 			isa = PBXGroup;
 			children = (
-				25579C372932457A009FBD32 /* MyDreamGiftModels.swift */,
-				25579C382932457A009FBD32 /* LstDreamGift.swift */,
+				25B9CAA72A754207000BE669 /* MyDreamGiftModels.swift */,
+				25B9CAA82A754208000BE669 /* LstDreamGift.swift */,
 			);
 			path = MyDreamGift;
 			sourceTree = "<group>";
@@ -1928,13 +1928,6 @@
 			path = PointStatements;
 			sourceTree = "<group>";
 		};
-		845C101B2931F85F004BEEBB /* MyOrder */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = MyOrder;
-			sourceTree = "<group>";
-		};
 		845C101C2931F892004BEEBB /* DefaultAddress */ = {
 			isa = PBXGroup;
 			children = (
@@ -2355,7 +2348,6 @@
 				845C10142931F698004BEEBB /* ClaimPoints */,
 				25FF751F2934C5EB0083E613 /* PopUpView */,
 				2556581929360C8C004AC7A4 /* Pancard */,
-				845C101B2931F85F004BEEBB /* MyOrder */,
 				845C101A2931F7F3004BEEBB /* PointStatements */,
 				845C10182931F71C004BEEBB /* NotificationListing */,
 				845C10172931F70A004BEEBB /* Summary */,
@@ -2633,6 +2625,7 @@
 				84C79324296FDAB100D9575E /* ObjCustomerDashboardList1.swift in Sources */,
 				252CA09229923639006200D9 /* LstDreamGift1.swift in Sources */,
 				2568004E2937876A00E625DB /* CustomerBasicInfoListJson.swift in Sources */,
+				25B9CAA92A754208000BE669 /* MyDreamGiftModels.swift in Sources */,
 				84C79323296FDAB100D9575E /* DashboardBannerImageModels.swift in Sources */,
 				2547DB35296EF9FB00047516 /* ClaimPointsModelView.swift in Sources */,
 				84FB8C7129274CF700FF2C1D /* NotificationExtension.swift in Sources */,
@@ -2658,7 +2651,6 @@
 				25579C3429324523009FBD32 /* DreamGiftListingViewModel.swift in Sources */,
 				84C793462970094A00D9575E /* DashboardModels.swift in Sources */,
 				84AF8658292F5015008F4D00 /* MSP_Support.swift in Sources */,
-				25579C3A2932457A009FBD32 /* LstDreamGift.swift in Sources */,
 				84140DD9298D11100090DD44 /* LstAttributesDetails21.swift in Sources */,
 				256800452937779400E625DB /* ShippingAddressViewModel.swift in Sources */,
 				25FB65BE293B132E000B678A /* LoginModels.swift in Sources */,
@@ -2750,7 +2742,6 @@
 				84A085202A028DAD004808E6 /* MultiShadowViewX.swift in Sources */,
 				841E20282931EE9900BB6E96 /* URLMethods.swift in Sources */,
 				84DC204429FAAB9B00D1E2E1 /* FG_MyRedemptionDetailsTVC.swift in Sources */,
-				25579C392932457A009FBD32 /* MyDreamGiftModels.swift in Sources */,
 				259A2AE929388498006626F9 /* SideMenuModel.swift in Sources */,
 				25C789D62972A556004140FE /* TCModels.swift in Sources */,
 				255F14A729320BB3003281F6 /* otherInfoTableViewCell.swift in Sources */,
@@ -2838,6 +2829,7 @@
 				84DB497D292FA934000789E6 /* MSP_ClaimPointsPopUpVC.swift in Sources */,
 				84826A5A2992A61A00836F4F /* MSP_MyRedemptionDetails.swift in Sources */,
 				255F147829320B7E003281F6 /* CreateNewQueryViewModel.swift in Sources */,
+				25B9CAAA2A754208000BE669 /* LstDreamGift.swift in Sources */,
 				255F14A029320BB3003281F6 /* senderImageTableViewCell.swift in Sources */,
 				25579C03293226DD009FBD32 /* MyRedemptionsListViewModel.swift in Sources */,
 				2552E188293B5A8000962F2E /* MSP_ClaimPointsModel.swift in Sources */,
@@ -2945,7 +2937,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
@@ -2964,7 +2956,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Loyltwo3ks-Pvt-Ltd.JSW-Cement.JSWNotificationServices";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "JSW-CementNotificationService-App Store";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "JSW-Cement-Notification-Development";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -2976,7 +2968,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
@@ -2995,7 +2987,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Loyltwo3ks-Pvt-Ltd.JSW-Cement.JSWNotificationServices";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "JSW-CementNotificationService-App Store";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "JSW-Cement-Notification-Development";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -3128,7 +3120,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = MSP_Customer/MSP_Customer.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -3160,7 +3152,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Loyltwo3ks-Pvt-Ltd.JSW-Cement";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "JSW-Cement-App Store";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "JSW-Cement-Dev";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "MSP_Customer/Resources/MSP_Customer-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -3180,7 +3172,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = MSP_Customer/MSP_Customer.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
@@ -3211,7 +3203,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Loyltwo3ks-Pvt-Ltd.JSW-Cement";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "JSW-Cement-App Store";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "JSW-Cement-Dev";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "MSP_Customer/Resources/MSP_Customer-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;

@@ -21,10 +21,12 @@ class JSW_ChangePasswordVC: BaseViewController {
     var newPassword = ""
     var mobileNumber = ""
     let userID = UserDefaults.standard.string(forKey: "UserID") ?? ""
+    let oldPassword =  UserDefaults.standard.string(forKey: "Password") ?? ""
     var VM = JSW_ChangePasswordVM()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.VM.VC = self
+        print(oldPassword)
         NotificationCenter.default.addObserver(self, selector: #selector(updatePass), name: Notification.Name.goToDashBoard, object: nil)
     }
 
@@ -36,7 +38,9 @@ class JSW_ChangePasswordVC: BaseViewController {
         self.navigationController?.popViewController(animated: true)
     }
     @IBAction func submitButton(_ sender: Any) {
-        if self.newPasswordTF.text?.count == 0{
+        if oldPassword != oldPasswordTF.text{
+            self.view.makeToast("Please enter the valid old password", duration: 2.0, position: .bottom)
+        }else if self.newPasswordTF.text?.count == 0{
             self.view.makeToast("Enter new password", duration: 2.0, position: .bottom)
         }else if self.confirmPasswordTF.text?.count == 0{
             self.view.makeToast("Enter confirm password", duration: 2.0, position: .bottom)

@@ -13,25 +13,26 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 
 import Foundation
 struct DistrictModels : Codable {
-	let returnMessage : String?
-	let returnValue : Int?
-	let totalRecords : Int?
-	let lstDistrict : [LstDistrict]?
+    let returnMessage : String?
+    let returnValue : Int?
+    let totalRecords : Int?
+    let lstDistrict : [LstDistrict]?
 
-	enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
 
-		case returnMessage = "ReturnMessage"
-		case returnValue = "ReturnValue"
-		case totalRecords = "TotalRecords"
-		case lstDistrict = "lstDistrict"
-	}
+        case returnMessage = "ReturnMessage"
+        case returnValue = "ReturnValue"
+        case totalRecords = "TotalRecords"
+        case lstDistrict = "lstDistrict"
+    }
 
-	init(from decoder: Decoder) throws {
-		let values = try decoder.container(keyedBy: CodingKeys.self)
-		returnMessage = try values.decodeIfPresent(String.self, forKey: .returnMessage)
-		returnValue = try values.decodeIfPresent(Int.self, forKey: .returnValue)
-		totalRecords = try values.decodeIfPresent(Int.self, forKey: .totalRecords)
-		lstDistrict = try values.decodeIfPresent([LstDistrict].self, forKey: .lstDistrict)
-	}
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        returnMessage = try values.decodeIfPresent(String.self, forKey: .returnMessage)
+        returnValue = try values.decodeIfPresent(Int.self, forKey: .returnValue)
+        totalRecords = try values.decodeIfPresent(Int.self, forKey: .totalRecords)
+        lstDistrict = try values.decodeIfPresent([LstDistrict].self, forKey: .lstDistrict)
+    }
 
 }
+

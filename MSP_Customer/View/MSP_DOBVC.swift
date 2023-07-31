@@ -34,7 +34,8 @@ class MSP_DOBVC: UIViewController {
                 datePicker.minimumDate = Calendar.current.date(byAdding: .day, value: -30, to: Date())
             }else{
                 datePicker.maximumDate = Date()
-                datePicker.minimumDate = Calendar.current.date(byAdding: .day, value: -7, to: Date())
+                datePicker.minimumDate = Calendar.current.date(byAdding: .day, value: -30, to: Date())
+//                datePicker.minimumDate = Calendar.current.date(byAdding: .day, value: -7, to: Date())
             }
             
             

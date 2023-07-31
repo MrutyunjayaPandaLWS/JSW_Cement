@@ -59,6 +59,7 @@ class MSP_MyDreamGiftDetailsVC: BaseViewController, popUpDelegate {
     var isRedeemable = 0
     var totalPts = 0
     var desiredDate = ""
+    var dreamGiftData = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         self.VM.VC = self
@@ -128,12 +129,12 @@ class MSP_MyDreamGiftDetailsVC: BaseViewController, popUpDelegate {
     @IBAction func redeemBtn(_ sender: Any) {
         print(verifiedStatus,"ljsdkhjkhi")
         
-        if self.verifiedStatus != 1{
+        if self.dreamGiftData != 1{
             DispatchQueue.main.async{
                 let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "PopupAlertOne_VC") as? PopupAlertOne_VC
                 vc!.delegate = self
                 vc!.titleInfo = ""
-                vc!.descriptionInfo = "You are not allowled to redeem .Please contact your administrator"
+                vc!.descriptionInfo = "Please submit your identity proof"
                 vc!.modalPresentationStyle = .overCurrentContext
                 vc!.modalTransitionStyle = .crossDissolve
                 self.present(vc!, animated: true, completion: nil)

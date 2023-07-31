@@ -69,7 +69,8 @@ class MSP_DropDownVC: BaseViewController{
         if isComeFrom == 1{
              self.stateListingAPI(CountryID: countryIDfromPreviousScreen)
          }else if isComeFrom == 2{
-             self.cityListingAPI(stateID: stateIDfromPreviousScreen)
+             districtListingAPI(stateID: stateIDfromPreviousScreen)
+//             self.cityListingAPI(stateID: stateIDfromPreviousScreen)
          }else if isComeFrom == 3{
              self.preferredLanguageApi()
          }else if isComeFrom == 4 {
@@ -132,6 +133,15 @@ class MSP_DropDownVC: BaseViewController{
         self.VM.statelisting(parameters: parameterJSON)
     }
 
+    func districtListingAPI(stateID: Int){
+           let parameterJSON = [
+               "StateId":"\(stateIDfromPreviousScreen)"
+           ] as  [String:Any]
+           print(parameterJSON)
+           self.VM.districtlisting(parameters: parameterJSON)
+       }
+    
+    
     func cityListingAPI(stateID: Int){
         let parameterJSON = [
             "ActionType":"2",
@@ -214,7 +224,7 @@ extension MSP_DropDownVC: UITableViewDataSource, UITableViewDelegate{
           
             return self.VM.stateArray.count
         }else if isComeFrom == 2{
-            return self.VM.cityArray.count
+            return self.VM.districtArray.count
         }else if isComeFrom == 3{
             return self.VM.preferredLanguageArray.count
         }else if isComeFrom == 4{
@@ -241,7 +251,7 @@ extension MSP_DropDownVC: UITableViewDataSource, UITableViewDelegate{
        if isComeFrom == 1{
             cell!.dropdownInfo.text = self.VM.stateArray[indexPath.row].stateName ?? ""
         }else if isComeFrom == 2{
-            cell!.dropdownInfo.text = self.VM.cityArray[indexPath.row].cityName ?? ""
+            cell!.dropdownInfo.text = self.VM.districtArray[indexPath.row].districtName ?? ""
         }else if isComeFrom == 3{
             cell!.dropdownInfo.text = self.VM.preferredLanguageArray[indexPath.row].attributeValue ?? ""
         }else if isComeFrom == 4{
@@ -267,8 +277,8 @@ extension MSP_DropDownVC: UITableViewDataSource, UITableViewDelegate{
             self.delegate?.stateDidTap(self)
             self.dismiss(animated: true, completion: nil)
         }else if isComeFrom == 2{
-            self.selectedCity = self.VM.cityArray[indexPath.row].cityName ?? ""
-            self.selectedCityID = self.VM.cityArray[indexPath.row].cityId ?? -1
+            self.selectedCity = self.VM.districtArray[indexPath.row].districtName ?? ""
+            self.selectedCityID = self.VM.districtArray[indexPath.row].districtId ?? -1
             self.delegate?.cityDidTap(self)
             self.dismiss(animated: true, completion: nil)
         }else if isComeFrom == 3{

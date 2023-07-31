@@ -365,17 +365,7 @@ class MSP_ProductCatalogueVC: BaseViewController, AddedToCartOrPlannerDelegate, 
                     let calcValue = self.totalCartValue + Int(self.VM.redemptionCatalogueArray[tappedIndex.row].pointsRequired!)
                     if calcValue <= Int(self.pointBalance) ?? 0{
                         self.selectedCatalogueID = self.VM.redemptionCatalogueArray[tappedIndex.row].catalogueId ?? 0
-                        if self.verifiedStatus != 1{
-                            DispatchQueue.main.async{
-                                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "PopupAlertOne_VC") as? PopupAlertOne_VC
-                                vc!.delegate = self
-                                vc!.titleInfo = ""
-                                vc!.descriptionInfo = "You are not allowed to redeem. Please contact your adminstration"
-                                vc!.modalPresentationStyle = .overCurrentContext
-                                vc!.modalTransitionStyle = .crossDissolve
-                                self.present(vc!, animated: true, completion: nil)
-                            }
-                        }else{
+
                             if self.VM.redemptionCatalogueArray[tappedIndex.row].is_Redeemable ?? 0 == 1{
                                 addToCartApi()
                             }else{
@@ -383,14 +373,14 @@ class MSP_ProductCatalogueVC: BaseViewController, AddedToCartOrPlannerDelegate, 
                                     let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "PopupAlertOne_VC") as? PopupAlertOne_VC
                                     vc!.delegate = self
                                     vc!.titleInfo = ""
-                                    vc!.descriptionInfo = "You are not allowed to redeem. Please contact your adminstration"
+                                    vc!.descriptionInfo = "Please submit your identity proof"
                                     vc!.modalPresentationStyle = .overCurrentContext
                                     vc!.modalTransitionStyle = .crossDissolve
                                     self.present(vc!, animated: true, completion: nil)
                                 }
                             }
                             
-                        }
+
                        
                     }else{
                         DispatchQueue.main.async{
@@ -435,6 +425,7 @@ class MSP_ProductCatalogueVC: BaseViewController, AddedToCartOrPlannerDelegate, 
             vc.termsandContions = self.VM.redemptionCatalogueArray[tappedIndex.row].termsCondition ?? ""
             vc.selectedCatalogueID = self.VM.redemptionCatalogueArray[tappedIndex.row].catalogueId ?? 0
             vc.catalogueId = self.VM.redemptionCatalogueArray[tappedIndex.row].catalogueId ?? 0
+            vc.dreamRedeemData = self.VM.redemptionCatalogueArray[tappedIndex.row].is_Redeemable ?? 0
             vc.selectedPtsRange = self.selectedPtsRange
             vc.categoryId = self.categoryId
             //                vc.tdspercentage1 = self.VM.redemptionCatalogueArray[indexPath.row].TDSPercentage ?? 0.0

@@ -1,4 +1,15 @@
+/*
+Copyright (c) 2023 Swift Models Generated from JSON powered by http://www.json4swift.com
 
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+For support, please feel free to contact me at https://www.linkedin.com/in/syedabsar
+
+*/
 
 import Foundation
 struct CatalogueSaveCartDetailListResponse1 : Codable {
@@ -14,7 +25,8 @@ struct CatalogueSaveCartDetailListResponse1 : Codable {
     let partialPaymentCash : Int?
     let deliveryType : String?
     let noOfQuantity : Int?
-    let noOfPointsDebit : Int?
+    let noOfPointsDebit : Double?
+    let noOfCartQuantity : Int?
     let totalCash : Int?
     let redemptionRefno : String?
     let redemptionId : Int?
@@ -25,7 +37,7 @@ struct CatalogueSaveCartDetailListResponse1 : Codable {
     let vendorName : String?
     let isPlanner : Bool?
     let redemptionPlannerId : Int?
-    let pointBalance : Int?
+    let pointBalance : Double?
     let averageEarning : String?
     let actualRedemptionDate : String?
     let pointReqToAcheiveProduct : Int?
@@ -38,7 +50,7 @@ struct CatalogueSaveCartDetailListResponse1 : Codable {
     let commandName : String?
     let activeStatus : Bool?
     let msqa : Int?
-    let redeemablePointBalance : Int?
+    let redeemablePointBalance : Double?
     let minimumStockQunty : Int?
     let redeemableEncashBalance : Int?
     let redeemableAverageEarning : String?
@@ -93,6 +105,15 @@ struct CatalogueSaveCartDetailListResponse1 : Codable {
     let applicableTds : Double?
     let sumOfRedeemableWithTDS : Double?
     let is_Redeemable : Int?
+    let is_CartRedeemable : Int?
+    let result : Int?
+    let averageEarningperDay : String?
+    let daysRequiredToAchieveGoal : String?
+    let averageEarningPerMonth : String?
+    let monthsRequiredToAchieveGoal : String?
+    let achievementDateMonthWize : String?
+    let achievementDateDayWize : String?
+    let redeemedCatalogueType : String?
     let catogoryId : Int?
     let catalogueBrandId : Int?
     let catalogueBrandName : String?
@@ -139,6 +160,7 @@ struct CatalogueSaveCartDetailListResponse1 : Codable {
         case deliveryType = "deliveryType"
         case noOfQuantity = "noOfQuantity"
         case noOfPointsDebit = "noOfPointsDebit"
+        case noOfCartQuantity = "noOfCartQuantity"
         case totalCash = "totalCash"
         case redemptionRefno = "redemptionRefno"
         case redemptionId = "redemptionId"
@@ -217,6 +239,15 @@ struct CatalogueSaveCartDetailListResponse1 : Codable {
         case applicableTds = "applicableTds"
         case sumOfRedeemableWithTDS = "sumOfRedeemableWithTDS"
         case is_Redeemable = "is_Redeemable"
+        case is_CartRedeemable = "is_CartRedeemable"
+        case result = "result"
+        case averageEarningperDay = "averageEarningperDay"
+        case daysRequiredToAchieveGoal = "daysRequiredToAchieveGoal"
+        case averageEarningPerMonth = "averageEarningPerMonth"
+        case monthsRequiredToAchieveGoal = "monthsRequiredToAchieveGoal"
+        case achievementDateMonthWize = "achievementDateMonthWize"
+        case achievementDateDayWize = "achievementDateDayWize"
+        case redeemedCatalogueType = "redeemedCatalogueType"
         case catogoryId = "catogoryId"
         case catalogueBrandId = "catalogueBrandId"
         case catalogueBrandName = "catalogueBrandName"
@@ -263,7 +294,8 @@ struct CatalogueSaveCartDetailListResponse1 : Codable {
         partialPaymentCash = try values.decodeIfPresent(Int.self, forKey: .partialPaymentCash)
         deliveryType = try values.decodeIfPresent(String.self, forKey: .deliveryType)
         noOfQuantity = try values.decodeIfPresent(Int.self, forKey: .noOfQuantity)
-        noOfPointsDebit = try values.decodeIfPresent(Int.self, forKey: .noOfPointsDebit)
+        noOfPointsDebit = try values.decodeIfPresent(Double.self, forKey: .noOfPointsDebit)
+        noOfCartQuantity = try values.decodeIfPresent(Int.self, forKey: .noOfCartQuantity)
         totalCash = try values.decodeIfPresent(Int.self, forKey: .totalCash)
         redemptionRefno = try values.decodeIfPresent(String.self, forKey: .redemptionRefno)
         redemptionId = try values.decodeIfPresent(Int.self, forKey: .redemptionId)
@@ -274,7 +306,7 @@ struct CatalogueSaveCartDetailListResponse1 : Codable {
         vendorName = try values.decodeIfPresent(String.self, forKey: .vendorName)
         isPlanner = try values.decodeIfPresent(Bool.self, forKey: .isPlanner)
         redemptionPlannerId = try values.decodeIfPresent(Int.self, forKey: .redemptionPlannerId)
-        pointBalance = try values.decodeIfPresent(Int.self, forKey: .pointBalance)
+        pointBalance = try values.decodeIfPresent(Double.self, forKey: .pointBalance)
         averageEarning = try values.decodeIfPresent(String.self, forKey: .averageEarning)
         actualRedemptionDate = try values.decodeIfPresent(String.self, forKey: .actualRedemptionDate)
         pointReqToAcheiveProduct = try values.decodeIfPresent(Int.self, forKey: .pointReqToAcheiveProduct)
@@ -287,7 +319,7 @@ struct CatalogueSaveCartDetailListResponse1 : Codable {
         commandName = try values.decodeIfPresent(String.self, forKey: .commandName)
         activeStatus = try values.decodeIfPresent(Bool.self, forKey: .activeStatus)
         msqa = try values.decodeIfPresent(Int.self, forKey: .msqa)
-        redeemablePointBalance = try values.decodeIfPresent(Int.self, forKey: .redeemablePointBalance)
+        redeemablePointBalance = try values.decodeIfPresent(Double.self, forKey: .redeemablePointBalance)
         minimumStockQunty = try values.decodeIfPresent(Int.self, forKey: .minimumStockQunty)
         redeemableEncashBalance = try values.decodeIfPresent(Int.self, forKey: .redeemableEncashBalance)
         redeemableAverageEarning = try values.decodeIfPresent(String.self, forKey: .redeemableAverageEarning)
@@ -342,6 +374,15 @@ struct CatalogueSaveCartDetailListResponse1 : Codable {
         applicableTds = try values.decodeIfPresent(Double.self, forKey: .applicableTds)
         sumOfRedeemableWithTDS = try values.decodeIfPresent(Double.self, forKey: .sumOfRedeemableWithTDS)
         is_Redeemable = try values.decodeIfPresent(Int.self, forKey: .is_Redeemable)
+        is_CartRedeemable = try values.decodeIfPresent(Int.self, forKey: .is_CartRedeemable)
+        result = try values.decodeIfPresent(Int.self, forKey: .result)
+        averageEarningperDay = try values.decodeIfPresent(String.self, forKey: .averageEarningperDay)
+        daysRequiredToAchieveGoal = try values.decodeIfPresent(String.self, forKey: .daysRequiredToAchieveGoal)
+        averageEarningPerMonth = try values.decodeIfPresent(String.self, forKey: .averageEarningPerMonth)
+        monthsRequiredToAchieveGoal = try values.decodeIfPresent(String.self, forKey: .monthsRequiredToAchieveGoal)
+        achievementDateMonthWize = try values.decodeIfPresent(String.self, forKey: .achievementDateMonthWize)
+        achievementDateDayWize = try values.decodeIfPresent(String.self, forKey: .achievementDateDayWize)
+        redeemedCatalogueType = try values.decodeIfPresent(String.self, forKey: .redeemedCatalogueType)
         catogoryId = try values.decodeIfPresent(Int.self, forKey: .catogoryId)
         catalogueBrandId = try values.decodeIfPresent(Int.self, forKey: .catalogueBrandId)
         catalogueBrandName = try values.decodeIfPresent(String.self, forKey: .catalogueBrandName)

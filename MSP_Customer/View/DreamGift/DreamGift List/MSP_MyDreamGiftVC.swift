@@ -40,6 +40,7 @@ class MSP_MyDreamGiftVC: BaseViewController, AddOrRemoveGiftDelegate, popUpDeleg
     var giftName = ""
     var contractorName = ""
     var giftStatusId = 0
+    var dreamGiftData = 0
     
     
     override func viewDidLoad() {
@@ -84,38 +85,54 @@ class MSP_MyDreamGiftVC: BaseViewController, AddOrRemoveGiftDelegate, popUpDeleg
     
     func redeemGift(_ cell: MSP_MyDreamGiftTVC) {
         guard let tappedIndexPath = myDreamGiftTableView.indexPath(for: cell) else {return}
-        if cell.redeemButton.tag == tappedIndexPath.row{
+        
+        let dreamGiftData = self.VM.myDreamGiftListArray[tappedIndexPath.row].is_DreamGiftRedeemable ?? 0
+        if dreamGiftData != 1{
+            let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "PopupAlertOne_VC") as? PopupAlertOne_VC
+            vc!.delegate = self
+            vc!.titleInfo = ""
+            vc!.descriptionInfo = "Please submit your identity proof"
+            vc!.modalPresentationStyle = .overCurrentContext
+            vc!.modalTransitionStyle = .crossDissolve
+            self.present(vc!, animated: true, completion: nil)
+            self.loaderView.isHidden = true
+            self.stopLoading()
             
+        }else{
+            
+            if cell.redeemButton.tag == tappedIndexPath.row{
+                
                 self.totalPoint = self.VM.myDreamGiftListArray[tappedIndexPath.row].pointsRequired ?? 0
                 self.dreamGiftID = self.VM.myDreamGiftListArray[tappedIndexPath.row].dreamGiftId ?? 0
                 self.giftName = self.VM.myDreamGiftListArray[tappedIndexPath.row].dreamGiftName ?? ""
                 self.contractorName = self.VM.myDreamGiftListArray[tappedIndexPath.row].contractorName ?? ""
                 self.giftStatusId = self.VM.myDreamGiftListArray[tappedIndexPath.row].giftStatusId ?? 0
-            if self.verifiedStatus != 1{
-                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "PopupAlertOne_VC") as? PopupAlertOne_VC
-                vc!.delegate = self
-                vc!.titleInfo = ""
-                vc!.descriptionInfo = "You are not allowled to redeem .Please contact your administrator"
-                vc!.modalPresentationStyle = .overCurrentContext
-                vc!.modalTransitionStyle = .crossDissolve
-                self.present(vc!, animated: true, completion: nil)
-                self.loaderView.isHidden = true
-                self.stopLoading()
+                if self.verifiedStatus != 1{
+                    let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "PopupAlertOne_VC") as? PopupAlertOne_VC
+                    vc!.delegate = self
+                    vc!.titleInfo = ""
+                    vc!.descriptionInfo = "You are not allowled to redeem .Please contact your administrator"
+                    vc!.modalPresentationStyle = .overCurrentContext
+                    vc!.modalTransitionStyle = .crossDissolve
+                    self.present(vc!, animated: true, completion: nil)
+                    self.loaderView.isHidden = true
+                    self.stopLoading()
+                    
+                }else{
+                    
+                    let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "MSP_DefaultAddressVC") as! MSP_DefaultAddressVC
+                    vc.redemptionTypeId = 3
+                    vc.isComingFrom = "DreemGift"
+                    vc.totalPoint = self.totalPoint
+                    vc.dreamGiftID = self.dreamGiftID
+                    vc.giftName = self.giftName
+                    vc.contractorName = self.contractorName
+                    vc.giftStatusId = self.giftStatusId
+                    
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
                 
-            }else{
-
-                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "MSP_DefaultAddressVC") as! MSP_DefaultAddressVC
-                vc.redemptionTypeId = 3
-                vc.isComingFrom = "DreemGift"
-                vc.totalPoint = self.totalPoint
-                vc.dreamGiftID = self.dreamGiftID
-                vc.giftName = self.giftName
-                vc.contractorName = self.contractorName
-                vc.giftStatusId = self.giftStatusId
-
-                self.navigationController?.pushViewController(vc, animated: true)
             }
-
         }
     }
     func removeGift(_ cell: MSP_MyDreamGiftTVC) {
@@ -140,8 +157,8 @@ class MSP_MyDreamGiftVC: BaseViewController, AddOrRemoveGiftDelegate, popUpDeleg
     
     //APi:-
     func dreamGiftListApi(){
-       
-
+        
+        
         self.VM.myDreamGiftListArray.removeAll()
         let parameters = [
             "ActionType": "1",
@@ -405,6 +422,7 @@ extension MSP_MyDreamGiftVC: UITableViewDataSource, UITableViewDelegate {
         vc?.selectedDreamGiftId = "\(self.VM.myDreamGiftListArray[indexPath.row].dreamGiftId ?? 0)"
         vc?.selectedGiftStatusID = self.VM.myDreamGiftListArray[indexPath.row].giftStatusId ?? 0
         vc?.contractorName = self.VM.myDreamGiftListArray[indexPath.row].contractorName ?? ""
+        vc?.dreamGiftData = self.VM.myDreamGiftListArray[indexPath.row].is_DreamGiftRedeemable ?? 0
       //  vc?.isRedeemable = self.VM.myDreamGiftListArray[indexPath.row].is_Redeemable ?? 0
         self.navigationController?.pushViewController((vc)!, animated: true)
     }

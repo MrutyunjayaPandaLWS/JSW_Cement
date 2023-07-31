@@ -130,8 +130,8 @@ class MSP_DefaultAddressVC: BaseViewController, SendUpdatedAddressDelegate, popU
         vc.selectedmobile = self.VM.defaultAddressArray[0].mobile ?? "-"
         vc.selectedState = self.VM.defaultAddressArray[0].stateName ?? "-"
         vc.selectedStateID = self.VM.defaultAddressArray[0].stateId ?? 0
-        vc.selectedCity = self.VM.defaultAddressArray[0].cityName ?? "-"
-        vc.selectedCityID = self.VM.defaultAddressArray[0].cityId ?? 0
+        vc.selectedCity = self.VM.defaultAddressArray[0].districtName ?? "Select District"
+        vc.selectedCityID = self.VM.defaultAddressArray[0].districtId ?? 0
         vc.selectedaddress = self.VM.defaultAddressArray[0].address1 ?? "-"
         vc.selectedpincode = self.VM.defaultAddressArray[0].zip ?? "-"
         vc.selectedCountryId = self.VM.defaultAddressArray[0].countryId ?? 0
@@ -172,7 +172,7 @@ class MSP_DefaultAddressVC: BaseViewController, SendUpdatedAddressDelegate, popU
                     let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "PopupAlertOne_VC") as? PopupAlertOne_VC
                     vc!.delegate = self
                     vc!.titleInfo = ""
-                        vc!.descriptionInfo = "Shipping address requires: State,City,Address,Pin code and Mobile Number,details,Click on 'Edit' to edit and add details"
+                        vc!.descriptionInfo = "Shipping address requires: State,District,Address,Pin code and Mobile Number,details,Click on 'Edit' to edit and add details"
                    
                     vc!.modalPresentationStyle = .overCurrentContext
                     vc!.modalTransitionStyle = .crossDissolve

@@ -102,10 +102,10 @@ class RedemptionsCatalogueListViewModel{
                         if  tempListingArray.isEmpty == false{
                             
 
-                                self.VC!.noofelements = tempListingArray.count
+                            self.VC?.noofelements = tempListingArray.count
                             self.redemptionCatalogueArray =  self.redemptionCatalogueArray + tempListingArray
                             self.redemptionCataloguesArray = self.redemptionCatalogueArray
-                            print(self.VC!.noofelements,"TempQueryList")
+                            print(self.VC?.noofelements,"TempQueryList")
                             print(self.redemptionCatalogueArray.count, "Product Catalogue List Count")
                             self.productsArray = self.redemptionCatalogueArray
                             //}

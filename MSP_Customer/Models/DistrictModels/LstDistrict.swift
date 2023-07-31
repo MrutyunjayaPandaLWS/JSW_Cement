@@ -13,31 +13,35 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 
 import Foundation
 struct LstDistrict : Codable {
-	let row : Int?
-	let districtCode : String?
-	let districtId : Int?
-	let districtName : String?
-	let isActive : Bool?
-	let stateId : Int?
+    let districtId : Int?
+    let stateId : Int?
+    let districtName : String?
+    let districtCode : String?
+    let isActive : Bool?
+    let totalRows : Int?
+    let row : Int?
 
-	enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
 
-		case row = "Row"
-		case districtCode = "DistrictCode"
-		case districtId = "DistrictId"
-		case districtName = "DistrictName"
-		case isActive = "IsActive"
-		case stateId = "StateId"
-	}
+        case districtId = "districtId"
+        case stateId = "stateId"
+        case districtName = "districtName"
+        case districtCode = "districtCode"
+        case isActive = "isActive"
+        case totalRows = "totalRows"
+        case row = "row"
+    }
 
-	init(from decoder: Decoder) throws {
-		let values = try decoder.container(keyedBy: CodingKeys.self)
-		row = try values.decodeIfPresent(Int.self, forKey: .row)
-		districtCode = try values.decodeIfPresent(String.self, forKey: .districtCode)
-		districtId = try values.decodeIfPresent(Int.self, forKey: .districtId)
-		districtName = try values.decodeIfPresent(String.self, forKey: .districtName)
-		isActive = try values.decodeIfPresent(Bool.self, forKey: .isActive)
-		stateId = try values.decodeIfPresent(Int.self, forKey: .stateId)
-	}
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        districtId = try values.decodeIfPresent(Int.self, forKey: .districtId)
+        stateId = try values.decodeIfPresent(Int.self, forKey: .stateId)
+        districtName = try values.decodeIfPresent(String.self, forKey: .districtName)
+        districtCode = try values.decodeIfPresent(String.self, forKey: .districtCode)
+        isActive = try values.decodeIfPresent(Bool.self, forKey: .isActive)
+        totalRows = try values.decodeIfPresent(Int.self, forKey: .totalRows)
+        row = try values.decodeIfPresent(Int.self, forKey: .row)
+    }
+
 
 }

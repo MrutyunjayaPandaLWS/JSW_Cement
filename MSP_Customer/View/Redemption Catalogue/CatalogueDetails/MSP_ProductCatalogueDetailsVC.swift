@@ -73,6 +73,7 @@ class MSP_ProductCatalogueDetailsVC: BaseViewController, popUpDelegate {
     var VM = CatalogueDetailsViewModel()
     var VM1 = HistoryNotificationsViewModel()
     var selectedPtsRange = ""
+    var dreamRedeemData = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         self.VM.VC = self
@@ -141,13 +142,13 @@ class MSP_ProductCatalogueDetailsVC: BaseViewController, popUpDelegate {
         }else{
             self.subView.isHidden = true
         }
-        if self.verifiedStatus != 1{
+        if self.dreamRedeemData != 1{
             
             DispatchQueue.main.async{
                 let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "PopupAlertOne_VC") as? PopupAlertOne_VC
                 vc!.delegate = self
                 vc!.titleInfo = ""
-                vc!.descriptionInfo = "You are not allowled to redeem .Please contact your administrator"
+                vc!.descriptionInfo = "Please submit your identity proof"
                 vc!.modalPresentationStyle = .overCurrentContext
                 vc!.modalTransitionStyle = .crossDissolve
                 self.present(vc!, animated: true, completion: nil)

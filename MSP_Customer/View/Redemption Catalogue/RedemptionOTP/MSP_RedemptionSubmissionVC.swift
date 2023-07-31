@@ -144,7 +144,7 @@ class MSP_RedemptionSubmissionVC: BaseViewController, popUpDelegate,UITextFieldD
                         "ActorId": userID,
                         "MemberName": "\(self.customerName)",
                         "ObjCatalogueDetails": [
-                              "DomainName": "MSP"
+                              "DomainName": "JSW"
                           ],
                         "ObjCatalogueList": self.newproductArray as [[String: Any]],
                         "ObjCustShippingAddressDetails":["Address1":"\(self.address1)","CityId":"\(self.cityID)", "CityName":"\(self.cityName)","CountryId":"\(self.countryId)","StateName": "\(self.stateName)","StateId":"\(self.stateID)","Zip":"\(self.pincode)","Email":"\(self.emailId)","FullName":"\(self.customerName)","Mobile": self.mobile],"SourceMode":5
@@ -156,7 +156,7 @@ class MSP_RedemptionSubmissionVC: BaseViewController, popUpDelegate,UITextFieldD
                         "ActorId": userID,
                         "MemberName": "\(contractorName)",
                         "ObjCatalogueDetails": [
-                               "DomainName": "MSP"
+                               "DomainName": "JSW"
                            ],
                         "ObjCatalogueList": [
                             [
@@ -363,10 +363,10 @@ class MSP_RedemptionSubmissionVC: BaseViewController, popUpDelegate,UITextFieldD
                                 "ProductCode": "\(item.productCode ?? "")",
                                 "ProductImage": "\(item.productImage ?? "")",
                                 "ProductName": "\(item.productName ?? "")",
-                                "RedemptionDate": "\(item.redemptionDate ?? "")",
-                                "RedemptionId": item.redemptionId ?? 0,
-                                "RedemptionTypeId": 1,
-                                "Status": item.status ?? 0,
+                                "redemptionDate": "\(item.redemptionDate ?? "")",
+                                "redemptionid": item.redemptionId ?? 0,
+                                "redemptiontypeid": 1,
+                                "status": 13,
                                 "CatogoryId": item.categoryID ?? 0,
                                 "CustomerCartId": item.customerCartId ?? 0,
                                 "TermsCondition": "\(item.termsCondition ?? "")",
@@ -390,7 +390,7 @@ class MSP_RedemptionSubmissionVC: BaseViewController, popUpDelegate,UITextFieldD
                                 "RedemptionId": item.redemptionId ?? 0,
                                 "RedemptionRefno": "\(self.redemptionRefId)",
                                 "RedemptionTypeId": self.redemptionTypeId,
-                                "Status": item.status ?? 0,
+                                "Status": 13,
                                 "TermsCondition": "\(item.termsCondition ?? "")",
                                 "TotalCash": item.totalCash ?? 0,
                                 "VendorId": item.vendorId ?? 0

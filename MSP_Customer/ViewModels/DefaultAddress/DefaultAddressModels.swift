@@ -31,8 +31,8 @@ class DefaultAddressModels{
                         self.VC?.selectedmobile = self.defaultAddressArray[0].mobile ?? "-"
                         self.VC?.selectedState = self.defaultAddressArray[0].stateName ?? "-"
                         self.VC?.selectedStateID = self.defaultAddressArray[0].stateId ?? 0
-                        self.VC?.selectedCity = self.defaultAddressArray[0].cityName ?? "-"
-                        self.VC?.selectedCityID = self.defaultAddressArray[0].cityId ?? 0
+                        self.VC?.selectedCity = self.defaultAddressArray[0].districtName ?? "-"
+                        self.VC?.selectedCityID = self.defaultAddressArray[0].districtId ?? 0
                         self.VC?.selectedaddress = self.defaultAddressArray[0].address1 ?? "-"
                         self.VC?.selectedpincode = self.defaultAddressArray[0].zip ?? "-"
                         self.VC?.selectedCountryId = self.defaultAddressArray[0].countryId ?? 0
