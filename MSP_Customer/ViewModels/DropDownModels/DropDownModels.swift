@@ -110,7 +110,7 @@ class DropDownModels{
             if error == nil {
                 if result != nil{
                     DispatchQueue.main.async {
-                        self.districtArray = (result?.lstDistrict)!
+                        self.districtArray = (result?.lstDistrict) ?? []
                         self.VC?.dropDownTableView.reloadData()
                         self.VC?.loaderView.isHidden = true
                         self.VC?.stopLoading()

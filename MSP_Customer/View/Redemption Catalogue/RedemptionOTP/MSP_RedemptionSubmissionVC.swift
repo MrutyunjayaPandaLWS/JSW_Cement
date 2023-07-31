@@ -61,8 +61,8 @@ class MSP_RedemptionSubmissionVC: BaseViewController, popUpDelegate,UITextFieldD
     let merchantEmail = UserDefaults.standard.string(forKey: "MerchantEmail") ?? ""
     var pointBalance = UserDefaults.standard.integer(forKey: "RedeemablePointBalance")
     let loyaltyId = UserDefaults.standard.string(forKey: "LoyaltyID") ?? ""
-    
-    
+    let date = Date()
+    let format = DateFormatter()
     var OTPforVerification = ""
     var newproductArray: [[String:Any]] = []
     var sendSMArray: [[String:Any]] = []
@@ -72,6 +72,7 @@ class MSP_RedemptionSubmissionVC: BaseViewController, popUpDelegate,UITextFieldD
     var VM = RedemptionOTPVM()
     var txtOTPView: DPOTPView!
     var enteredValue = ""
+    var currentDateData = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         self.VM.VC = self
@@ -100,6 +101,16 @@ class MSP_RedemptionSubmissionVC: BaseViewController, popUpDelegate,UITextFieldD
 //
 //        guard let builder = GAIDictionaryBuilder.createScreenView() else { return }
 //        tracker.send(builder.build() as [NSObject : AnyObject])
+        currentDate()
+    }
+    
+    
+    func currentDate(){
+        let yesterday = "\(Calendar.current.date(byAdding: .day, value: 0, to: Date())!)"
+        let today = yesterday.split(separator: " ")
+        let desiredDateFormat = convertDateFormater("\(today[0])", fromDate: "yyyy-MM-dd", toDate: "yyyy-MM-dd")
+        self.currentDateData = "\(desiredDateFormat)"
+        print(self.currentDateData,"DataAdded")
     }
     
     @objc func sendSuccess(){
@@ -147,7 +158,7 @@ class MSP_RedemptionSubmissionVC: BaseViewController, popUpDelegate,UITextFieldD
                               "DomainName": "JSW"
                           ],
                         "ObjCatalogueList": self.newproductArray as [[String: Any]],
-                        "ObjCustShippingAddressDetails":["Address1":"\(self.address1)","CityId":"\(self.cityID)", "CityName":"\(self.cityName)","CountryId":"\(self.countryId)","StateName": "\(self.stateName)","StateId":"\(self.stateID)","Zip":"\(self.pincode)","Email":"\(self.emailId)","FullName":"\(self.customerName)","Mobile": self.mobile],"SourceMode":5
+                        "ObjCustShippingAddressDetails":["Address1":"\(self.address1)","Districid":"\(self.cityID)","CountryId":"\(self.countryId)","StateName": "\(self.stateName)","StateId":"\(self.stateID)","Zip":"\(self.pincode)","Email":"\(self.emailId)","FullName":"\(self.customerName)","Mobile": self.mobile],"SourceMode": 5
                     ]
                     print(productsParameter ?? [])
                 }else{
@@ -172,12 +183,11 @@ class MSP_RedemptionSubmissionVC: BaseViewController, popUpDelegate,UITextFieldD
                         ],
                         "ObjCustShippingAddressDetails": [
                             "Address1": "\(self.address1)",
-                            "CityId": self.cityID,
-                            "CityName": "\(self.cityName)",
+                            "Districid": self.cityID,
                             "CountryId": 103,
                             "Email": "\(self.emailId)",
                             "FullName": "\(contractorName)",
-                            "Mobile": "\(loyaltyId)",
+                            "Mobile": "\(self.mobile)",
                             "StateId": self.stateID,
                             "StateName": "\(self.stateName)",
                             "Zip": "\(self.pincode)"
@@ -355,23 +365,23 @@ class MSP_RedemptionSubmissionVC: BaseViewController, popUpDelegate,UITextFieldD
                         for item in self.VM.myCartListArray {
                             let singleImageDict:[String:Any] = [
                                 "CatalogueId": item.catalogueId ?? 0,
+                                "CatogoryId": item.categoryID ?? 0,
+                                "CustomerCartId": item.customerCartId ?? 0,
                                 "DeliveryType": "In Store",
                                 "HasPartialPayment": false,
-                                "NoOfPointsDebit": "\(Double(item.pointsRequired ?? 0))",
+                                "NoOfPointsDebit": "\(Int(item.pointsRequired ?? 0))",
                                 "NoOfQuantity": item.noOfQuantity ?? 0,
-                                "PointsRequired": "\(Double(item.pointsRequired ?? 0))",
+                                "PointsRequired": "\(Int(item.pointsRequired ?? 0))",
                                 "ProductCode": "\(item.productCode ?? "")",
                                 "ProductImage": "\(item.productImage ?? "")",
                                 "ProductName": "\(item.productName ?? "")",
-                                "redemptionDate": "\(item.redemptionDate ?? "")",
+                                "redemptiondate": "\(self.currentDateData)",
                                 "redemptionid": item.redemptionId ?? 0,
                                 "redemptiontypeid": 1,
                                 "status": 13,
-                                "CatogoryId": item.categoryID ?? 0,
-                                "CustomerCartId": item.customerCartId ?? 0,
-                                "TermsCondition": "\(item.termsCondition ?? "")",
-                                "TotalCash": item.totalCash ?? 0,
-                                "VendorId": item.vendorId ?? 0
+                                "termscondition": "\(item.termsCondition ?? "")",
+                                "totalcash": item.totalCash ?? 0,
+                                "vendorid": item.vendorId ?? 0
                             ]
                             print(singleImageDict)
                             self.newproductArray.append(singleImageDict)
@@ -380,13 +390,13 @@ class MSP_RedemptionSubmissionVC: BaseViewController, popUpDelegate,UITextFieldD
                                 "CatalogueId": item.catalogueId ?? 0,
                                 "DeliveryType": "\(item.deliveryType ?? "")",
                                 "HasPartialPayment": false,
-                                "NoOfPointsDebit": "\(Double(item.pointsRequired ?? 0))",
+                                "NoOfPointsDebit": "\(Int(item.pointsRequired ?? 0))",
                                 "NoOfQuantity": item.noOfQuantity ?? 0,
-                                "PointsRequired": "\(Double(item.pointsRequired ?? 0))",
+                                "PointsRequired": "\(Int(item.pointsRequired ?? 0))",
                                 "ProductCode": "\(item.productCode ?? "")",
                                 "ProductImage": "\(item.productImage ?? "")",
                                 "ProductName": "\(item.productName ?? "")",
-                                "RedemptionDate": "\(item.redemptionDate ?? "")",
+                                "RedemptionDate": "\(self.currentDateData)",
                                 "RedemptionId": item.redemptionId ?? 0,
                                 "RedemptionRefno": "\(self.redemptionRefId)",
                                 "RedemptionTypeId": self.redemptionTypeId,
@@ -542,7 +552,7 @@ class MSP_RedemptionSubmissionVC: BaseViewController, popUpDelegate,UITextFieldD
                 "ActionType": 4,
                 "ActorId": "\(userID)",
                 "DreamGiftId": "\(dreamGiftId)",
-                "GiftStatusId": 4
+                "GiftStatusId": 5
         ] as [String: Any]
         print(parameters)
         self.VM.removeDreamGift(parameters: parameters) { response in
@@ -557,20 +567,7 @@ class MSP_RedemptionSubmissionVC: BaseViewController, popUpDelegate,UITextFieldD
             }
         }
     }
-//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-//      let aSet = NSCharacterSet(charactersIn:"0123456789").inverted
-//      let compSepByCharInSet = string.components(separatedBy: aSet)
-//      let numberFiltered = compSepByCharInSet.joined(separator: "")
-//
-//      if string == numberFiltered {
-//        let currentText = otpTF.text ?? ""
-//        guard let stringRange = Range(range, in: currentText) else { return false }
-//        let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
-//        return updatedText.count <= 6
-//      } else {
-//        return false
-//      }
-//    }
+
     func playAnimation(){
                    animationView11 = .init(name: "Loader_v4")
                      animationView11!.frame = loaderAnimatedView.bounds

@@ -119,7 +119,7 @@ class MSP_MyProfileVC: BaseViewController {
                 //self.dateOfBirthTF.text = response?.lstCustomerJson?[0].dob ?? "-"
                 self.addressTF.text = response?.lstCustomerJson?[0].address1 ?? "-"
                 self.stateBtn.setTitle(" \(response?.lstCustomerJson?[0].stateName ?? "-")", for: .normal)
-                self.cityBtn.setTitle(" \(response?.lstCustomerJson?[0].districtName ?? "-")", for: .normal)
+                self.cityBtn.setTitle(" \(response?.lstCustomerJson?[0].districtName ?? "Select District")", for: .normal)
                 self.pinTF.text = response?.lstCustomerJson?[0].zip ?? "-"
                 let createdDate = (response?.lstCustomerJson?[0].jdob ?? "-").split(separator: " ")
                 //let convertedFormat = self.convertDateFormater(String(createdDate[0]), fromDate: "MM/dd/yyyy", toDate: "dd/MM/yyyy")

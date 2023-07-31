@@ -113,7 +113,7 @@ class MSP_ProductCatalogueVC: BaseViewController, AddedToCartOrPlannerDelegate, 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.loaderView.isHidden = true
-
+        self.totalCartValue = 0
         self.VM.redemptionCataloguesArray.removeAll()
         self.redemptionCategoryList()
        
@@ -361,9 +361,9 @@ class MSP_ProductCatalogueVC: BaseViewController, AddedToCartOrPlannerDelegate, 
                     self.present(vc!, animated: true, completion: nil)
                 }
             }else{
-                if self.totalCartValue < Int(self.pointBalance) ?? 0 {
+//                if self.totalCartValue <= Int(self.pointBalance) {
                     let calcValue = self.totalCartValue + Int(self.VM.redemptionCatalogueArray[tappedIndex.row].pointsRequired!)
-                    if calcValue <= Int(self.pointBalance) ?? 0{
+                    if calcValue <= Int(self.pointBalance) {
                         self.selectedCatalogueID = self.VM.redemptionCatalogueArray[tappedIndex.row].catalogueId ?? 0
 
                             if self.VM.redemptionCatalogueArray[tappedIndex.row].is_Redeemable ?? 0 == 1{
@@ -393,17 +393,17 @@ class MSP_ProductCatalogueVC: BaseViewController, AddedToCartOrPlannerDelegate, 
                             self.present(vc!, animated: true, completion: nil)
                         }
                     }
-                }else{
-                    DispatchQueue.main.async{
-                        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "PopupAlertOne_VC") as? PopupAlertOne_VC
-                        vc!.delegate = self
-                        vc!.titleInfo = ""
-                        vc!.descriptionInfo = "Insufficient redeemable balance!"
-                        vc!.modalPresentationStyle = .overCurrentContext
-                        vc!.modalTransitionStyle = .crossDissolve
-                        self.present(vc!, animated: true, completion: nil)
-                    }
-                }
+//                }else{
+//                    DispatchQueue.main.async{
+//                        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "PopupAlertOne_VC") as? PopupAlertOne_VC
+//                        vc!.delegate = self
+//                        vc!.titleInfo = ""
+//                        vc!.descriptionInfo = "Insufficient redeemable balance!"
+//                        vc!.modalPresentationStyle = .overCurrentContext
+//                        vc!.modalTransitionStyle = .crossDissolve
+//                        self.present(vc!, animated: true, completion: nil)
+//                    }
+//                }
             }
           
             self.productTableView.reloadData()
@@ -416,6 +416,9 @@ class MSP_ProductCatalogueVC: BaseViewController, AddedToCartOrPlannerDelegate, 
             let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "MSP_ProductCatalogueDetailsVC") as! MSP_ProductCatalogueDetailsVC
             vc.isComeFrom = "Catalogue"
             vc.delegate = self
+            vc.cartPointsValue = self.totalCartValue
+            vc.isAddPlannerData = "\(self.VM.redemptionCatalogueArray[tappedIndex.row].isAddPlanner ?? false)"
+            vc.catalogueIdExistData = self.VM.redemptionCatalogueArray[tappedIndex.row].catalogueIdExist ?? 0
             vc.productImage = self.VM.redemptionCatalogueArray[tappedIndex.row].productImage ?? ""
             vc.prodRefNo = self.VM.redemptionCatalogueArray[tappedIndex.row].redemptionRefno ?? ""
             vc.productCategory = self.VM.redemptionCatalogueArray[tappedIndex.row].catogoryName ?? ""
@@ -702,8 +705,7 @@ extension MSP_ProductCatalogueVC: UITableViewDelegate, UITableViewDataSource {
         let filterPlannerList = self.VM.myPlannerListArray.filter { $0.catalogueId == self.VM.redemptionCatalogueArray[indexPath.row].catalogueId ?? 0 }
         let productPoints = self.VM.redemptionCatalogueArray[indexPath.row].pointsRequired ?? 0
         if Int(self.pointBalance) >= productPoints{
-         
-            if filterCategory.count > 0 {
+            if self.VM.redemptionCatalogueArray[indexPath.row].catalogueIdExist != 0 {
                 cell.addedToCart.isHidden = false
                 cell.addedToCart.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
                 cell.addToPlanner.isHidden = true
@@ -711,46 +713,97 @@ extension MSP_ProductCatalogueVC: UITableViewDelegate, UITableViewDataSource {
                 cell.addedToPlanner.isHidden = true
                 cell.wishPlannerOutBTN.isHidden = true
             }else{
-                cell.addedToCart.isHidden = true
-                cell.addToPlanner.isHidden = true
-                cell.addToCartButton.isHidden = false
-                cell.addToCartButton.backgroundColor = #colorLiteral(red: 0.6156862745, green: 0.06274509804, blue: 0.05882352941, alpha: 1)
-                cell.addedToPlanner.isHidden = true
-                cell.wishPlannerOutBTN.isHidden = true
+                if filterCategory.count > 0 {
+                    cell.addedToCart.isHidden = false
+                    cell.addedToCart.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+                    cell.addToPlanner.isHidden = true
+                    cell.addToCartButton.isHidden = true
+                    cell.addedToPlanner.isHidden = true
+                    cell.wishPlannerOutBTN.isHidden = true
+                }else{
+                    cell.addedToCart.isHidden = true
+                    cell.addToPlanner.isHidden = true
+                    cell.addToCartButton.isHidden = false
+                    cell.addToCartButton.backgroundColor = #colorLiteral(red: 0.6156862745, green: 0.06274509804, blue: 0.05882352941, alpha: 1)
+                    cell.addedToPlanner.isHidden = true
+                    cell.wishPlannerOutBTN.isHidden = true
+                }
             }
         }else{
-            if self.VM.redemptionCatalogueArray[indexPath.row].isPlanner! == true{
+            if self.VM.redemptionCatalogueArray[indexPath.row].isAddPlanner == true {
+                if self.VM.redemptionCatalogueArray[indexPath.row].catalogueIdExist == 1 {
+                    cell.addedToCart.isHidden = false
+                    cell.addedToCart.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+                    cell.addToPlanner.isHidden = true
+                    cell.addToCartButton.isHidden = true
+                    cell.addedToPlanner.isHidden = true
+                    cell.wishPlannerOutBTN.isHidden = true
+                }else{
+                    cell.addedToCart.isHidden = true
+                    cell.addToPlanner.isHidden = true
+                    cell.addToCartButton.isHidden = true
+                    cell.addedToPlanner.isHidden = false
+                    cell.wishPlannerOutBTN.isHidden = true
+                }
+                
+            }else{
                 cell.addedToCart.isHidden = true
                 cell.addToPlanner.isHidden = false
                 cell.addToCartButton.isHidden = true
                 cell.addedToPlanner.isHidden = true
                 cell.wishPlannerOutBTN.isHidden = true
-            }else{
-                cell.addedToCart.isHidden = true
-                cell.addToPlanner.isHidden = true
-                cell.addToCartButton.isHidden = true
-                cell.addedToPlanner.isHidden = true
-                cell.wishPlannerOutBTN.isHidden = true
             }
         }
-        if filterPlannerList.count > 0 {
-            if Int(pointBalance) > Int(productPoints) {
+//        if Int(self.pointBalance) >= productPoints{
+//
+//            if filterCategory.count > 0 {
+//                cell.addedToCart.isHidden = false
+//                cell.addedToCart.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+//                cell.addToPlanner.isHidden = true
+//                cell.addToCartButton.isHidden = true
+//                cell.addedToPlanner.isHidden = true
+//                cell.wishPlannerOutBTN.isHidden = true
+//            }else{
 //                cell.addedToCart.isHidden = true
 //                cell.addToPlanner.isHidden = true
 //                cell.addToCartButton.isHidden = false
+//                cell.addToCartButton.backgroundColor = #colorLiteral(red: 0.6156862745, green: 0.06274509804, blue: 0.05882352941, alpha: 1)
 //                cell.addedToPlanner.isHidden = true
 //                cell.wishPlannerOutBTN.isHidden = true
-            }else{
-                cell.addedToCart.isHidden = true
-                cell.addToPlanner.isHidden = true
-                cell.addToCartButton.isHidden = true
-                cell.addedToPlanner.isHidden = false
-                cell.wishPlannerOutBTN.setImage(UIImage(named: "heart-4"), for: .normal)
-                cell.wishPlannerOutBTN.isHidden = false
-                
-            }
-            
-        }
+//            }
+//        }else{
+//            if self.VM.redemptionCatalogueArray[indexPath.row].isPlanner! == true{
+//                cell.addedToCart.isHidden = true
+//                cell.addToPlanner.isHidden = false
+//                cell.addToCartButton.isHidden = true
+//                cell.addedToPlanner.isHidden = true
+//                cell.wishPlannerOutBTN.isHidden = true
+//            }else{
+//                cell.addedToCart.isHidden = true
+//                cell.addToPlanner.isHidden = true
+//                cell.addToCartButton.isHidden = true
+//                cell.addedToPlanner.isHidden = true
+//                cell.wishPlannerOutBTN.isHidden = true
+//            }
+//        }
+//        if filterPlannerList.count > 0 {
+//            if Int(pointBalance) > Int(productPoints) {
+////                cell.addedToCart.isHidden = true
+////                cell.addToPlanner.isHidden = true
+////                cell.addToCartButton.isHidden = false
+////                cell.addedToPlanner.isHidden = true
+////                cell.wishPlannerOutBTN.isHidden = true
+//            }else{
+//                cell.addedToCart.isHidden = true
+//                cell.addToPlanner.isHidden = true
+//                cell.addToCartButton.isHidden = true
+//                cell.addedToPlanner.isHidden = false
+//                cell.wishPlannerOutBTN.setImage(UIImage(named: "heart-4"), for: .normal)
+//                cell.wishPlannerOutBTN.isHidden = false
+//
+//            }
+//
+//        }
         return cell
         
     }

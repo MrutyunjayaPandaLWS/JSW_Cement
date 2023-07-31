@@ -74,6 +74,9 @@ class MSP_ProductCatalogueDetailsVC: BaseViewController, popUpDelegate {
     var VM1 = HistoryNotificationsViewModel()
     var selectedPtsRange = ""
     var dreamRedeemData = 0
+    var isAddPlannerData = ""
+    var catalogueIdExistData = 0
+     var cartPointsValue = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         self.VM.VC = self
@@ -105,6 +108,7 @@ class MSP_ProductCatalogueDetailsVC: BaseViewController, popUpDelegate {
             self.subView.isHidden = true
         }
         self.notificationListApi()
+         self.cartPointsValue = 0
         self.myCartList()
         plannerListing1()
 //        guard let tracker = GAI.sharedInstance().defaultTracker else { return }
@@ -137,6 +141,7 @@ class MSP_ProductCatalogueDetailsVC: BaseViewController, popUpDelegate {
       
     }
     @IBAction func addToCartBtn(_ sender: Any) {
+         print(cartPointsValue)
         if self.subView.isHidden == false{
             self.subView.isHidden = true
         }else{
@@ -157,11 +162,23 @@ class MSP_ProductCatalogueDetailsVC: BaseViewController, popUpDelegate {
             
         }else{
             //            if self.totalCartValue <= Int(pointBalance)!{
-            //                let calcValues = self.totalCartValue + Int(self.productPoints)!
+                            let calcValues = self.totalCartValue + Int(self.productPoints)!
             //                print(calcValues)
-            if Int(productPoints) ?? 0 <= Int(pointBalance) ?? 0 {
-            //if Int(productPoints) ?? 0 <= Int(pointBalance) ?? 0 {
-                addToCartApi()
+            if calcValues <= Int(pointBalance) ?? 0 {
+                 if cartPointsValue + (Int(productPoints) ?? 0) <= Int(pointBalance) ?? 0 {
+                      addToCartApi()
+                 }else{
+                      DispatchQueue.main.async{
+                          let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "PopupAlertOne_VC") as? PopupAlertOne_VC
+                          vc!.delegate = self
+                          vc!.titleInfo = ""
+                          vc!.descriptionInfo = "Insufficent Point Balance"
+                          vc!.modalPresentationStyle = .overCurrentContext
+                          vc!.modalTransitionStyle = .crossDissolve
+                          self.present(vc!, animated: true, completion: nil)
+                      }
+                 }
+                
             }else{
                 DispatchQueue.main.async{
                     let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "PopupAlertOne_VC") as? PopupAlertOne_VC
@@ -206,6 +223,7 @@ class MSP_ProductCatalogueDetailsVC: BaseViewController, popUpDelegate {
                 self.countLabel.isHidden = false
                 self.countLabel.text = "\(self.VM.myCartListArray.count)"
             }else{
+                 self.totalCartValue = 0
                 self.countLabel.isHidden = true
             }
             DispatchQueue.main.async {
@@ -216,31 +234,88 @@ class MSP_ProductCatalogueDetailsVC: BaseViewController, popUpDelegate {
                         print(self.totalCartValue, "TotalValue")
                         let filterCategory = self.VM.myCartListArray.filter { $0.catalogueId == self.catalogueId}
                         print(filterCategory.count)
-                        if filterCategory.count > 0 {
-                            self.addedToCart.isHidden = false
-                            self.addToPlanner.isHidden = true
-                            self.addToCart.isHidden = true
-                            self.addedToPlannerBTN.isHidden = true
-                        }else{
-                            print(Int(self.productPoints) ?? 0, "Value1")
-                            print(Int(self.pointBalance) ?? 0, "Value 2")
-                            print("\(self.applicabletds)", "Value 3")
-                            
-                            // if (Int(self.productPoints)! + Int(self.applicabletds)) < Int(self.pointBalance)!{
-                            if Int(self.productPoints) ?? 0 <= Int(self.pointBalance) ?? 0 {
-                                self.addedToCart.isHidden = true
-                                self.addToPlanner.isHidden = true
-                                self.addToCart.isHidden = false
-                                self.addedToPlannerBTN.isHidden = true
-                            }else{
-                                self.addedToCart.isHidden = true
-                                self.addToPlanner.isHidden = false
-                                self.addToCart.isHidden = true
-                                self.addedToPlannerBTN.isHidden = true
-                                
-                                self.plannerListing()
-                            }
-                        }
+                         
+                         if Int(self.productPoints) ?? 0 <= Int(self.pointBalance) ?? 0 {
+                              if self.catalogueIdExistData != 0 {
+                                self.addedToCart.isHidden = false
+                                 self.addedToCart.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+                                 self.addToPlanner.isHidden = true
+                                 self.addToCart.isHidden = true
+                                 self.addedToPlannerBTN.isHidden = true
+                                         
+                              }else{
+                                   if filterCategory.count > 0{
+                                        self.addedToCart.isHidden = false
+                                         self.addedToCart.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+                                         self.addToPlanner.isHidden = true
+                                         self.addToCart.isHidden = true
+                                         self.addedToPlannerBTN.isHidden = true
+                                   }else{
+                                        self.addedToCart.isHidden = true
+                                        self.addToPlanner.isHidden = true
+                                        self.addToCart.isHidden = false
+                                        self.addToCart.backgroundColor = #colorLiteral(red: 0.6156862745, green: 0.06274509804, blue: 0.05882352941, alpha: 1)
+                                        self.addedToPlannerBTN.isHidden = true
+                                   }
+                              }
+                         }else{
+                              let isAddPlannerData = self.isAddPlannerData
+                              print(isAddPlannerData)
+                              print(self.isAddPlannerData)
+                              if self.isAddPlannerData == "false"{
+                                   self.addedToCart.isHidden = true
+                                   self.addToPlanner.isHidden = false
+                                   self.addToCart.isHidden = true
+                                   self.addedToPlannerBTN.isHidden = true
+                              }else{
+                                   if self.catalogueIdExistData != 0 {
+                                     self.addedToCart.isHidden = false
+                                      self.addedToCart.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+                                      self.addToPlanner.isHidden = true
+                                      self.addToCart.isHidden = true
+                                      self.addedToPlannerBTN.isHidden = true
+                                              
+                                   }else{
+                                        self.addedToCart.isHidden = true
+                                        self.addToPlanner.isHidden = true
+                                        self.addToCart.isHidden = true
+                                        self.addedToPlannerBTN.isHidden = false
+                                   }
+                              }
+                         }
+                         
+                         
+                        
+
+                        
+                        
+//                        if filterCategory.count > 0 {
+//                            self.addedToCart.isHidden = false
+//                            self.addToPlanner.isHidden = true
+//                            self.addToCart.isHidden = true
+//                            self.addedToPlannerBTN.isHidden = true
+//                        }else{
+//                            print(Int(self.productPoints) ?? 0, "Value1")
+//                            print(Int(self.pointBalance) ?? 0, "Value 2")
+//                            print("\(self.applicabletds)", "Value 3")
+//
+//                            // if (Int(self.productPoints)! + Int(self.applicabletds)) < Int(self.pointBalance)!{
+//                            if Int(self.productPoints) ?? 0 <= Int(self.pointBalance) ?? 0 {
+//
+//
+//                                self.addedToCart.isHidden = true
+//                                self.addToPlanner.isHidden = true
+//                                self.addToCart.isHidden = false
+//                                self.addedToPlannerBTN.isHidden = true
+//                            }else{
+//                                self.addedToCart.isHidden = true
+//                                self.addToPlanner.isHidden = false
+//                                self.addToCart.isHidden = true
+//                                self.addedToPlannerBTN.isHidden = true
+//
+//                                self.plannerListing()
+//                            }
+//                        }
                     }
                 }else{
                     print(self.productPoints)
@@ -350,13 +425,6 @@ class MSP_ProductCatalogueDetailsVC: BaseViewController, popUpDelegate {
                     self.loaderView.isHidden = true
                     self.stopLoading()
                 }else{
-                    print(self.isPlanner, "IspLannser")
-                    //if self.isPlanner == true{
-                    print(self.pointBalance,"ksjd")
-                    print(self.productPoints,"kjshdk")
-                    print(Int(self.pointBalance) ?? 0)
-                    print(Int(self.productPoints) ?? 0)
-                    print(Int(Double(self.pointBalance) ?? 0))
                     
                     if Int(self.productPoints) ?? 0 <= Int(Double(self.pointBalance) ?? 0){
                         
@@ -364,10 +432,7 @@ class MSP_ProductCatalogueDetailsVC: BaseViewController, popUpDelegate {
                         self.addToPlanner.isHidden = true
                         self.addToCart.isHidden = false
                         self.addedToPlannerBTN.isHidden = true
-                        //                    }else{
-                        //                        self.addBTNStackView.isHidden = true
-                        //
-                        //                    }
+
                     }else{
                         self.addedToCart.isHidden = true
                         self.addToPlanner.isHidden = false

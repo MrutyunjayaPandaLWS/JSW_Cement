@@ -23,7 +23,7 @@ class MSP_DefaultAddressVC: BaseViewController, SendUpdatedAddressDelegate, popU
         self.selectedpincode = vc.selectedpincode
         self.selectedCountryId = 15
         self.selectedCountry = "India"
-        self.contractorName = vc.selectedname
+//        self.contractorName = vc.selectedname
         self.customerAddressTV.text = "\(selectedname),\n\(self.selectedmobile),\n\(self.selectedaddress),\n\(self.selectedCity),\n\(self.selectedState),\n\(self.selectedCountry),\n\(self.selectedemail),\n\(self.selectedpincode)"
     }
     

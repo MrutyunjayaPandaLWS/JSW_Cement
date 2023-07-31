@@ -67,20 +67,35 @@ class MSP_MyCartVC: BaseViewController, popUpDelegate, MyCartDelegate {
     }
     
     @IBAction func proceedbtn(_ sender: Any) {
-        if self.cartCountData != 1{
-            let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "PopupAlertOne_VC") as? PopupAlertOne_VC
-            vc!.delegate = self
-            vc!.titleInfo = ""
-            vc!.descriptionInfo = "Please submit your identity proof"
-            vc!.modalPresentationStyle = .overCurrentContext
-            vc!.modalTransitionStyle = .crossDissolve
-            self.present(vc!, animated: true, completion: nil)
-            
-        }else if self.verifiedStatus == 1{
-            let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "MSP_DefaultAddressVC") as! MSP_DefaultAddressVC
-            vc.totalPoint = self.finalPoints
-            self.navigationController?.pushViewController(vc, animated: true)
+        if finalPoints <= pointBalance {
+            if self.cartCountData != 1{
+                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "PopupAlertOne_VC") as? PopupAlertOne_VC
+                vc!.delegate = self
+                vc!.titleInfo = ""
+                vc!.descriptionInfo = "Please submit your identity proof"
+                vc!.modalPresentationStyle = .overCurrentContext
+                vc!.modalTransitionStyle = .crossDissolve
+                self.present(vc!, animated: true, completion: nil)
+                
+            }else if self.verifiedStatus == 1{
+                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "MSP_DefaultAddressVC") as! MSP_DefaultAddressVC
+                vc.totalPoint = self.finalPoints
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }else{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "PopupAlertOne_VC") as? PopupAlertOne_VC
+                vc!.delegate = self
+                vc!.titleInfo = ""
+                
+                vc!.descriptionInfo = "Insufficient Point Balance"
+               
+                vc!.modalPresentationStyle = .overCurrentContext
+                vc!.modalTransitionStyle = .crossDissolve
+                self.present(vc!, animated: true, completion: nil)
+            }
         }
+        
         
     }
     

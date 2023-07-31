@@ -7,175 +7,47 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5CD2CFDC-4FB7-4352-A3A3-0D16EC6C4002"
+            uuid = "D0CD6800-9548-48C7-BFD1-C83A842AE0E2"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MSP_Customer/View/Dashboard/MSP_DashboardVC.swift"
+            filePath = "MSP_Customer/View/Redemption Catalogue/CatalogueList/MSP_ProductCatalogueVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "328"
-            endingLineNumber = "328"
-            landmarkName = "dashboardAPI()"
+            startingLineNumber = "388"
+            endingLineNumber = "388"
+            landmarkName = "addToCart(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "5CD2CFDC-4FB7-4352-A3A3-0D16EC6C4002 - b06e8c172766ddc3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MSP_Customer.MSP_DashboardVC.dashboardAPI() -&gt; ()"
-                  moduleName = "MSP_Customer"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arokia-m3/Documents/LWS%20Projects/JSW_Cement/MSP_Customer/View/Dashboard/MSP_DashboardVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "328"
-                  endingLineNumber = "328"
-                  offsetFromSymbolStart = "1226">
-               </Location>
-               <Location
-                  uuid = "5CD2CFDC-4FB7-4352-A3A3-0D16EC6C4002 - 9313b0e08f3da05f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.Optional&lt;MSP_Customer.DashboardModels&gt;) -&gt; () in MSP_Customer.MSP_DashboardVC.dashboardAPI() -&gt; ()"
-                  moduleName = "MSP_Customer"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arokia-m3/Documents/LWS%20Projects/JSW_Cement/MSP_Customer/View/Dashboard/MSP_DashboardVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "329"
-                  endingLineNumber = "329"
-                  offsetFromSymbolStart = "203">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5CB3293B-F656-4443-814B-BC58042D7864"
-            shouldBeEnabled = "Yes"
+            uuid = "C288BDEE-97B1-40BE-86AA-30F4F7811E8A"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MSP_Customer/View/Claim Status/MSP_ClaimStatusVC.swift"
+            filePath = "MSP_Customer/View/Redemption Catalogue/CatalogueList/MSP_ProductCatalogueVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "251"
-            endingLineNumber = "251"
-            landmarkName = "claimPointsApi(startIndex:)"
+            startingLineNumber = "402"
+            endingLineNumber = "402"
+            landmarkName = "addToCart(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "ABCD75F2-9240-41DC-BF91-9D6DBD111E63"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MSP_Customer/ViewModels/ForgotPassword/ForgotPasswordViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
-            landmarkName = "forgotPasswordAPI(paramters:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "39F44D47-3509-4106-806C-23DEAD9FCAAA"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MSP_Customer/View/Redemption Catalogue/CatalogueDetails/MSP_ProductCatalogueDetailsVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "197"
-            endingLineNumber = "197"
-            landmarkName = "myCartList()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "41117F54-C1B9-494F-8FB7-439076743904"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MSP_Customer/View/ClaimPoints/ClaimPointsLising/MSP_ClaimPointsVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "446"
-            endingLineNumber = "446"
-            landmarkName = "claimPointsApi()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "41117F54-C1B9-494F-8FB7-439076743904 - f6073c9899a22437"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MSP_Customer.MSP_ClaimPointsVC.claimPointsApi() -&gt; ()"
-                  moduleName = "MSP_Customer"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arokia-m3/Documents/LWS%20Projects/JSW_Cement/MSP_Customer/View/ClaimPoints/ClaimPointsLising/MSP_ClaimPointsVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "446"
-                  endingLineNumber = "446"
-                  offsetFromSymbolStart = "1020">
-               </Location>
-               <Location
-                  uuid = "41117F54-C1B9-494F-8FB7-439076743904 - fc3062a7cf840ae9"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;MSP_Customer.ClaimPointsModelView&gt;) -&gt; () in MSP_Customer.MSP_ClaimPointsVC.claimPointsApi() -&gt; ()"
-                  moduleName = "MSP_Customer"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arokia-m3/Documents/LWS%20Projects/JSW_Cement/MSP_Customer/View/ClaimPoints/ClaimPointsLising/MSP_ClaimPointsVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "447"
-                  endingLineNumber = "447"
-                  offsetFromSymbolStart = "232">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "A0A899AA-A412-40D9-8FDF-9E1F15E6ECEC"
+            uuid = "0510839A-EF4B-49D0-B29C-7566712D8A08"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MSP_Customer/View/Redemption Catalogue/CatalogueList/MSP_ProductCatalogueVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "486"
-            endingLineNumber = "486"
-            landmarkName = "redemptionCatalogueList(startIndex:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E51CAFA0-51E3-4499-813E-8D53DC28632C"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MSP_Customer/View/Redemption Catalogue/My Cart/MSP_MyCartVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "214"
-            endingLineNumber = "214"
+            startingLineNumber = "585"
+            endingLineNumber = "585"
             landmarkName = "myCartList()"
             landmarkType = "7">
          </BreakpointContent>
@@ -183,47 +55,47 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "38FED70D-C260-4FFE-BFE5-B642288C4975"
+            uuid = "E681AE8C-3AC5-4896-BA83-7349BC30DBD6"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MSP_Customer/View/DreamGift/DreamGift List/MSP_MyDreamGiftVC.swift"
+            filePath = "MSP_Customer/View/Redemption Catalogue/CatalogueList/MSP_ProductCatalogueVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "170"
-            endingLineNumber = "170"
-            landmarkName = "dreamGiftListApi()"
+            startingLineNumber = "573"
+            endingLineNumber = "573"
+            landmarkName = "myCartList()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "38FED70D-C260-4FFE-BFE5-B642288C4975 - 970a0acc96836d1a"
+                  uuid = "E681AE8C-3AC5-4896-BA83-7349BC30DBD6 - c76988aa20300a3"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "MSP_Customer.MSP_MyDreamGiftVC.dreamGiftListApi() -&gt; ()"
+                  symbolName = "MSP_Customer.MSP_ProductCatalogueVC.myCartList() -&gt; ()"
                   moduleName = "MSP_Customer"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arokia-m3/Documents/LWS%20Projects/JSW_Cement/MSP_Customer/View/DreamGift/DreamGift%20List/MSP_MyDreamGiftVC.swift"
+                  urlString = "file:///Users/arokia-m3/Documents/LWS%20Projects/JSW_Cement/MSP_Customer/View/Redemption%20Catalogue/CatalogueList/MSP_ProductCatalogueVC.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "170"
-                  endingLineNumber = "170"
-                  offsetFromSymbolStart = "1304">
+                  startingLineNumber = "573"
+                  endingLineNumber = "573"
+                  offsetFromSymbolStart = "1066">
                </Location>
                <Location
-                  uuid = "38FED70D-C260-4FFE-BFE5-B642288C4975 - 2675a1b5c15467da"
+                  uuid = "E681AE8C-3AC5-4896-BA83-7349BC30DBD6 - 12d24765c3cc94f6"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;MSP_Customer.MyDreamGiftModels&gt;) -&gt; () in MSP_Customer.MSP_MyDreamGiftVC.dreamGiftListApi() -&gt; ()"
+                  symbolName = "closure #1 (Swift.Optional&lt;MSP_Customer.MyCartModels&gt;) -&gt; () in MSP_Customer.MSP_ProductCatalogueVC.myCartList() -&gt; ()"
                   moduleName = "MSP_Customer"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arokia-m3/Documents/LWS%20Projects/JSW_Cement/MSP_Customer/View/DreamGift/DreamGift%20List/MSP_MyDreamGiftVC.swift"
+                  urlString = "file:///Users/arokia-m3/Documents/LWS%20Projects/JSW_Cement/MSP_Customer/View/Redemption%20Catalogue/CatalogueList/MSP_ProductCatalogueVC.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "171"
-                  endingLineNumber = "171"
-                  offsetFromSymbolStart = "96">
+                  startingLineNumber = "574"
+                  endingLineNumber = "574"
+                  offsetFromSymbolStart = "209">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -231,112 +103,112 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D09AA50E-5432-459F-A9D9-64AB1A9FA8B2"
+            uuid = "78483675-C7F5-4872-806C-224F33ED205A"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MSP_Customer/View/MyProfile/MSP_MyProfileVC.swift"
+            filePath = "MSP_Customer/View/Redemption Catalogue/CatalogueList/MSP_ProductCatalogueVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
-            landmarkName = "profileDetails()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "D09AA50E-5432-459F-A9D9-64AB1A9FA8B2 - ef885fe41b9e4078"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MSP_Customer.MSP_MyProfileVC.profileDetails() -&gt; ()"
-                  moduleName = "MSP_Customer"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arokia-m3/Documents/LWS%20Projects/JSW_Cement/MSP_Customer/View/MyProfile/MSP_MyProfileVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "109"
-                  endingLineNumber = "109"
-                  offsetFromSymbolStart = "1392">
-               </Location>
-               <Location
-                  uuid = "D09AA50E-5432-459F-A9D9-64AB1A9FA8B2 - fc819bd293249442"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.Optional&lt;MSP_Customer.MyProfileModels&gt;) -&gt; () in MSP_Customer.MSP_MyProfileVC.profileDetails() -&gt; ()"
-                  moduleName = "MSP_Customer"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arokia-m3/Documents/LWS%20Projects/JSW_Cement/MSP_Customer/View/MyProfile/MSP_MyProfileVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "110"
-                  endingLineNumber = "110"
-                  offsetFromSymbolStart = "208">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "4A4C414E-F34E-44A8-8959-B08FDA8F87B1"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MSP_Customer/View/DropDown/MSP_DropDownVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
-            landmarkName = "districtListingAPI(stateID:)"
+            startingLineNumber = "711"
+            endingLineNumber = "711"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "42EEF9D2-E7AC-4B4C-B56F-D64F639B5585"
+            uuid = "FA875D49-B878-4299-8B21-426234346F50"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MSP_Customer/View/DropDown/MSP_DropDownVC.swift"
+            filePath = "MSP_Customer/View/Redemption Catalogue/CatalogueList/MSP_ProductCatalogueVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "726"
+            endingLineNumber = "726"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A7A413FF-DA8B-4E88-BFD5-7D88DCB09CB2"
+            uuid = "C1D06FB4-38C7-4928-BBFC-D7BB15A671C2"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MSP_Customer/View/Redemption Catalogue/My Cart/MSP_MyCartVC.swift"
+            filePath = "MSP_Customer/View/Redemption Catalogue/CatalogueList/MSP_ProductCatalogueVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
-            landmarkName = "increaseCount(_:)"
+            startingLineNumber = "737"
+            endingLineNumber = "737"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "2392CE5F-8B87-45C9-96B5-3FA97A82AE5A"
+            uuid = "6318AAE4-BDDB-4DCE-A09D-B7153B0D16D1"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MSP_Customer/View/Redemption Catalogue/My Cart/MSP_MyCartVC.swift"
+            filePath = "MSP_Customer/View/Redemption Catalogue/CatalogueList/MSP_ProductCatalogueVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
-            landmarkName = "increaseCount(_:)"
+            startingLineNumber = "743"
+            endingLineNumber = "743"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "60E3442B-FA4B-49B2-A9B2-E4428096B1EF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MSP_Customer/View/Redemption Catalogue/CatalogueList/MSP_ProductCatalogueVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "409"
+            endingLineNumber = "409"
+            landmarkName = "addToCart(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CB6DD591-034D-4097-AE1E-45AEDFC0B396"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MSP_Customer/View/Redemption Catalogue/CatalogueDetails/MSP_ProductCatalogueDetailsVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "227"
+            endingLineNumber = "227"
+            landmarkName = "myCartList()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C04C332C-007B-4C56-8295-9A9FE08BA73C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MSP_Customer/View/Redemption Catalogue/CatalogueList/MSP_ProductCatalogueVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "366"
+            endingLineNumber = "366"
+            landmarkName = "addToCart(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

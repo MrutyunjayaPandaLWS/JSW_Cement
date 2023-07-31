@@ -35,6 +35,7 @@ class MSP_WishlistListingVC: BaseViewController, RedemptionPlannerDelegate, popU
     let verifiedStatus = UserDefaults.standard.integer(forKey: "VerifiedStatus")
     var checkAccountStatus = UserDefaults.standard.string(forKey: "SemiActiveAccount") ?? ""
     var VM1 = HistoryNotificationsViewModel()
+    var tappedWishList = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         self.VM.VC = self
@@ -119,6 +120,7 @@ class MSP_WishlistListingVC: BaseViewController, RedemptionPlannerDelegate, popU
         guard let tappedIndex = WishlistTableView.indexPath(for: cell) else{return}
         if cell.productRedeemBTN.tag == tappedIndex.row{
             let filterCategory = self.VM.myCartListArray.filter { $0.catalogueId == self.VM.myPlannerListArray[tappedIndex.row].catalogueId ?? 0}
+            self.tappedWishList = "\(filterCategory)"
             if filterCategory.count > 0{
                 DispatchQueue.main.async{
                     let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "PopupAlertOne_VC") as? PopupAlertOne_VC
@@ -196,7 +198,8 @@ class MSP_WishlistListingVC: BaseViewController, RedemptionPlannerDelegate, popU
         self.VM.myCartListArray.removeAll()
         let parameters = [
             "ActionType": "6",
-            "ActorId": "\(userID)"
+            "ActorId": "\(userID)",
+            "Domain":"JSW"
         ] as [String : Any]
         print(parameters)
         self.VM.plannerListingApi(parameters: parameters) { response in
@@ -246,6 +249,7 @@ class MSP_WishlistListingVC: BaseViewController, RedemptionPlannerDelegate, popU
           print(response?.returnValue ?? 0, "Added TO Cart")
             
             if response?.returnValue == 1{
+                self.removeProductInPlanner()
                 DispatchQueue.main.async{
                     
                     let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "MSP_MyCartVC") as! MSP_MyCartVC
