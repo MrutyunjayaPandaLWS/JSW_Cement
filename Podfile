@@ -25,7 +25,7 @@ target 'MSP_Customer' do
   pod 'QCropper'
 
   pod 'GoogleAnalytics'
- pod 'Firebase/Core'
+  pod 'Firebase/Core'
   pod 'FirebaseAuth'
   pod 'FirebaseFirestore'
   pod 'Firebase/Messaging'
@@ -35,11 +35,17 @@ target 'MSP_Customer' do
 end
 
 post_install do |installer|
-    installer.pods_project.targets.each do |target|
-        target.build_configurations.each do |config|
-           if config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'].to_f < 11.0
-             config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '11.0'
-           end
-        end
-    end
+  # ios deployment version
+  installer.pods_project.targets.each do |target|
+     target.build_configurations.each do |config|
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '12.0'
+      xcconfig_relative_path = "Pods/Target Support Files/#{target.name}/#{target.name}.#{config.name}.xcconfig"
+      file_path = Pathname.new(File.expand_path(xcconfig_relative_path))
+      next unless File.file?(file_path)
+      configuration = Xcodeproj::Config.new(file_path)
+      next if configuration.attributes['LIBRARY_SEARCH_PATHS'].nil?
+      configuration.attributes['LIBRARY_SEARCH_PATHS'].sub! 'DT_TOOLCHAIN_DIR', 'TOOLCHAIN_DIR'
+      configuration.save_as(file_path)
+     end
  end
+end

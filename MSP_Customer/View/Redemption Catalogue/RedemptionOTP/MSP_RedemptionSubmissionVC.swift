@@ -271,14 +271,15 @@ class MSP_RedemptionSubmissionVC: BaseViewController, popUpDelegate,UITextFieldD
         }
     }
     
+//    "OTPType": "Enrollment",
     func getOTP(){
         DispatchQueue.main.async {
             let parameterJSON = [
-                "UserName": "",
-                "UserId": -1,
+                "UserName": "\(self.loyaltyId)",
+                "UserId": self.userID,
                 "MobileNo": "\(self.customerMobile)",
-                "OTPType": "Enrollment",
-                "MerchantUserName": "\(MerchantUserName)"
+                "MerchantUserName": "\(MerchantUserName)",
+                "Name": "\(self.firstname)"
             ] as [String: Any]
             print(parameterJSON)
             self.OTPAPI(paramters: parameterJSON)
